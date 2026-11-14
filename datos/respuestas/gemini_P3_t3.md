@@ -1,0 +1,85 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:14
+Prompt: P3 · Tirada: 3 · Chat: https://gemini.google.com/app/a6f06f4c0005adaa
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué emoción celebrar los 2 años de tu pequeño! La idea de la mesa de snacks suena deliciosa, práctica y muy colorida. Para que todo salga perfecto, organizé una guía completa con la lista de compras exacta, ideas de decoración jurásica adaptadas para niños de 2 años y un itinerario fluido de 4 horas.
+
+1. Lista de Compras (Calculada para 10 niños y ~15 adultos)
+
+Para un grupo de esta magnitud (aproximadamente 25 personas en total, contando a los peques), las porciones se calculan considerando que los niños de 2 años comen porciones pequeñas y los adultos serán quienes disfruten el resto de los snacks.
+
+🥩 Snacks Salados y Proteínas
+
+Mini salchichas cocteleras: 1.5 kg a 2 kg (puedes prepararlas guisadas con un toque de cátsup y poquito jugo de piña, o estilo banderillas miniatura).
+
+Palomitas de colores (o naturales con un toque festivo): 2 bolsas grandes de tamaño comercial o 3 bolsitas medianas (aprox. 300-400 g en total).
+
+Cacahuates japoneses: 1 bolsa grande (aprox. 800 g a 1 kg). Nota: Colócalos en la parte alta de la mesa o en recipientes fuera del alcance directo de los niños pequeños por seguridad.
+
+🍇 Fruta y Queso (Brochetas)
+
+Uvas sin semilla (verdes o rojas): 2 kg (asegúrate de lavarlas muy bien y cortarlas en mitades si hay riesgo de atragantamiento para los menores de 2 años, o déjalas enteras si los papás las van a supervisar de cerca).
+
+Queso tipo Panela, Manchego o Gouda (en cubitos): 700 g a 1 kg.
+
+Material extra: 1 paquete de palitos de brocheta (de preferencia corta la punta filosa por seguridad de los niños).
+
+🍬 Dulces y Golosinas
+
+Gomitas variadas: 1 kg.
+
+Bombones (suaves): 1 bolsa grande (aprox. 600 g - 800 g).
+
+2. Ideas de Decoración: "Dino-Fiesta" para 2 Años
+
+Para una fiesta de 2 años, lo ideal es usar colores alegres y pasteles o tierra (verde menta, amarillo suave, naranja tostado y beige) para que no se vea tenebroso, sino tierno y divertido.
+
+Fondo de la mesa (Backdrop):
+
+Una cortina de flecos verde o un fondo de papel kraft donde dibujes o pegues hojas grandes de palma hechas de cartulina.
+
+Un letrero central que diga algo tierno como "¡[Nombre del niño] ruge a los 2!" o "El Roar-den de [Nombre]".
+
+Elementos de la temática:
+
+Pequeños dinosaurios de juguete: Coloca 3 o 4 dinosaurios de plástico (de preferencia estilo caricatura o "tierno") entre los platones de snacks.
+
+Toques naturales: Usa algunas plantas falsas (helechos o hojas de monstera) en la base de la mesa para simular una selva jurásica.
+
+Presentación de los snacks:
+
+Pon letreros divertidos con temática (ej. "Huevos de dinosaurio" para las uvas con queso, "Garras crujientes" para los cacahuates, "Lava dulce" para las gomitas).
+
+Usa bases de madera o charolas de colores neutros para que resalten los tonos de la comida (como las palomitas de colores y las gomitas).
+
+3. Horario Sugerido para la Fiesta (4:00 PM - 8:00 PM)
+
+A los 2 años los niños se desgastan rápido, por lo que este horario está diseñado para respetar sus siestas y la hora de cenar/dormir.
+
+4:00 PM - 4:30 PM |  ¡Bienvenidos al Campamento Jurásico!
+
+Llegada de los invitados, música de fondo divertida y tiempo libre para que los niños exploren el área de juegos mientras llegan todos.
+
+4:30 PM - 5:15 PM |  Exploración y Merienda Libre
+
+Se abre oficialmente la mesa de snacks. Los papás pueden platicar mientras los niños comen fruta, palomitas y minisalchichas.
+
+5:15 PM - 6:00 PM |  ¡Hora del Rugido! (Actividad / Animación)
+
+Un juego sencillo adaptado para su edad: buscar "huevos de dinosaurio" escondidos en el jardín o pasto (pueden ser pelotitas o huevos de plástico con una sorpresita adentro), o sesión de fotos con una diadema de dinosaurio.
+
+6:00 PM - 6:45 PM |  Pastel y Las Mañanitas
+
+Momento del pastel, cantar el cumpleaños feliz, fotos familiares y repartir la porción de pastel a los invitados.
+
+6:45 PM - 7:30 PM |  Tiempo Libre y Despedida Paulatina
+
+Los niños más pequeños empiezan a cansarse; es el momento ideal para que convivan un rato más los adultos o dejen que los niños corran libremente.
+
+7:30 PM - 8:00 PM |  Cierre de la Aventura
+
+Agradecimiento a los invitados, entrega de bolsitas de dulces/recuerditos de salida y fin del evento.
+
+¿Te gustaría que profundicemos en alguna receta rápida para las mini salchichas o necesitas ideas para los recuerditos de los niños?

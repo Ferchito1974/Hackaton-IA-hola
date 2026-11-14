@@ -1,0 +1,123 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:20
+Prompt: P4 · Tirada: 4 · Chat: https://gemini.google.com/app/bbdc97b381bbc036
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Muchísimas felicidades por su primer año juntos! Qué gran detalle prepararle una cena especial en casa.
+
+Para que todo sea un éxito y libre de estrés, el menú que elegiste es delicioso, pero tenemos que hacer un ajuste clave: la salsa de soya tradicional tiene gluten. Para que sea apta para celíacos, debes usar tamari (salsa de soya 100% de soya sin trigo) o una salsa de soya certificada sin gluten (gluten-free). Del cilantro ni te preocupes, no lo usaremos en ninguna receta.
+
+Aquí tienes todo lo que necesitas para triunfar en la cocina:
+
+🛒 Lista del Supermercado
+Proteínas y Verduras
+
+Pechuga o muslo de pollo (aprox. 500 g)
+
+Arroz de grano corto o largo (mejor si es del día anterior, pero si no, arroz blanco normal)
+
+Verduras para el arroz frito: zanahoria, chíbates/guisantes, calabacita (zucchini) y cebollín (cebolleta/cebolla de verdeo) —recuerda: nada de cilantro—
+
+Ajo y jengibre fresco
+
+Despensa (¡Ojo con el sello sin gluten!)
+
+Salsa Tamari o salsa de soya certificada sin gluten (crucial para celíacos)
+
+Vinagre de arroz
+
+Azúcar mascabado, panela o miel (para endulzar el teriyaki)
+
+Fécula de maíz (maicena) para espesar
+
+Aceite de ajonjolí (sésamo) y aceite vegetal
+
+Semillas de ajonjolí (sésamo) para decorar
+
+Postre (Mochis)
+
+Los mochis son tradicionalmente libres de gluten porque se hacen con harina de arroz glutinoso, pero debes comprar una marca certificada gluten-free o comprarlos en una pastelería especializada (libre de contaminación cruzada). Si los vas a hacer desde cero, necesitarás harina de arroz glutinoso (mochiko), azúcar y helado para el relleno. Te sugiero comprarlos hechos en una tienda especializada para ahorrar tiempo en la cena.
+
+⏱️ Cronograma: Orden para cocinar todo en 2 horas
+
+Para que no te satures y disfrutes la cocina con una copa de vino, sigue este orden:
+
+Minuto 0 al 20 (Preparación previa): Pica todas las verduras, corta el pollo en cubos, pela y ralla el jengibre y el ajo. Mide tus líquidos (salsa tamari, vinagre, etc.).
+
+Minuto 20 al 40 (El Arroz): Cocina el arroz (si no lo tienes hecho del día anterior) y déjalo enfriar extendido en una charola para que pierda la humedad y quede perfecto para freír.
+
+Minuto 40 al 55 (Salsa Teriyaki): Prepara la salsa teriyaki y déjala lista en la sartén.
+
+Minuto 55 al 1:15 (El Arroz Frito): Saltea las verduras y el arroz. Resérvalo caliente o tápalo bien.
+
+Minuto 1:15 al 1:35 (El Pollo Teriyaki): Cocina el pollo y mézclalo con la salsa teriyaki para que quede brillante y jugoso.
+
+Minuto 1:35 al 1:45 (Emplatado y Descanso): Sirve la comida bonita en los platos, limpia la cocina, saca los mochis del congelador y relájate para recibir a tu novia.
+
+👩‍🍳 Recetas Paso a Paso
+1. Pollo Teriyaki (Sin Gluten)
+
+Ingredientes:
+
+500 g de pollo en cubos
+
+1/3 taza de salsa Tamari (sin gluten)
+
+2 cucharadas de vinagre de arroz
+
+2 cucharadas de azúcar mascabado o miel
+
+1 diente de ajo picado y 1 cucharadita de jengibre rallado
+
+1 cucharadita de fécula de maíz disuelta en 2 cucharadas de agua fría
+
+Aceite vegetal y semillas de sésamo
+
+Paso a paso:
+
+En un tazón pequeño, mezcla la salsa tamari, el vinagre de arroz, el azúcar, el ajo y el jengibre.
+
+En una sartén a fuego medio-alto con un poco de aceite, dora los cubos de pollo hasta que estén bien cocidos por fuera y por dentro (unos 6-8 minutos).
+
+Vierte la mezcla de la salsa directamente sobre el pollo en la sartén.
+
+Deja que hierva un minuto y añade la fécula de maíz disuelta en agua. Remueve constantemente; verás cómo la salsa se espesa y se pone brillante cubriendo todo el pollo.
+
+Retira del fuego y decora con semillas de sésamo.
+
+2. Arroz Frito con Verduras
+
+Ingredientes:
+
+3 tazas de arroz cocido (idealmente frío del día anterior)
+
+1 taza de verduras picadas en cubitos muy pequeños (zanahoria, chícharos, calabacita)
+
+2 huevos batidos
+
+2 cucharadas de cebollín picado (solo la parte verde)
+
+2 cucharadas de salsa tamari (sin gluten)
+
+1 cucharadita de aceite de ajonjolí y aceite vegetal
+
+Paso a paso:
+
+Calienta un poco de aceite vegetal en una sartén grande o wok a fuego alto.
+
+Agrega las verduras picadas y saltea durante 4-5 minutos hasta que estén tiernas pero crujientes. Retíralas a un plato.
+
+En la misma sartén, añade los huevos batidos y revuélvelos rápidamente para hacer un revuelto en trozos pequeños.
+
+Suma el arroz cocido a la sartén, desbaratando los grumos con una cuchara de madera. Saltéalo por 3 minutos.
+
+Integra de nuevo las verduras y el huevo. Vierte las 2 cucharadas de salsa tamari y el aceite de ajonjolí por los bordes de la sartén para que se dore ligeramente.
+
+Apaga el fuego, mezcla el cebollín picado y rectifica de sabor.
+
+3. El Postre (Mochis)
+
+Si compraste los mochis congelados en una tienda especializada (gluten-free), simplemente sácalos del congelador unos 15-20 minutos antes de servirlos para que recuperen su textura suave y chiclosa perfecta.
+
+¿Hay algún otro detalle de la velada en el que te gustaría que te ayude, como alguna recomendación de bebida o ideas para la decoración de la mesa?

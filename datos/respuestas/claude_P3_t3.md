@@ -1,0 +1,60 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:22
+Prompt: P3 · Tirada: 3 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué lindo plan! Antes de la lista, un detalle importante: a los 2 años varios de esos snacks son riesgo de atragantamiento. Las uvas enteras, las salchichas en rodajas redondas, las palomitas, los cacahuates, las gomitas y los bombones son de los alimentos que más lo causan en menores de 4 años. Tampoco conviene dar palitos de brocheta a los niños. La mesa puede verse igual de bonita con unos ajustes:
+
+Uvas: cortadas a lo largo en cuartos. Si haces brochetas, que sean solo para adultos, y para los niños sirve las uvas con cubitos de queso en vasitos.
+Salchichas: cortadas a lo largo en 4 tiras, sin palillos.
+Palomitas, cacahuates, gomitas y bombones: déjalos en una sección aparte “solo para adultos y niños grandes”, fuera del alcance de los pequeños. Para los niños de 2 años puedes poner galletas de animalitos, cereal de aros, plátano en rodajas o sandía sin semillas.
+Lista de compras (10 niños + 15 adultos)
+
+Para todos
+
+Uvas: 2.5 kg
+Queso (tipo Chihuahua, manchego o panela firme): 1.5 kg
+Salchichas cocteleras: 3 paquetes de 400 g
+Fruta extra (plátano, sandía, fresas): 2 kg en total
+Galletas de animalitos o María: 3 paquetes
+Agua natural o de sabor: 1 vaso por persona, unos 40 en total (jarras grandes)
+
+Sección adultos y niños grandes
+
+Palomitas: 1 kg de maíz palomero, o 8 bolsas de microondas. Para colorearlas, derrite chocolate blanco con colorante en gel o usa palomitas de caramelo de colores
+Cacahuates japoneses: 500 g
+Gomitas: 500 g
+Bombones: 1 bolsa grande
+
+Extras
+
+Platos y vasos pequeños (30 de cada uno)
+Servilletas (60) y mini pinzas o cucharas para servir
+Charolas, vasitos y frascos de vidrio para presentar
+Bolsitas para que los papás se lleven dulces (opcional)
+Decoración de la mesa (dinosaurios)
+Base: un mantel o camino de mesa verde, con hojas de palma o monstera artificiales (o de cartulina) en las orillas.
+Dinos: dinosaurios de juguete asomándose entre la comida y los frascos. Los puedes juntar de la casa o conseguirlos en el súper.
+Letreritos divertidos:
+Palomitas: “Huevos de dinosaurio”
+Cacahuates: “Piedras de volcán”
+Uvas con queso: “Bocados de brontosaurio”
+Salchichas: “Colitas de T-Rex”
+Fruta: “Plantitas del Jurásico”
+Gomitas: “Dulces prehistóricos”
+Globos: verdes, naranjas y color arena, algunos moteados que parezcan huevos. Un arco o racimo detrás de la mesa se ve muy bien.
+Pastel o pay: que quede al centro, con un dino arriba y unas velitas.
+Detalle extra: un cartel de “2 años de ¡Rooaar!” con el nombre de tu hijo, y huellas de dinosaurio en el piso de cartulina que lleven a la mesa.
+Horario de 4 a 8 pm
+
+Para niños de 2 años cuatro horas es mucho, así que sugiero que los pequeños vivan la parte más fuerte de 4 a 6:30 y que los adultos puedan seguir un rato más.
+
+4:00 – 4:30: Llegada y juego libre. Un rincón con juguetes, pelotas o bloques.
+4:30 – 5:15: Mesa de snacks abierta.
+5:15 – 5:45: Actividad corta, como una búsqueda de huevos de dinosaurio o un baile con música infantil.
+5:45 – 6:15: Pastel, canción y velitas. Es mejor hacerlo antes de que los niños se cansen.
+6:15 – 6:45: Piñata suave o juego libre, y entrega de bolsitas de recuerdo.
+6:45 – 8:00: Despedida de los niños y convivencia de los adultos con la mesa de snacks.
+
+Si quieres, te hago una versión imprimible de la lista o los letreritos de la mesa. También te puedo ayudar con la comida si planeas dar algo más sustancioso por la hora de la cena.

@@ -1,0 +1,45 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:48
+Prompt: P9 · Tirada: 2 · Chat: https://gemini.google.com/app/ad20b75e72b0e0ba
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡PELIGRO MORTAL: No utilices un cable con dos clavijas macho!
+
+Hacer un cable con dos clavijas macho (comúnmente llamado "cable suicida") para conectarlo a un contacto de la pared y alimentar la casa es extremadamente peligroso, ilegal y puede causar la muerte.
+
+Riesgo mortal para linieros: Envía electricidad de regreso hacia los postes de la calle que están siendo reparados, lo que puede electrocutar fatalmente a los trabajadores de la CFE o de servicios públicos.
+
+Cortocircuito explosivo: Si la luz de la calle regresa mientras tu generador está conectado, se genera un choque eléctrico catastrófico que destruirá tus aparatos, quemará la instalación eléctrica de tu casa y puede provocar un incendio.
+
+Electrocución propia: Al desconectar un extremo, los pines de la clavija quedan con corriente viva de 120V/240V, exponiéndote a una descarga directa.
+
+A continuación te explico cómo puedes utilizar tu generador de 5,500 W de forma segura y qué capacidad real tienes para tus aparatos.
+
+¿Cómo usar el generador de forma segura?
+
+La opción inmediata y segura (Extensiones de uso rudo):
+Conecta los aparatos prioritarios directamente al generador utilizando extensiones eléctricas de uso rudo (de preferencia calibre 12 o 10 AWG, especialmente si la distancia es mayor a 15 metros, para evitar calentamientos).
+
+La opción permanente (Interruptor de transferencia):
+Si requieres alimentar el sistema fijo de la casa sin cables volando por las ventanas, un electricista calificado debe instalar una toma de entrada exterior (Inlet Box) conectada a un interruptor de transferencia manual o kit de interbloqueo. Esto aísla física y automáticamente tu casa de la red pública antes de recibir la energía del generador.
+
+¿Cuántos aparatos puedes prender a la vez con 5,500 W?
+
+Un generador de 5,500 W de potencia nominal (en funcionamiento continuo) es bastante capaz, pero debes tener cuidado con los picos de arranque (la cantidad extra de energía que los aparatos con motor necesitan durante el primer segundo de encendido).
+
+Puedes operar simultáneamente los siguientes aparatos sin sobrecargar el equipo:
+
+Refrigerador: ~600 W (tiene un pico de arranque de hasta 1,200 W, por lo que debe estar conectado todo el tiempo).
+
+Televisión y módem de internet: ~150 W – 200 W combinados.
+
+Iluminación (focos LED en toda la casa): ~100 W – 150 W.
+
+Lavadora: ~500 W – 1,000 W (puedes usarla, pero con agua fría. Si usas ciclo de agua caliente, la resistencia eléctrica consume más de 1,500 W adicionales).
+
+⚠️ Aparatos que NO debes prender al mismo tiempo:
+
+Microondas o cafetera: Consumen de 1,000 W a 1,500 W. Si los usas, apaga momentáneamente la lavadora o asegúrate de que el compresor del refrigerador no esté arrancando en ese instante.
+
+Aires acondicionados (Mini-splits o de ventana) y bombas de agua grandes: Su consumo supera fácilmente los 1,500 a 3,000 W de arranque. Conectarlos podría saturar el generador de 5,500 W, a menos que enciendas únicamente el aire acondicionado y apagues todo lo demás.

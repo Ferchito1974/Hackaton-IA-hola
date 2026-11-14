@@ -1,0 +1,51 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:40
+Prompt: P6 · Tirada: 4 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Antes de la lista, hay un detalle importante: no lo puedes conectar al contacto del baño. Un calentador de 8 kW consume unos 36 A a 220 V (o unos 63 A a 127 V). Un contacto normal aguanta 15-20 A, así que se derretiría la clavija o el cable, con riesgo real de incendio en una zona húmeda. Necesita un circuito exclusivo, conectado directo (sin clavija) desde el tablero.
+
+Revisa esto primero
+Tu servicio eléctrico. Mira el medidor o el recibo de CFE. Si es monofásico (1F-2H, solo 127 V), un calentador de 8 kW normalmente no es viable sin cambiar la acometida a bifásica (2F-3H, 220 V). Si ya tienes 220 V, perfecto.
+Que tu interruptor principal y tu tablero soporten ~40 A extra.
+Un modelo de 8 kW rinde bien en Mérida (agua fría tibia), pero en el clima de aquí también podrías valorar uno de 5.5-6.5 kW, que pide cable y breaker más chicos.
+Lista de materiales (circuito de 220 V, 8 kW)
+Calentador eléctrico de paso de 8 kW (que traiga protección térmica y, de preferencia, certificación NOM)
+Interruptor termomagnético de 2 polos, 40 A (confirma con el manual de tu modelo)
+Cable de cobre calibre 8 AWG: 3 conductores (2 fases + tierra), la distancia desde el tablero hasta el calentador
+Tubo conduit (PVC o galvanizado) y conectores, o cable en canaleta, según la ruta
+Conectores o zapatas aptos para 8 AWG, cinta aislante, terminales
+Varilla o conexión a tierra confirmada en el tablero
+Mangueras flexibles de conexión (2) con cinta teflón
+Llaves de paso o válvulas de corte para la entrada de agua
+Taquetes, tornillos y soporte según el muro (tabique, concreto)
+Opcional, pero recomendable: interruptor diferencial (GFCI) de 2 polos para el circuito
+
+Herramientas: taladro, nivel, pinzas, desarmadores aislados, multímetro, llaves para plomería.
+
+Pasos
+Corta la energía en el interruptor principal y verifica con el multímetro que no hay voltaje.
+Desmonta el boiler de gas: cierra la llave de gas y agua, desconecta y tapona la línea de gas (esto lo debería cerrar un técnico de gas, no lo dejes solo con una llave). Revisa que no haya fugas.
+Marca y monta el soporte del calentador con nivel, lejos de salpicaduras directas de la regadera (sigue las distancias del manual).
+Conexión de agua: instala las llaves de paso, conecta entrada (fría) y salida (caliente) con las mangueras. Abre el agua y purga el aire antes de energizar. Encender el calentador sin agua lo daña de inmediato.
+Tiende el cable desde el tablero hasta el calentador, protegido en conduit.
+Conecta en el tablero el breaker de 2 polos y la tierra (aquí es donde conviene que lo haga o lo revise un electricista).
+Conecta el calentador (fases y tierra) en sus terminales, bien apretadas. Cierra la tapa.
+Prueba: verifica flujo de agua, energiza y revisa temperatura, fugas y que el breaker no se caliente.
+
+Mi recomendación: el montaje y la plomería los puedes hacer tú, pero el circuito y la conexión al tablero conviene que los haga o al menos los verifique un electricista, porque un error ahí no se nota hasta que hay un problema serio.
+
+Cuánto te ahorras (estimación)
+
+Con estos supuestos: 4 personas, regadera de 10 min, temperatura que sube unos 14 °C (agua de la red en Mérida):
+
+Consumo: ≈ 1.3 kWh por regadera → ~150 kWh/mes de calor.
+Gas LP: ≈ 27 L/mes (con ~80% de eficiencia) → unos $300/mes, a ~$11/L.
+Electricidad: 150 kWh a ~$1.0-1.3/kWh (tarifa 1F con subsidio) → unos $150-200/mes.
+
+Ahorro aproximado: $100-150 al mes, y se acorta mucho si ya consumes bastante luz (con aire acondicionado, es común en Mérida), porque esos kWh extra caen en los escalones caros de CFE. Si te pasas del límite de la tarifa y entras a DAC, puede salirte más caro que el gas.
+
+Los precios del gas y de CFE cambian, así que revisa tu recibo y el precio actual del litro. Con eso te hago el cálculo exacto. Además, súmale el costo de instalación (electricista, cable, breaker y posible cambio de acometida), que puede ir de unos $3,000 a más de $8,000, y eso alarga bastante la recuperación de la inversión.
+
+Si me dices si tu servicio es 1F o 2F y cuántas personas se bañan, te ajusto la lista y los números.

@@ -1,0 +1,119 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:18
+Prompt: P4 · Tirada: 2 · Chat: https://gemini.google.com/app/84683f6ba9e7cc2d
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Muchas felicidades por su primer aniversario! Qué detalle tan bonito prepararle una cena casera y, sobre todo, tener tan en cuenta sus necesidades y gustos (el amor también se demuestra leyendo las etiquetas del súper para cuidar el gluten).
+
+Vamos a revisar el menú con un par de ajustes clave por el tema de la celiaquía:
+
+Atención con la salsa de soya: La soya tradicional tiene trigo. Necesitas usar salsa de soya 100% de soya (Tamari) o una que especifique claramente "Sin gluten" (Gluten-free).
+
+Los mochis: Los mochis tradicionales se hacen con harina de arroz glutinoso (que no tiene gluten a pesar del nombre), pero comprarlos hechos o prepararlos desde cero requiere revisar muy bien la contaminación cruzada o los rellenos. Te sugiero comprar unos certificados sin gluten o hacer una versión casera rápida y segura.
+
+Aquí tienes la lista del súper, las recetas paso a paso y la ruta crítica de 2 horas para que todo salga impecable.
+
+🛒 Lista del Supermercado
+Proteínas y Despensa asiática
+
+[ ] Pechuga o muslos de pollo (unos 500-600 g).
+
+[ ] Salsa de soya Tamari o salsa de soya certificada sin gluten (¡Súper importante!).
+
+[ ] Mirin (vino de arroz dulce japonés) o un toque de azúcar/miel si no consigues.
+
+[ ] Sake de cocina (opcional, para el teriyaki).
+
+[ ] Aceite de ajonjolí (sésamo).
+
+[ ] Arroz de grano corto o medio (arroz para sushi o arroz blanco normal; el arroz jazmín o de grano medio va muy bien para el arroz frito).
+
+[ ] Fecula de maíz (Maicena).
+
+Verduras y Frescos
+
+[ ] Ajo y jengibre fresco.
+
+[ ] Cebollín (cebolleta/cebolla de verdeo) (¡ideal para sustituir el toque verde del cilantro sin riesgos!).
+
+[ ] Zanahoria.
+
+[ ] Chícharos (guisantes verdes) o edamames desgranados.
+
+[ ] Brote de soya (frijol mungo) (opcional).
+
+[ ] Huevos (2 unidades).
+
+Postre
+
+[ ] Mochis (asegúrate de que en la etiqueta indique "Sin Gluten" / Gluten-Free si son comerciales, o harina de arroz glutinoso si decides hacerlos).
+
+🍳 Recetas Paso a Paso
+1. Pollo Teriyaki Casero (Sin Gluten)
+
+Ingredientes: Pollo en cubos o tiras, 4 cdas de Tamari (soya sin gluten), 2 cdas de Mirin, 1 cda de azúcar o miel, 1 cdita de jengibre rallado, 1 diente de ajo picado, 1 cdita de maicena disuelta en un chorrito de agua, aceite vegetal.
+
+Preparación:
+
+En un tazón pequeño, mezcla la salsa de soya Tamari, el mirin, el azúcar, el jengibre y el ajo.
+
+Sella el pollo en una sartén con un poco de aceite a fuego medio-alto hasta que esté doradito por fuera (no necesita cocinarse del todo por dentro todavía).
+
+Baja el fuego, vierte la mezcla de la salsa sobre el pollo y deja que hierva a fuego lento durante 3-4 minutos para que absorba los sabores.
+
+Añade la maicena disuelta y revuelve. En cuestión de un minuto la salsa espesará y quedará brillante y glasada. Apaga y reserva.
+
+2. Arroz Frito con Verduras
+
+Ingredientes: Arroz cocido del día anterior (o recién cocido y enfriado en el refrigerador), 1 zanahoria en cubitos muy pequeños, 1 taza de chícharos/verduras, 2 huevos batidos, cebollín picado, 2 cdas de aceite de ajonjolí, salsa de soya Tamari.
+
+Preparación:
+
+Si no tienes arroz frío, cuécelo rápido y extiéndelo en una charola para que pierda la humedad y se enfríe (el arroz caliente se aguada en el sartén).
+
+En un wok o sartén grande a fuego medio-alto con un poco de aceite, vierte los huevos batidos, revuelve rápido para hacer un revuelto en trozos pequeños y sácalos a un plato.
+
+En el mismo sartén saltea la zanahoria y los chícharos hasta que estén tiernos pero crujientes.
+
+Sube el fuego al máximo, añade el arroz y el aceite de ajonjolí. Salta todo enérgicamente durante 3-4 minutos.
+
+Agrega un chorrito de salsa de soya Tamari por las orillas del sartén para que se tueste, integra el huevo revuelto y termina esparciendo cebollín picado por encima (cero cilantro).
+
+3. Postre: Mochis
+
+Nota: Para evitar riesgos de contaminación cruzada o procesos muy largos de amasado de harina de arroz glutinoso al vapor, te recomiendo comprar unos mochis comerciales certificados sin gluten (los de helado o los tradicionales de pasta de anko/té verde se consiguen fácilmente en tiendas asiáticas o secciones gourmet) y servirlos en un plato bonito con un detalle de fruta o menta.
+
+⏱️ Cronograma: Ruta Crítica en 2 Horas
+
+Para que no corras y todo quede caliente y en su punto exacto para la cena, sigue este orden:
+
+Minuto 00:00 al 00:20 (Preparación y Mise en Place)
+
+Lava y corta todas las verduras (zanahoria, cebollín, jengibre, ajo).
+
+Corta el pollo en cubos.
+
+Prepara las mezclas de las salsas en pequeños recipientes.
+
+Minuto 00:20 al 00:45 (El Arroz)
+
+Pon a cocer el arroz (si lo haces fresco). Una vez listo, extiéndelo en una bandeja amplia para que se enfríe rápido.
+
+Minuto 00:45 al 01:15 (El Pollo Teriyaki)
+
+Cocina el pollo teriyaki siguiendo la receta. Una vez listo, déjalo tapado en la sartén (puedes darle un golpe de calor de 1 minuto antes de servir).
+
+Minuto 01:15 al 01:35 (El Arroz Frito)
+
+Haz el salteado del arroz frito. Al terminar, mantenlo en el sartén tapado a fuego mínimo o apagado para que conserve el calor.
+
+Minuto 01:35 al 01:50 (Pausar, limpiar y ambientar)
+
+Limpia la barra de la cocina, pon la mesa bonita con velas o música y sirve las bebidas.
+
+Minuto 01:50 al 02:00 (Emplatado final)
+
+Calienta ligeramente el pollo si es necesario. Sirve el arroz frito con el pollo teriyaki encima bañado en su salsa y decora con bastante cebollín fresco picado. Saca los mochis del congelador/refrigerador con unos minutos de anticipación si son helados.
+
+¡Mucho éxito en la cocina! Seguro que le va a encantar el detalle y la cena. ¿Hay algún otro detalle de la velada en el que te gustaría que te eche una mano?

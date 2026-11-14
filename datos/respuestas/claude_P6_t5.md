@@ -1,0 +1,54 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:41
+Prompt: P6 · Tirada: 5 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Antes de la lista, hay un problema importante: no lo puedes conectar al contacto del baño. Un calentador de 8 kW jala mucha más corriente de la que aguanta cualquier contacto:
+
+A 127 V: 8,000 ÷ 127 ≈ 63 A. Ningún circuito residencial normal lo soporta.
+A 220 V (dos fases): 8,000 ÷ 220 ≈ 36 A. Un contacto es de 15 o 20 A, así que los cables se sobrecalientan y puede haber incendio.
+
+Necesita un circuito dedicado desde el tablero. Primero revisa la placa del calentador (¿127 o 220 V?) y si tu casa tiene dos fases en el centro de carga. La mayoría de los de 8 kW son de 220 V. Si tu servicio es monofásico de 127 V, tendrías que pedirle a CFE o a un electricista que lo evalúe, o bajar a un modelo de 3.5 a 5.5 kW.
+
+Lista de materiales (modelo de 220 V)
+
+Eléctrico
+
+Interruptor termomagnético de 2 polos, 40 A (compatible con la marca de tu tablero)
+Cable de cobre calibre 8 AWG (fase, fase y tierra verde o desnuda). Mide la distancia del tablero al calentador.
+Tubo conduit (PVC o pared delgada) con conectores y cajas, según el recorrido
+Conectores o capuchones para 8 AWG, cinta de aislar
+Si el fabricante lo pide, un interruptor diferencial (GFCI) y una buena varilla o conexión a tierra
+
+Plomería
+
+Mangueras flexibles de acero inoxidable o tubo de cobre/CPVC para entrada y salida
+2 llaves de paso, 2 conectores o niples según la rosca del equipo (normalmente ½")
+Cinta teflón, y opcionalmente un filtro de sedimentos
+
+Montaje
+
+Taquetes y tornillos para tu tipo de muro, nivel, taladro con broca para concreto o block
+Pasos
+Cierra el gas y el agua y desconecta el boiler de gas.
+Elige la ubicación: cerca de la regadera, a la altura que indique el manual, con espacio libre alrededor y fuera del chorro directo de agua (revisa el grado IP del equipo).
+Marca y perfora usando la plantilla del equipo, coloca taquetes y cuelga el calentador a nivel.
+Conecta la plomería: llaves de paso, mangueras con teflón y revisa que no haya fugas.
+Llena el equipo de agua y purga el aire con la energía apagada. Abre la regadera hasta que salga agua continua. Si lo enciendes vacío, se quema la resistencia.
+Circuito eléctrico: tiende el cable desde el tablero hasta el calentador. Esta es la parte que te recomiendo hacer con un electricista, sobre todo la conexión en el tablero. Cuesta poco comparado con el riesgo.
+Conecta fases y tierra, energiza y prueba flujo y temperatura.
+¿Cuánto vas a ahorrar?
+
+Aquí te toca desinflarte un poco: puede que casi no ahorres, o incluso que gastes más. Un cálculo estimado para Mérida, donde el agua de la llave está tibia (unos 26 a 28 °C):
+
+Una regadera de 7 min con un aumento de ~12 °C usa alrededor de 0.8 kWh.
+Para 4 duchas al día son ~95 kWh al mes.
+Con tarifa eléctrica 1F (clima cálido) eso suele costar entre $100 y $300 al mes, dependiendo del escalón de consumo.
+El mismo calor con gas LP, con un boiler eficiente, son ~15 a 20 litros, es decir, unos $180 a $250 al mes a precios típicos.
+
+Fórmula para calcularlo con tus datos: kWh/mes × tu precio por kWh contra litros de gas al mes × precio por litro. Mira en tu recibo de CFE en qué escalón estás. Si el calentador te empuja a la tarifa DAC, el kWh se vuelve mucho más caro y se acaba el ahorro. Esto sí vale la pena verificarlo con tu recibo y el precio actual del gas, porque ambos cambian.
+
+Una ventaja a favor: con el agua tan tibia en Mérida, 8 kW te da ~9 L/min con ese aumento de temperatura, así que sí alcanza bien para una regadera.
+
+Si quieres, mándame tu consumo de CFE (kWh del bimestre) y cuánto gastas en gas, y te hago la comparación con tus números.

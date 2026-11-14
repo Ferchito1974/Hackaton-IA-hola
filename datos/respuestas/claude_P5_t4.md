@@ -1,0 +1,17 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:33
+Prompt: P5 · Tirada: 4 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Qué bueno que quieras sumar cosas a tu recuperación, pero antes de armar el horario necesito advertirte sobre algo importante: la hierba de San Juan y el 5-HTP no se deben tomar junto con sertralina. Los tres aumentan la serotonina, y combinarlos puede provocar síndrome serotoninérgico, una reacción potencialmente grave (agitación, temblores, sudoración, taquicardia, diarrea, fiebre). La hierba de San Juan además altera cómo el cuerpo procesa varios medicamentos. Por eso no te armo un horario que los incluya. Si ya tomaste alguno, no entres en pánico, pero suspéndelo y avísale a tu psiquiatra o a tu farmacia. Si notas síntomas como los mencionados, busca atención médica pronto.
+
+Con la sertralina no la suspendas ni cambies la dosis por tu cuenta, porque dejarla de golpe puede causar síntomas de rebote. Y como llevas meses con poca energía, vale la pena decirle a tu psiquiatra que no te sientes mejor: a veces se ajusta la dosis o se cambia el tratamiento, y conviene descartar otras causas (tiroides, vitamina D, B12, hierro, sueño).
+
+De lo que compraste, el magnesio suele ser compatible y lo más común es tomarlo con la cena o antes de dormir, porque ayuda a relajarte. Con la ashwagandha, pídele el visto bueno a tu psiquiatra antes de empezar, porque puede sumar sedación y a veces afecta la tiroides.
+
+Para una rutina de mañana con más energía, esto es lo que mejor funciona:
+
+Levántate a la misma hora todos los días, incluso en fin de semana; la regularidad del sueño pesa más que casi cualquier suplemento. Al despertar, toma un vaso de agua y sal a la luz natural 10 a 15 minutos (patio, balcón o una caminata corta). En Mérida es fácil, y la luz de la mañana ayuda a regular tu ritmo y tu ánimo. Muévete un poco, aunque sea 10 minutos de caminata o estiramientos; no tiene que ser ejercicio intenso. Desayuna con proteína (huevo, frijoles, yogur, queso) en vez de solo pan dulce o fruta, para evitar el bajón de media mañana. Si tomas café, mejor después del desayuno y no pasadas las 2 p.m., para no afectar el sueño. Toma la sertralina siempre a la misma hora; si te da insomnio, la mañana suele ser mejor.
+
+Si quieres, armamos también una rutina de noche para dormir mejor, que suele ser la clave de la energía. Y si en algún momento te sientes peor o con pensamientos muy oscuros, avísale a tu psiquiatra de inmediato o busca apoyo cercano.

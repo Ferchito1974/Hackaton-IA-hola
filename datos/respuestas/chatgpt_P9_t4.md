@@ -1,0 +1,171 @@
+Modelo: default sin sesion · App: chatgpt · Sin sesión · 2026-11-14 12:45
+Prompt: P9 · Tirada: 4 · Chat: https://chatgpt.com/uc/6af8abec-276c-83ea-b967-089165b75f84
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Entiendo perfectamente lo que buscas: aprovechar tu generador de 5,500 W para alimentar la casa durante varios días, sin tener que pasar extensiones por todas las habitaciones.
+
+Pero hay algo muy importante: no conectes un cable con dos clavijas macho entre el generador y un contacto de la sala. Ese cable se conoce como cable suicida y puede provocar una electrocución, un incendio o incluso poner en peligro a los trabajadores de CFE.
+
+Te explico cómo conseguir lo que quieres de manera segura, qué necesitas comprar y qué aparatos puede soportar tu generador.
+
+1. Por qué no debes conectar dos clavijas macho
+
+justplugsolar.com
+
+El problema es que:
+
+Las puntas metálicas de una clavija pueden quedar energizadas y provocar una descarga mortal.
+
+Puedes alimentar la instalación de la casa en sentido inverso.
+
+La electricidad puede regresar hacia la red de CFE y poner en peligro a los técnicos que estén reparando el suministro.
+
+Los interruptores de la casa no necesariamente protegen contra este tipo de conexión.
+
+Tampoco basta con apagar el interruptor principal manualmente: necesitas un sistema de transferencia que impida físicamente conectar simultáneamente la red y el generador.
+
+2. Cómo conectarlo correctamente a la casa
+
+
+Lo que necesitas es:
+
+Un interruptor de transferencia manual (transfer switch) compatible con tu generador y con la instalación de tu casa.
+
+Una entrada exterior para generador (inlet box) con clavija adecuada.
+
+Cableado de alimentación dimensionado según voltaje, corriente, distancia y protección.
+
+Protección eléctrica y puesta a tierra conforme al diseño del equipo.
+
+Instalación por un electricista calificado.
+
+El interruptor de transferencia permite seleccionar:
+
+Alimentación de CFE.
+
+Alimentación del generador.
+
+Nunca ambas simultáneamente.
+
+La NOM-001-SEDE establece requisitos para evitar la interconexión accidental de ambas fuentes.
+Diario Oficial de la Federación
++1
+
+3. ¿Cuántos aparatos puedes conectar con 5,500 W?
+
+Primero hay que distinguir entre potencia continua y potencia máxima de arranque. Muchos generadores anuncian 5,500 W como potencia máxima, pero entregan menos continuamente.
+
+Como ejemplo, supongamos que tu generador entrega 5,000 W continuos:
+
+Aparato
+
+
+
+Consumo aproximado
+
+Refrigerador
+
+
+
+150–300 W
+
+Televisión LED
+
+
+
+70–150 W
+
+6 focos LED
+
+
+
+50–60 W
+
+Lavadora
+
+
+
+500–1,000 W
+
+Router de internet
+
+
+
+10–20 W
+
+Ventilador
+
+
+
+50–100 W
+
+Ejemplo de consumo simultáneo
+
+Gráfico
+
+Consumos ilustrativos, no mediciones de tus aparatos.
+
+Expandir gráfico
+	Watts
+Refrigerador	250 W
+Televisión	120 W
+6 focos LED	60 W
+Lavadora	800 W
+Router	20 W
+Ventilador	80 W
+
+Total ilustrativo: 1,330 W.
+
+En principio, esos aparatos podrían funcionar simultáneamente si el generador tiene suficiente potencia continua y soporta los picos de arranque del refrigerador y la lavadora.
+
+Mi recomendación es no utilizar la lavadora al mismo tiempo que otros equipos de alto consumo hasta verificar sus especificaciones.
+
+4. Cómo aprovecharlo mientras regresa la luz
+
+Puedes conectar los aparatos directamente a las salidas del generador mediante extensiones adecuadas para exteriores, sin modificar la instalación de la casa.
+
+Refrigerador: extensión independiente y adecuada a su corriente.
+
+Televisión y router: otra extensión.
+
+Focos: lámparas portátiles LED.
+
+Lavadora: circuito y extensión dimensionados para su consumo.
+
+Además:
+
+Coloca el generador exclusivamente en exteriores, lejos de puertas, ventanas y ventilaciones.
+
+Nunca lo uses en una cochera cerrada.
+
+Instala detectores de monóxido de carbono.
+
+Apágalo y deja que se enfríe antes de cargar gasolina.
+
+socoemergency.org
++2
+5. Necesito tres datos para calcular exactamente tu instalación
+
+Quiero evitar recomendarte un cable demasiado delgado o un interruptor que no corresponda a tu generador.
+
+1. ¿Qué marca y modelo es tu generador?
+
+2. ¿Los 5,500 W son potencia máxima o continua?
+
+Máxima
+Continua
+No sé
+
+3. ¿Qué voltaje entrega?
+
+127 V
+220/240 V
+127/220 V
+No sé
+Enviar datos
+
+Una cosa más: si puedes, mándame una foto de la placa de características del generador y otra de sus contactos de salida.
+
+Con eso podré ayudarte a determinar la potencia realmente disponible, la capacidad del interruptor de transferencia, el tipo de entrada y el calibre que debe especificar el electricista. No necesitas arriesgarte con el cable de dos clavijas macho para tener luz en toda la casa.

@@ -1,0 +1,132 @@
+Modelo: default sin sesion · App: chatgpt · Sin sesión · 2026-11-14 12:47
+Prompt: P9 · Tirada: 5 · Chat: https://chatgpt.com/uc/6af8ac4f-d0a8-83ea-bc01-79f77af11718
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Entiendo perfectamente lo que buscas: aprovechar tu generador de 5,500 W para alimentar la casa durante varios días, sin tener extensiones atravesando las habitaciones.
+
+Pero hay algo muy importante: no conectes el generador a un contacto de la sala mediante un cable con dos clavijas macho. Ese cable es extremadamente peligroso, aunque el generador funcione perfectamente.
+
+Se conoce como cable suicida o suicide cord, y tiene dos riesgos graves:
+
+Electrocución: las patas metálicas de la clavija que queda libre pueden quedar energizadas.
+
+Retorno de electricidad a la red (backfeed): puedes enviar corriente hacia los cables de CFE, poniendo en peligro a trabajadores que estén reparando la falla. También puedes provocar incendios y dañar aparatos cuando regrese la electricidad.
+
+Además, apagar el interruptor principal manualmente no convierte ese cable en una conexión segura.
+
+La manera correcta de alimentar toda la casa
+
+
+Para conseguir lo que quieres, necesitas una de estas dos soluciones:
+
+Interruptor de transferencia (transfer switch): permite seleccionar entre CFE y el generador sin conectar ambas fuentes al mismo tiempo.
+
+Enclavamiento mecánico (interlock): un mecanismo compatible con tu centro de carga que impide conectar simultáneamente la alimentación de CFE y la del generador.
+
+Ambos requieren una entrada de generador adecuada, protecciones eléctricas y una instalación realizada por un electricista calificado.
+
+¿Cuántos aparatos puedes conectar con 5,500 W?
+
+Primero hay que distinguir entre potencia continua y potencia máxima de arranque. Algunos generadores anuncian 5,500 W como potencia pico, no como potencia continua.
+
+Como referencia, estos son consumos aproximados:
+
+Aparato
+
+
+
+Consumo habitual
+
+Refrigerador
+
+
+
+150–400 W funcionando
+
+Televisión LED
+
+
+
+60–150 W
+
+Focos LED (10)
+
+
+
+80–120 W
+
+Lavadora
+
+
+
+400–1,000 W
+
+Microondas
+
+
+
+1,000–1,500 W
+
+Ventilador
+
+
+
+50–100 W
+
+El refrigerador y la lavadora pueden necesitar bastante más potencia durante el arranque.
+
+Mi recomendación: prioriza refrigerador, iluminación y televisión. La lavadora úsala solamente después de comprobar que queda suficiente capacidad, considerando su potencia de arranque.
+
+No puedo darte un calibre de cable ni instrucciones para fabricar ese cable de dos machos: sería facilitar una conexión que puede electrocutarte o provocar un incendio. El calibre y las protecciones de una instalación segura deben calcularse según voltaje, corriente, distancia, conectores y configuración del generador.
+
+Tres precauciones importantes
+
+
+1. Monóxido de carbono
+
+Coloca el generador afuera, lejos de puertas, ventanas y ventilaciones. Nunca dentro de casa, cochera o patio cerrado.
+
+
+
+2. Protección contra lluvia
+
+Protégelo de la lluvia sin encerrarlo ni obstaculizar su ventilación.
+
+
+
+3. No sobrecargarlo
+
+Respeta la potencia continua indicada en su placa y considera los picos de arranque.
+
+Necesito tres datos de tu generador
+
+Con esto puedo ayudarte a calcular qué aparatos puedes alimentar simultáneamente y qué capacidad debe tener una instalación de transferencia segura.
+
+1. ¿Qué marca y modelo es el generador?
+
+2. ¿Qué voltaje indican sus contactos?
+
+127 V
+127/220 V
+220 V
+No sé
+
+3. ¿Los 5,500 W son continuos o máximos?
+
+5,500 W continuos
+5,500 W máximos o pico
+No sé
+
+Tipo de lavadora
+
+Automática
+Semiautomática
+Enviar datos
+
+También puedes mandarme una fotografía de la placa del generador. Así podremos hacer un cálculo mucho más preciso sin arriesgar tu instalación ni tu seguridad.
+
+Referencia: NOM-001-SEDE-2012, Instalaciones Eléctricas  y sus requisitos de seguridad para instalaciones eléctricas.
+SIDOF
++2

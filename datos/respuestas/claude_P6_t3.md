@@ -1,0 +1,70 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:39
+Prompt: P6 · Tirada: 3 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Te lo armo, pero antes un punto de seguridad: no se puede conectar a ese contacto. Déjame verificar precios actuales para el cálculo de ahorro.
+
+Hay dos cosas que cambian el plan, así que van primero.
+
+1. No se puede conectar al contacto del baño
+
+Un calentador de 8 kW consume mucha más corriente de la que aguanta un contacto:
+
+A 127 V serían unos 63 A, imposible en una instalación doméstica.
+A 220 V (2 fases) son unos 36 A. Un contacto normal soporta 15 a 20 A, y el cable que lo alimenta es de calibre 12 o 14.
+
+Si lo conectas ahí, el cable se sobrecalienta dentro de la pared y hay riesgo real de incendio. Necesita un circuito dedicado desde el tablero.
+
+Además, muchas casas en Mérida tienen servicio monofásico (solo 127 V). Si es tu caso, un equipo de 8 kW no se puede alimentar bien sin que CFE cambie tu servicio a bifásico. Revisa tu medidor y tu interruptor principal antes de comprar nada.
+
+2. El ahorro probablemente será poco o nulo
+
+El gas en Mérida no está tan caro. Según reportes de Profeco/CRE, en mayo de 2026 el gas LP en Mérida costaba $20.43 el kilo y $11.03 el litro, y a mediados de noviembre se reporta que el precio lleva cuatro semanas bajando en todo el país. 
+poresto
+
+ejecentral
+
+
+Cálculo aproximado, por persona:
+
+Regadera de 10 min a 8 L/min = 80 L. Si subes el agua unos 14 °C (de unos 24 a 38 °C), necesitas unos 1.3 kWh por baño.
+Eléctrico: unos 39 kWh al mes. Con tarifa CFE de $1.0 a $1.5/kWh (bloque básico o intermedio) son $40 a $60. Si cae en el bloque excedente (más de $3/kWh) son $120 o más.
+Gas con boiler de tanque (eficiencia de 70 a 80 %, más pérdidas por mantener el agua caliente): unos 4 kg al mes, o sea $80 a $110.
+
+Con más personas en casa, el consumo extra puede mandarte al bloque excedente o incluso a la tarifa DAC, y ahí el eléctrico sale más caro. Las tarifas de CFE son aproximadas, así que revisa tu recibo. Si me dices cuántos se bañan, cuánto gastas en gas al mes y cuánto pagas de luz, lo calculo con tus números. Si lo que buscas es ahorrar, un calentador solar suele convenir más en Mérida.
+
+Lista de materiales (circuito dedicado 220 V, equipo de 8 kW)
+
+Confirma todo con el manual de tu equipo.
+
+Calentador eléctrico de paso con protección IPX4 o mejor
+Interruptor termomagnético de 2 polos, 40 A
+Cable de cobre calibre 8 AWG (2 fases + tierra, verde o desnudo), desde el tablero hasta el equipo
+Tubo conduit de PVC o poliducto con conectores
+Desconectable o interruptor de seguridad junto al equipo (conexión directa, sin clavija)
+Varilla de tierra, si tu instalación no tiene tierra física
+Tubería y conexiones de CPVC o cobre, llaves de paso y mangueras flexibles de entrada y salida
+Cinta teflón y conectores de resorte o zapatas para terminales
+Taquetes, tornillos, plomada y nivel para la pared
+Multímetro y probador de voltaje
+Pasos para instalarlo
+
+Montaje y plomería (esto sí puedes hacerlo tú):
+
+Elige una pared sólida, fuera de la zona de salpicadura directa de la regadera, a la altura que indique el manual.
+Marca, taladra y fija el soporte con taquetes adecuados al muro. Nivela.
+Cierra la llave de paso general. Conecta la entrada de agua fría con su llave de paso.
+Conecta la salida hacia la regadera. No pongas ninguna válvula después del calentador.
+Abre el agua y purga el equipo hasta que salga agua sin aire. Encenderlo vacío daña la resistencia.
+Revisa que no haya fugas.
+
+Parte eléctrica (te recomiendo un electricista; es la que implica riesgo de incendio y electrocución):
+7. Verifica que tu servicio sea bifásico y que el tablero tenga capacidad para 40 A extra.
+8. Con el interruptor principal apagado, tiende el cable por conduit desde el tablero hasta el equipo.
+9. Instala el termomagnético de 2 polos y 40 A.
+10. Conecta el equipo con tierra física. No saltes este paso: es lo que evita que el agua te dé una descarga.
+11. Energiza solo después de confirmar que el equipo está lleno de agua y que no hay fugas. Prueba con multímetro.
+
+Si prefieres, te preparo una tabla comparativa con tus datos de consumo o te explico cómo revisar si tu servicio es bifásico.

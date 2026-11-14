@@ -1,0 +1,89 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:13
+Prompt: P3 · Tirada: 1 · Chat: https://gemini.google.com/app/6423f1b2eb7a2d8b
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué emoción festejar los 2 años de tu peque! Es una etapa padrísima y una fiesta con temática de dinosaurios le va a encantar.
+
+Aquí tienes la propuesta completa para organizar tu mesa de snacks, la lista de compras exacta calculada para 10 niños y 15 adultos, ideas sencillas de decoración "dino" y un horario equilibrado para una fiesta de 4 horas.
+
+1. Lista de Compras (Para 10 niños y 15 adultos)
+
+Calculamos un margen generoso (aprox. 25 personas en total, contando que los papás también pican y los niños repiten).
+
+🥩 Snacks Salados y Proteína
+
+Mini salchichas cocteleras: 1.5 kg a 2 kg (rinden muy bien para guisarlas con cátsup y chipotle suave para los grandes, o solitas para los niños).
+
+Cacahuates japoneses: 3 bolsas de 300g o 1 bolsa grande de 1 kg (ideal para los adultos).
+
+Palomitas de colores (o naturales): 2 bolsas grandes (busca palomitas dulces de colores pastel para darle vista, o haz palomitas de maíz naturales y mezcla algunas de colores).
+
+🍇 Snacks Dulces y Fruta (Ojo con las uvas)
+
+⚠️ Nota de seguridad importante (2 años): Para niños de 2 años, las uvas enteras son un riesgo grave de atragantamiento. Te sugiero cortarlas siempre a lo largo (en cuartos) para las brochetas o para la mesa de los niños, o bien usar uvas sin semilla pequeñas pero bien cortaditas.
+
+Uvas sin semilla (verdes y rojas): 1.5 kg (para armar las brochetas y rellenar).
+
+Queso tipo Panela o Manchego en cubos: 700 g (para intercalar en las brochetas con las uvas).
+
+Gomitas: 1 kg (pueden ser de gusanos o animalitos, simulando "huellas" o "dinos").
+
+Bombones (malvaviscos): 1 bolsa grande (pueden ser blancos o de colores suaves).
+
+🥤 Bebidas y Extras
+
+Para los niños: Agua de sabor natural (horchata o Jamaica ligera) en garrafón/dispensador, o cajitas de jugo individuales (aprox. 15-20 piezas).
+
+Para los adultos: Café (si hace fresco a partir de las 7 PM), agua de sabor y opciones frías (refrescos o agua mineral, aprox. 15-20 latas/botellas).
+
+Desechables temáticos: Platos, servilletas y vasos de dinosaurios (1 paquete de cada uno, aprox. 25-30 piezas), además de palillos o brochetas de madera (1 paquete).
+
+2. Ideas de Decoración: Mesa de Snacks "Dino Party"
+
+Para que la mesa luzca hermosa sin gastar de más ni pasar horas decorando, usa estos elementos clave:
+
+Fondo (Backdrop): Consigue un mantel verde o una cortina metálica verde/dorada, y pega siluetas de hojas de palma tropicales (puedes recortarlas en cartulina verde o comprar un paquete económico). Añade un letrero de "¡Rawr! [Nombre] The Two-saurus" (¡Dos-aurio!).
+
+Contenedores temáticos: Usa cajitas de madera rústica, bandejas de mimbre o recipientes de vidrio transparentes. Ponles etiquetas divertidas con nombres temáticos:
+
+Uvas y queso: "Pasto de Brontosaurio"
+
+Mini salchichas: "Huevos de Triceratops" (o carnita de carnívoro)
+
+Palomitas: "Piedritas volcánicas"
+
+Gomitas y bombones: "Dulces fósiles"
+
+Toques verdes: Coloca algunas plantas de hojas grandes (como monsteras o palmas de imitación o naturales) alrededor de la mesa y algunos dinosaurios de juguete de plástico de tu hijo asomándose entre los snacks.
+
+3. Horario Propuesto para la Fiesta (4:00 PM a 8:00 PM)
+
+A los 2 años los niños se cansan fácil, por lo que este itinerario está pensado para mantenerlos tranquilos, alimentados y con energía sin saturarlos:
+
+4:00 PM - 4:30 PM | Recepción y Bienvenida:
+
+Llegada de invitados, música de fondo alegre, los niños empiezan a explorar los juguetes o el área de juegos mientras los papás se saludan.
+
+4:30 PM - 5:30 PM | Juego libre y Snacks ligeros:
+
+Se abre la mesa de snacks (las palomitas, cacahuates y bebidas están disponibles). Los niños querrán correr y jugar un rato con libertad.
+
+5:30 PM - 6:30 PM | Actividad o Animación Breve:
+
+Un pequeño show de burbujas, un cuentacuentos, o sacar una alberca de pelotas/túneles. A esta hora los niños se entretienen muchísimo con dinámicas sencillas de 30-45 minutos.
+
+6:30 PM - 7:15 PM | Fuerte de la tarde (Comida principal + Snacks pesados):
+
+Es momento de sacar las mini salchichas calientes (si pediste pizza o antojitos para los adultos, este es el momento) y que todos recarguen energía.
+
+7:15 PM - 7:45 PM | Las Mañanitas y Pastel:
+
+Cantamos el "Cumpleaños Feliz", se parte el pastel y se reparten los recuerdos o bolsitas de dulces.
+
+7:45 PM - 8:00 PM | Despedida:
+
+Agradecimiento a los invitados, fotos finales y cierre de la fiesta con los niños ya relajados listos para ir a dormir temprano.
+
+¿Hay algún detalle adicional que te gustaría ajustar, como agregar algún platillo fuerte para los adultos o alguna actividad en específico para los niños?
