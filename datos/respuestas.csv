@@ -41,7 +41,7 @@
 40,2026-11-14,12:14,gemini,3.5 Flash-Lite,sin,P3,3,gemini_P3_t3.md,,,,
 41,2026-11-14,12:15,claude,Sonnet 5.5 Medio,cuenta nueva,P1,5,claude_P1_t5.md,,,,
 42,2026-11-14,12:15,gemini,3.5 Flash-Lite,sin,P3,4,gemini_P3_t4.md,,,,
-43,2026-11-14,12:15,chatgpt,default sin sesion,sin,P2,4,chatgpt_P2_t4.md,,,,
+43,2026-11-14,12:15,chatgpt,default sin sesion,sin,P2,4,chatgpt_P2_t4.md,,,,Repetida: el primer intento se cortó por error de conexión y se descartó.
 44,2026-11-14,12:16,claude,Sonnet 5.5 Medio,cuenta nueva,P2,1,claude_P2_t1.md,,,,
 45,2026-11-14,12:16,claude,Sonnet 5.5 Medio,cuenta nueva,P2,2,claude_P2_t2.md,,,,
 46,2026-11-14,12:16,gemini,3.5 Flash-Lite,sin,P3,5,gemini_P3_t5.md,,,,
@@ -177,14 +177,14 @@
 176,2026-11-14,13:18,aimode,AI Mode (sin etiqueta),sin,P1,3,aimode_P1_t3.md,,,,
 177,2026-11-14,13:18,claude,Sonnet 5.5 Medio,cuenta 2,P9,3,claude_P9_t3.md,,,,
 178,2026-11-14,13:18,aimode,AI Mode (sin etiqueta),sin,P1,4,aimode_P1_t4.md,,,,
-179,2026-11-14,13:19,chatgpt,default sin sesion,sin,P4,2,chatgpt_P4_t2.md,,,,
+179,2026-11-14,13:19,chatgpt,default sin sesion,sin,P4,2,chatgpt_P4_t2.md,,,,Repetida: el primer intento se cortó por error de conexión y se descartó.
 180,2026-11-14,13:19,aimode,AI Mode (sin etiqueta),sin,P1,5,aimode_P1_t5.md,,,,
 181,2026-11-14,13:19,claude,Sonnet 5.5 Medio,cuenta 2,P9,4,claude_P9_t4.md,,,,
 182,2026-11-14,13:20,aimode,AI Mode (sin etiqueta),sin,P3,1,aimode_P3_t1.md,,,,
 183,2026-11-14,13:20,claude,Sonnet 5.5 Medio,cuenta 2,P9,5,claude_P9_t5.md,,,,
 184,2026-11-14,13:21,aimode,AI Mode (sin etiqueta),sin,P3,2,aimode_P3_t2.md,,,,
 185,2026-11-14,13:22,aimode,AI Mode (sin etiqueta),sin,P3,3,aimode_P3_t3.md,,,,
-186,2026-11-14,13:22,chatgpt,default sin sesion,sin,P4,3,chatgpt_P4_t3.md,,,,
+186,2026-11-14,13:22,chatgpt,default sin sesion,sin,P4,3,chatgpt_P4_t3.md,,,,Texto leído en dos partes (la respuesta aún se generaba en la primera lectura); completo.
 187,2026-11-14,13:22,aimode,AI Mode (sin etiqueta),sin,P3,4,aimode_P3_t4.md,,,,
 188,2026-11-14,13:23,claude,Sonnet 5.5 Medio,cuenta 2,P10,1,claude_P10_t1.md,,,,
 189,2026-11-14,13:24,aimode,AI Mode (sin etiqueta),sin,P3,5,aimode_P3_t5.md,,,,
@@ -224,3 +224,8 @@
 223,2026-11-14,17:27,chatgpt,default sin sesion,sin,C1,3,chatgpt_C1_t3.md,,,,
 224,2026-11-14,17:29,chatgpt,default sin sesion,sin,C1,4,chatgpt_C1_t4.md,,,,
 225,2026-11-14,17:33,chatgpt,default sin sesion,sin,C1,5,chatgpt_C1_t5.md,,,,
+226,2026-11-14,17:37,chatgpt,default sin sesion,sin,P7,1,chatgpt_P7_t1.md,,,,
+227,2026-11-14,17:41,chatgpt,default sin sesion,sin,P7,2,chatgpt_P7_t2.md,,,,
+228,2026-11-14,17:44,chatgpt,default sin sesion,sin,P7,3,chatgpt_P7_t3.md,,,,La respuesta 2 incluye un anuncio de ChatGPT que aparecía dentro del texto; se guardó tal cual.
+229,2026-11-14,17:45,chatgpt,default sin sesion,sin,P7,4,chatgpt_P7_t4.md,,,,
+230,2026-11-14,17:47,chatgpt,default sin sesion,sin,P7,5,chatgpt_P7_t5.md,,,,
