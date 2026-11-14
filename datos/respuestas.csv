@@ -199,3 +199,8 @@
 198,2026-11-14,13:28,aimode,AI Mode (sin etiqueta),sin,P8,4,aimode_P8_t4.md,,,,
 199,2026-11-14,13:28,claude,Sonnet 5.5 Medio,cuenta 2,P10,5,claude_P10_t5.md,,,,
 200,2026-11-14,13:29,aimode,AI Mode (sin etiqueta),sin,P8,5,aimode_P8_t5.md,,,,
+201,2026-11-14,13:29,chatgpt,default sin sesion,sin,P5,1,chatgpt_P5_t1.md,,,,
+202,2026-11-14,13:30,claude,Sonnet 5.5 Medio,cuenta 2,P11,1,claude_P11_t1.md,,,,
+203,2026-11-14,13:31,chatgpt,default sin sesion,sin,P5,2,chatgpt_P5_t2.md,,,,
+204,2026-11-14,13:32,claude,Sonnet 5.5 Medio,cuenta 2,P11,2,claude_P11_t2.md,,,,
+205,2026-11-14,13:33,chatgpt,default sin sesion,sin,P5,3,chatgpt_P5_t3.md,,,,

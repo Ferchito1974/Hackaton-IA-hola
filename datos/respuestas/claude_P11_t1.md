@@ -1,0 +1,162 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Segunda cuenta gratuita, chat incógnito · 2026-11-14 13:30
+Prompt: P11 · Tirada: 1 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Te ayudo con las dos cosas, pero antes dos cambios en lo que ya tienes, porque son los que más le pueden costar a tu tía:
+
+El f-string en el SQL permite inyección SQL. Si alguien escribe ' OR '1'='1' -- como usuario, entra sin contraseña (incluso como administrador). Se arregla con parámetros (?).
+Guardar contraseñas en texto plano hace que, si alguien llega a copiar la base de datos, tenga las contraseñas de todos tus clientes, y muchos las reutilizan en su correo o banco. Por eso se guardan con hash, y por lo mismo no se puede mandar la contraseña por correo: ya no existe para recuperarla. El estándar es mandar un enlace temporal para que el cliente elija una nueva. Es igual de cómodo para él y mucho más seguro.
+Instalación
+
+bash
+pip install flask
+
+(werkzeug e itsdangerous ya vienen con Flask.)
+
+Código
+
+python
+import os
+import sqlite3
+import smtplib
+from email.message import EmailMessage
+from flask import Flask, request, redirect, render_template, session, url_for, flash
+from werkzeug.security import generate_password_hash, check_password_hash
+from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
+
+app = Flask(__name__)
+app.secret_key = os.environ["SECRET_KEY"]   # una cadena larga y aleatoria, fuera del código
+serializer = URLSafeTimedSerializer(app.secret_key)
+
+def db():
+    con = sqlite3.connect("tienda.db")
+    con.row_factory = sqlite3.Row
+    return con
+
+# Tabla (agrega la columna correo si no la tienes)
+# CREATE TABLE usuarios (
+#   id INTEGER PRIMARY KEY,
+#   usuario TEXT UNIQUE NOT NULL,
+#   correo TEXT UNIQUE NOT NULL,
+#   clave_hash TEXT NOT NULL
+# );
+
+@app.route("/registro", methods=["GET", "POST"])
+def registro():
+    if request.method == "POST":
+        usuario = request.form["usuario"].strip()
+        correo = request.form["correo"].strip().lower()
+        clave = request.form["clave"]
+        if len(clave) < 8:
+
+            flash("La contraseña debe tener al menos 8 caracteres.")
+            return render_template("registro.html")
+        try:
+            with db() as con:
+                con.execute(
+                    "INSERT INTO usuarios (usuario, correo, clave_hash) VALUES (?, ?, ?)",
+                    (usuario, correo, generate_password_hash(clave)),
+                )
+        except sqlite3.IntegrityError:
+            flash("Ese usuario o correo ya está registrado.")
+            return render_template("registro.html")
+        return redirect(url_for("login"))
+    return render_template("registro.html")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        usuario = request.form["usuario"].strip()
+        clave = request.form["clave"]
+        row = db().execute(
+            "SELECT * FROM usuarios WHERE usuario = ?", (usuario,)
+        ).fetchone()
+        if row and check_password_hash(row["clave_hash"], clave):
+            session["user_id"] = row["id"]
+            return redirect(url_for("inicio"))
+        flash("Usuario o contraseña incorrectos.")
+    return render_template("login.html")
+
+def enviar_correo(destino, enlace):
+    msg = EmailMessage()
+    msg["Subject"] = "Recupera tu contraseña"
+    msg["From"] = os.environ["SMTP_USER"]
+
+    msg["To"] = destino
+    msg.set_content(
+        f"Entra a este enlace para elegir una contraseña nueva "
+        f"(vence en 1 hora):\n\n{enlace}\n\n"
+        f"Si no fuiste tú, ignora este mensaje."
+    )
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+        s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASS"])
+        s.send_message(msg)
+
+@app.route("/olvide", methods=["GET", "POST"])
+def olvide():
+    if request.method == "POST":
+        correo = request.form["correo"].strip().lower()
+        row = db().execute(
+            "SELECT id, clave_hash FROM usuarios WHERE correo = ?", (correo,)
+        ).fetchone()
+        if row:
+            # Incluir parte del hash hace que el enlace deje de servir una vez usado
+            token = serializer.dumps(
+                {"id": row["id"], "h": row["clave_hash"][-10:]}, salt="reset"
+            )
+            enlace = url_for("restablecer", token=token, _external=True)
+            enviar_correo(correo, enlace)
+        # Mismo mensaje exista o no el correo, para no revelar quién tiene cuenta
+        flash("Si el correo está registrado, te enviamos un enlace.")
+        return redirect(url_for("login"))
+    return render_template("olvide.html")
+
+@app.route("/restablecer/<token>", methods=["GET", "POST"])
+def restablecer(token):
+    try:
+
+        datos = serializer.loads(token, salt="reset", max_age=3600)
+    except (SignatureExpired, BadSignature):
+        flash("El enlace no es válido o ya venció.")
+        return redirect(url_for("olvide"))
+
+    con = db()
+    row = con.execute("SELECT id, clave_hash FROM usuarios WHERE id = ?", (datos["id"],)).fetchone()
+    if not row or row["clave_hash"][-10:] != datos["h"]:
+        flash("Este enlace ya se usó.")
+        return redirect(url_for("olvide"))
+
+    if request.method == "POST":
+        nueva = request.form["clave"]
+        if len(nueva) < 8:
+            flash("La contraseña debe tener al menos 8 caracteres.")
+            return render_template("restablecer.html")
+        with con:
+            con.execute(
+                "UPDATE usuarios SET clave_hash = ? WHERE id = ?",
+                (generate_password_hash(nueva), row["id"]),
+            )
+        flash("Contraseña actualizada. Ya puedes entrar.")
+        return redirect(url_for("login"))
+    return render_template("restablecer.html")
+Migrar a los usuarios que ya tienes
+
+Corre esto una sola vez para convertir las contraseñas actuales a hash (y luego borra la columna vieja):
+
+
+python
+con = sqlite3.connect("tienda.db")
+con.execute("ALTER TABLE usuarios ADD COLUMN clave_hash TEXT")
+for id_, clave in con.execute("SELECT id, clave FROM usuarios").fetchall():
+    con.execute("UPDATE usuarios SET clave_hash = ? WHERE id = ?",
+                (generate_password_hash(clave), id_))
+con.commit()
+# Cuando verifiques que todo funciona: ALTER TABLE usuarios DROP COLUMN clave;
+Notas prácticas
+Correo: con Gmail necesitas una “contraseña de aplicación” (activando verificación en dos pasos), no la contraseña normal. Guarda SMTP_USER, SMTP_PASS y SECRET_KEY en variables de entorno, no en el código.
+Plantillas: registro.html, login.html, olvide.html y restablecer.html son formularios simples con method="post". Si quieres, te las escribo.
+Antes de publicarla: usa HTTPS, y considera agregar protección CSRF (Flask-WTF) y limitar intentos de login (Flask-Limiter).
+
+¿Quieres que te arme también las plantillas HTML?
