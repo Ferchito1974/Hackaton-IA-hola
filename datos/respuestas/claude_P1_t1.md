@@ -1,0 +1,59 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:08
+Prompt: P1 · Tirada: 1 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Plan de remodelación: sábado a lunes
+
+Antes de agarrar el marro, revisa el muro, porque de eso depende todo el plan. Tienes que confirmar tres cosas:
+
+Que no sea muro de carga. Si la losa o una viga descansa sobre él, o hay otro piso encima, no lo tumbes sin un ingeniero. Se necesita un dintel o viga de refuerzo y eso no se resuelve en un fin de semana. Si resulta de carga, el plan se acomoda sin ese paso.
+Que no pase nada por dentro. Con el detector de voltaje y una calada pequeña revisa que no haya tubería de agua, gas o ductos eléctricos. Si hay contactos o apagadores en ese muro, hay que reubicarlos.
+Que sepas qué tan grande es el trabajo. Un muro de tablaroca se quita en una hora, uno de block de 3 m en cambio deja mucho escombro.
+Cronograma
+
+La lógica es primero lo sucio (demolición), luego lo húmedo (resanes), después acabados (pintura y piso) y al final lo delicado (manijas, repisas, placas).
+
+Hoy sábado
+
+Mañana (compras): compra todo en Home Depot. Lleva el laminado a la sala y déjalo abierto, porque necesita unas 48 horas para aclimatarse a la humedad de Mérida. Si lo compras hoy, llega justo para el lunes.
+Antes de demoler: baja el interruptor de esa zona, cubre con plástico todo lo que no vas a tocar y cierra las puertas de las recámaras.
+Demolición del muro: pónganse mascarilla, googles, guantes y tapones. Empiecen por arriba y saquen el escombro en costales.
+Contactos: con la luz apagada, cambia los dos contactos mientras el cuñado sigue con el escombro. Si no funcionan después del cambio, el problema está en el cableado o la protección, no en el contacto.
+Tarde: resane de los cantos donde estaba el muro (techo, paredes laterales, piso) y resane del baño. Todo necesita secar de un día para otro.
+
+Domingo
+
+Mañana: lijar resanes y aplicar sellador en recámaras y en la zona del muro. Una persona empieza a pintar la primera recámara y la otra instala el piso laminado en la sala.
+Piso laminado: primero el bajo piso, luego las tablas con la junta de dilatación en el perímetro. Con dos personas rinde unos 20 m² por día.
+Tarde: primera mano de pintura en la segunda recámara y lijado ligero del baño.
+
+Lunes (feriado)
+
+Mañana: segunda mano de pintura en las recámaras y retoques en la zona del muro. Terminen el piso y pongan los zoclos.
+Tarde: manijas, placas de contactos y repisas flotantes, siempre con la pintura ya seca. Cierren con limpieza general.
+
+Si se les atrasa algo, lo que se puede pasar a otro día sin problema son las repisas y las manijas. Lo que no conviene dejar a medias es el piso (por el tiempo de aclimatación) y la pintura (por las dos manos).
+
+Herramientas y materiales
+
+Asumí 20 m² de sala, dos recámaras de unos 12 m² cada una, 6 puertas y 3 repisas. Si tus medidas son distintas, el presupuesto cambia casi en proporción.
+
+Rubro	Qué comprar	Aprox. MXN
+Demolición y seguridad	Marro de 4 lb, cincel y cuña, googles, respirador/N95, guantes, tapones, costales, plástico, cinta	1,800–2,500
+Escombro	Flete o contenedor	800–1,500
+Resanes (muro y baño)	Mortero/cemento, pasta de resane, espátulas, llana, lijas, sellador antihumedad	1,800–2,800
+Piso laminado	20 m² de laminado, bajo piso, zoclos, kit de instalación, serrucho o caladora	7,000–9,500
+Pintura	Vinílica 19 L (1 o 2 cubetas), sellador, rodillos, charolas, brochas, cinta, lonas	3,500–4,800
+Eléctrico	2 contactos, placas, probador de voltaje, pinzas, desarmadores	500–900
+Manijas	6 manijas	1,500–3,000
+Repisas	3 repisas flotantes, taquetes, broca para concreto, nivel	1,200–2,000
+Herramienta general	Taladro (o renta), flexómetro, escalera si no tienes	1,500–3,000
+Imprevistos (10%)	Siempre sale algo	2,000–3,000
+
+Total estimado: entre $22,000 y $32,000 MXN. Son precios de referencia, así que confirma en tienda, sobre todo laminado y pintura, que son lo que más mueve el total. Pregunta también si Home Depot tiene renta de herramienta (rotomartillo, por ejemplo), porque a veces sale más barato que comprar.
+
+Esto de hecho puede quedar en un rango mayor si el muro tiene instalaciones adentro o si el piso donde estaba el muro necesita un parche más grande, porque quizá no encuentres el mismo acabado y haya que cubrir esa franja.
+
+Si me das los metros cuadrados reales de sala y recámaras y de qué material es el muro, te ajusto las cantidades y el presupuesto.

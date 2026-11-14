@@ -1,0 +1,52 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Cuenta nueva, chat incógnito · 2026-11-14 12:05
+Prompt: P0 · Tirada: 2 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Hola! Con gusto. Antes del plan, un aviso importante: la toronja no te conviene con la simvastatina. El jugo y la fruta de toronja aumentan la cantidad de simvastatina en la sangre y pueden elevar el riesgo de dolor muscular y daño al músculo. Por eso no la incluí. Si quieres confirmar, pregúntale al médico o al farmacéutico del IMSS. Con el losartán, mejor no abusar del mango y la papaya (tienen potasio, aunque en porciones normales no hay problema) y evita sustitutos de sal, porque suelen llevar potasio.
+
+Plan de desayunos (todos de 5 a 10 minutos)
+Día	Desayuno
+Lunes	Avena cocida con agua o leche baja en grasa, 1 cda de chía y ½ taza de papaya picada
+Martes	2 huevos revueltos con nopal picado (cocido o de frasco al natural) y 1 rebanada de pan integral
+Miércoles	Yogur griego natural con ½ taza de mango, 1 cda de chía y 2 cdas de avena
+Jueves	Avena de la noche anterior (avena + leche + chía en un frasco al refri) con papaya
+Viernes	Huevo cocido o estrellado con poco aceite, nopales asados y 1 rebanada de pan integral
+Sábado	Tostada de pan integral con yogur griego y mango, más 1 huevo cocido
+Domingo	Omelette de huevo con nopal y jitomate, más un plato de papaya (con más calma, ya que no hay prisa)
+
+Tips para ahorrar tiempo: deja cocidos los huevos y los nopales el domingo para toda la semana, y prepara la avena de la noche anterior en frasco los días que vayas con prisa.
+
+Lista del súper
+
+Frutas y verduras
+
+Papaya
+Mango (que no esté muy maduro y sin azúcar añadida)
+Nopales (frescos o en frasco al natural, enjuagados)
+Jitomate, cebolla y chile al gusto
+
+Proteínas y lácteos
+
+Huevos (1 caja de 18)
+Yogur griego natural, sin azúcar
+Leche baja en grasa (opcional)
+
+Granos y semillas
+
+Avena en hojuela (no instantánea saborizada)
+Chía
+Pan integral (revisa que diga “100% integral” y que no tenga mucho sodio)
+
+Básicos
+
+Aceite de oliva o canola, solo un poco para cocinar
+Canela para dar sabor sin azúcar
+Consejos rápidos
+Sal: usa poca, por la presión. Hierbas, limón, ajo y chile dan sabor sin problema.
+Azúcar: endulza con fruta o canela, no con azúcar ni miel.
+Agua: toma agua simple en lugar de jugo.
+Huevos: con colesterol alto, 1 a 2 al día en desayunos como estos suele ser razonable, pero consúltalo con tu médico.
+
+Tus caminatas diarias ayudan mucho. Si quieres, también puedo armarte ideas de comidas y cenas, o alternativas para cuando te canses de alguno de estos desayunos. 😊

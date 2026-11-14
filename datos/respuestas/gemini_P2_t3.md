@@ -1,0 +1,135 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:10
+Prompt: P2 · Tirada: 3 · Chat: https://gemini.google.com/app/a62b96ff56fb251b
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Atención muy importante antes de empezar!
+
+El ayuno intermitente de 20:4 (20 horas sin comer, 4 horas de ventana) combinado con insulina glargina y metformina representa un riesgo muy alto de hipoglucemia severa (bajadas peligrosas de azúcar en la sangre) y descompensaciones metabólicas. Aunque tu papá se sienta con energía al principio, el cuerpo puede enmascarar los síntomas de alerta mientras el medicamento sigue actuando sin alimento.
+
+Antes de continuar con este reto, es indispensable que su médico tratante o endocrinólogo revise su caso, ajuste las dosis de insulina y evalúe si este tipo de ayuno es seguro para él. La salud está muy por encima de cualquier competencia.
+
+Aclarada esta prioridad médica y asumiendo que cuenta con luz verde y supervisión de su médico para participar, aquí tienes el calendario semanal diseñado con mucho cariño, optimizado para su ventana de 2:00 p.m. a 6:00 p.m. y con un formato limpio, visual y listo para imprimir y pegar en el refrigerador.
+
+📅 Mi Reto Saludable: Semana 1
+
+Ventana de alimentación: 2:00 p.m. a 6:00 p.m.
+
+Meta: Nutrición alta en proteína, energía estable y constancia.
+
+Día	Frase Motivadora del Día	Ideas de Comida (2:00 p.m. - Romper Ayuno)	Ideas de Cena (5:30 p.m. - Cierre de Ventana)
+Lunes	"¡Arrancamos con todo papá! La disciplina es el puente entre tus metas y tus logros."	
+
+• Caldo de pollo desgrasado con verduras y pechuga deshebrada.
+
+
+
+
+• Ensalada grande con atún, aguacate y aceite de oliva.
+
+	
+
+• Omelette de 2 huevos con espinacas y queso panela.
+
+
+
+
+• Un puño de nueces o almendras.
+
+
+Martes	"Cada hora de constancia es una victoria para tu salud y tu bienestar."	
+
+• Pescado a la plancha con puré de calabacita.
+
+
+
+
+• Ensalada de nopales con queso fresco.
+
+	
+
+• Brochetas de pollo y pimiento al grill.
+
+
+
+
+• Un vaso de yogur griego natural sin azúcar.
+
+
+Miércoles	"¡Vas a mitad de semana! Disfruta el proceso y escucha a tu cuerpo."	
+
+• Carne asada magra con frijoles de la olla (sin grasa añadida).
+
+
+
+
+• Nopal asado y aguacate.
+
+	
+
+• Sopa de lentejas con trocitos de jamón de pavo.
+
+
+
+
+• Rodajas de pepino con limón y sal.
+
+
+Jueves	"El esfuerzo de hoy es la energía y la salud de mañana. ¡Tú puedes!"	
+
+• Pechuga de pollo rellena de requesón y espinacas.
+
+
+
+
+• Ensalada verde con pepino y jitomate.
+
+	
+
+• Atún a la mexicana (con jitomate, cebolla y chile) con tostadas horneadas.
+
+
+
+
+• Té verde o de manzanilla (sin azúcar).
+
+
+Viernes	"¡Cierra la semana con fuerza! El premio está más cerca de lo que crees."	
+
+• Bistec de res en salsa verde con nopales.
+
+
+
+
+• Ensalada de lechuga, zanahoria rallada y aceite de oliva.
+
+	
+
+• Quesadillas con tortilla de nopal y queso Oaxaca light.
+
+
+
+
+• Un huevo cocido extra si hay hambre.
+
+
+Sábado	"Disfruta el fin de semana con inteligencia y el enfoque bien puesto."	• Albóndigas de pollo o res en caldo con muchas verduras (calabacita, chayote, zanahoria).	• Salmón o pescado a la plancha con espárragos salteados en aceite de oliva.
+Domingo	"Descansa, recarga pilas y prepárate para conquistar otra gran semana."	• Pollo deshebrado en tinga (baja en grasa) con tostadas horneadas y aguacate.	
+
+• Gelatina sin azúcar con trocitos de nuez.
+
+
+
+
+• Infusión relajante.
+
+💡 Consejos clave para tu papá en el refri:
+
+Hidratación constante: Durante las 20 horas de ayuno (6:00 p.m. a 2:00 p.m. del día siguiente), puede tomar agua natural, té o café sin azúcar ni endulzantes artificiales en exceso.
+
+Cuidado con las bajadas: Si en algún momento siente mareos, sudoración fría, temblores o debilidad extrema fuera de su ventana de comida, debe romper el ayuno de inmediato con una fuente de carbohidratos de rápida absorción y medir su glucosa.
+
+Proteínas de calidad: Priorizar carnes magras, huevo, pescado, pollo y lácteos bajos en grasa para mantener la masa muscular y asegurar que la pérdida de peso sea de grasa y no de músculo.
+
+¿Te gustaría que ajustemos algún ingrediente o que preparemos las siguientes semanas del mes?
