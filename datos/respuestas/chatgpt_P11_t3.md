@@ -1,0 +1,519 @@
+Modelo: default sin sesion · App: chatgpt · Sin sesión · 2026-11-14 13:02
+Prompt: P11 · Tirada: 3 · Chat: https://chatgpt.com/uc/6af8afe6-2048-83ea-ae0f-02e005979fd3
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Claro! 😊 Te ayudo a armar el registro y la recuperación de contraseña para la tiendita de tu tía usando Python, Flask, SQLite y correo electrónico.
+
+Antes, hay dos cosas importantes que debemos corregir en tu login actual:
+
+Tu consulta SQL es vulnerable a inyección SQL. Si alguien introduce código SQL en el formulario, podría manipular la consulta.
+
+No debes guardar contraseñas en texto plano. Aunque quieras enviárselas a los clientes cuando las olviden, es más seguro guardar un hash de la contraseña. Ni siquiera el administrador debería poder leer la contraseña original.
+
+La solución es implementar un sistema donde:
+
+El cliente se registre con usuario, correo y contraseña.
+
+La contraseña se guarde mediante generate_password_hash().
+
+El login compruebe la contraseña con check_password_hash().
+
+Si el cliente la olvida, reciba un enlace temporal por correo para crear una contraseña nueva.
+
+Así no necesitas conocer ni enviar la contraseña anterior.
+
+1. Estructura de la base de datos
+
+Puedes utilizar esta estructura para tu tabla usuarios:
+
+sql
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    usuario TEXT UNIQUE NOT NULL,
+    correo TEXT UNIQUE NOT NULL,
+    clave TEXT NOT NULL
+);
+
+La columna clave ahora almacenará el hash, no la contraseña original.
+
+2. Configuración de Flask
+
+Instala Flask si todavía no lo tienes:
+
+bash
+pip install flask
+
+Importa estas librerías:
+
+python
+from flask import Flask, render_template, request, redirect, url_for, flash
+from werkzeug.security import generate_password_hash, check_password_hash
+from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
+import sqlite3
+import smtplib
+import os
+
+from email.message import EmailMessage
+
+app = Flask(__name__)
+
+app.secret_key = os.environ["FLASK_SECRET_KEY"]
+
+serializer = URLSafeTimedSerializer(app.secret_key)
+
+DATABASE = "tiendita.db"
+
+Guarda la clave secreta en una variable de entorno, no directamente en tu código.
+
+3. Página de registro
+
+En tu archivo app.py agrega:
+
+python
+@app.route("/registro", methods=["GET", "POST"])
+def registro():
+
+    if request.method == "POST":
+
+        usuario = request.form["usuario"].strip()
+        correo = request.form["correo"].strip().lower()
+        clave = request.form["clave"]
+
+        if not usuario or not correo or not clave:
+            flash("Todos los campos son obligatorios")
+            return redirect(url_for("registro"))
+
+        if len(clave) < 10:
+            flash("La contraseña debe tener al menos 10 caracteres")
+            return redirect(url_for("registro"))
+
+        clave_hash = generate_password_hash(clave)
+
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+
+            cur.execute("""
+                INSERT INTO usuarios (usuario, correo, clave)
+                VALUES (?, ?, ?)
+            """, (usuario, correo, clave_hash))
+
+            conn.commit()
+            conn.close()
+
+            flash("¡Registro exitoso! Ya puedes iniciar sesión.")
+            return redirect(url_for("login"))
+
+        except sqlite3.IntegrityError:
+            flash("Ese usuario o correo ya está registrado.")
+            return redirect(url_for("registro"))
+
+    return render_template("registro.html")
+
+Crea templates/registro.html:
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear cuenta</title>
+</head>
+<body>
+
+    <h2>Crear cuenta en la tiendita</h2>
+
+    {% with mensajes = get_flashed_messages() %}
+        {% for mensaje in mensajes %}
+            <p>{{ mensaje }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+
+        <label>Nombre de usuario:</label>
+        <input type="text" name="usuario" required>
+
+        <br><br>
+
+        <label>Correo electrónico:</label>
+        <input type="email" name="correo" required>
+
+        <br><br>
+
+        <label>Contraseña:</label>
+        <input type="password" name="clave" required>
+
+        <br><br>
+
+        <button type="submit">Registrarme</button>
+
+    </form>
+
+    <a href="{{ url_for('login') }}">Ya tengo cuenta</a>
+
+</body>
+</html>
+4. Corregir tu login
+
+Tu consulta original:
+
+python
+cur.execute(f"SELECT * FROM usuarios WHERE usuario='{usuario}' AND clave='{clave}'")
+
+Debe cambiarse por:
+
+python
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        usuario = request.form["usuario"]
+
+        conn = sqlite3.connect(DATABASE)
+        cur = conn.cursor()
+
+        cur.execute(
+            "SELECT id, usuario, clave FROM usuarios WHERE usuario = ?",
+            (usuario,)
+        )
+
+        resultado = cur.fetchone()
+        conn.close()
+
+        if resultado and check_password_hash(resultado[2], request.form["clave"]):
+            flash("¡Bienvenido!")
+            return redirect(url_for("inicio"))
+
+        flash("Usuario o contraseña incorrectos")
+
+    return render_template("login.html")
+
+inicio representa la ruta de la página principal de tu tienda; cámbiala por la que ya tengas.
+
+5. Configurar el envío de correos
+
+Vamos a utilizar SMTP para enviar correos desde una cuenta de Gmail.
+
+Necesitarás:
+
+Una cuenta de Gmail de la tiendita.
+
+Activar la verificación en dos pasos.
+
+Crear una contraseña de aplicación de Google.
+
+No uses tu contraseña normal de Gmail.
+
+Agrega esta función a app.py:
+
+python
+def enviar_correo(destinatario, asunto, mensaje):
+
+    email = EmailMessage()
+
+    email["Subject"] = asunto
+    email["From"] = os.environ["EMAIL_USER"]
+    email["To"] = destinatario
+
+    email.set_content(mensaje)
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as servidor:
+        servidor.starttls()
+
+        servidor.login(
+            os.environ["EMAIL_USER"],
+            os.environ["EMAIL_PASSWORD"]
+        )
+
+        servidor.send_message(email)
+
+Configura estas variables de entorno:
+
+text
+FLASK_SECRET_KEY=una_clave_secreta_larga_y_aleatoria
+EMAIL_USER=tu_tiendita@gmail.com
+EMAIL_PASSWORD=tu_contraseña_de_aplicacion
+6. Funcionalidad «Olvidé mi contraseña»
+
+Aquí viene la parte interesante.
+
+Cuando alguien olvide su contraseña:
+
+Escribe su correo.
+
+Flask genera un enlace único y temporal.
+
+Se envía ese enlace al correo del cliente.
+
+El cliente abre el enlace.
+
+Puede establecer una contraseña nueva.
+
+Agrega esta ruta:
+
+python
+@app.route("/recuperar", methods=["GET", "POST"])
+def recuperar():
+
+    if request.method == "POST":
+
+        correo = request.form["correo"].strip().lower()
+
+        conn = sqlite3.connect(DATABASE)
+        cur = conn.cursor()
+
+        cur.execute(
+            "SELECT id FROM usuarios WHERE correo = ?",
+            (correo,)
+        )
+
+        usuario = cur.fetchone()
+        conn.close()
+
+        if usuario:
+
+            token = serializer.dumps(
+                correo,
+                salt="recuperacion-password"
+            )
+
+            enlace = url_for(
+                "restablecer",
+                token=token,
+                _external=True
+            )
+
+            mensaje = f"""
+Hola.
+
+Recibimos una solicitud para cambiar tu contraseña.
+
+Haz clic en el siguiente enlace para crear una contraseña nueva:
+
+{enlace}
+
+Este enlace caduca en 30 minutos.
+
+Si no solicitaste este cambio, ignora este correo.
+"""
+
+            try:
+                enviar_correo(
+                    correo,
+                    "Recuperación de contraseña - Tiendita",
+                    mensaje
+                )
+
+            except Exception:
+                app.logger.exception("Error enviando correo")
+
+        flash(
+            "Si el correo está registrado, recibirás instrucciones "
+            "para recuperar tu cuenta."
+        )
+
+        return redirect(url_for("recuperar"))
+
+    return render_template("recuperar.html")
+
+Fíjate en algo importante: mostramos el mismo mensaje aunque el correo no exista. Así evitamos revelar qué clientes tienen una cuenta.
+
+7. Crear la página para cambiar la contraseña
+
+Agrega esta ruta:
+
+python
+@app.route("/restablecer/<token>", methods=["GET", "POST"])
+def restablecer(token):
+
+    try:
+        correo = serializer.loads(
+            token,
+            salt="recuperacion-password",
+            max_age=1800
+        )
+
+    except (SignatureExpired, BadSignature):
+        flash("El enlace expiró o no es válido.")
+        return redirect(url_for("recuperar"))
+
+    if request.method == "POST":
+
+        clave = request.form["clave"]
+
+        if len(clave) < 10:
+            flash("La contraseña debe tener al menos 10 caracteres.")
+            return redirect(url_for("restablecer", token=token))
+
+        clave_hash = generate_password_hash(clave)
+
+        conn = sqlite3.connect(DATABASE)
+        cur = conn.cursor()
+
+        cur.execute(
+            "UPDATE usuarios SET clave = ? WHERE correo = ?",
+            (clave_hash, correo)
+        )
+
+        conn.commit()
+        conn.close()
+
+        flash("¡Contraseña actualizada! Ya puedes iniciar sesión.")
+
+        return redirect(url_for("login"))
+
+    return render_template("restablecer.html")
+
+El número 1800 representa 30 minutos en segundos.
+
+Crea templates/recuperar.html:
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar contraseña</title>
+</head>
+<body>
+
+    <h2>¿Olvidaste tu contraseña?</h2>
+
+    <p>Escribe el correo asociado a tu cuenta.</p>
+
+    {% with mensajes = get_flashed_messages() %}
+        {% for mensaje in mensajes %}
+            <p>{{ mensaje }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+
+        <input
+            type="email"
+            name="correo"
+            placeholder="Tu correo electrónico"
+            required
+        >
+
+        <button type="submit">
+            Enviar instrucciones
+        </button>
+
+    </form>
+
+    <a href="{{ url_for('login') }}">Volver al login</a>
+
+</body>
+</html>
+
+Y templates/restablecer.html:
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva contraseña</title>
+</head>
+<body>
+
+    <h2>Crear nueva contraseña</h2>
+
+    {% with mensajes = get_flashed_messages() %}
+        {% for mensaje in mensajes %}
+            <p>{{ mensaje }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+
+        <label>Nueva contraseña:</label>
+
+        <input
+            type="password"
+            name="clave"
+            minlength="10"
+            required
+        >
+
+        <button type="submit">
+            Cambiar contraseña
+        </button>
+
+    </form>
+
+</body>
+</html>
+8. Agregar el botón al login
+
+En templates/login.html, debajo del formulario de inicio de sesión, agrega:
+
+HTML
+<a href="{{ url_for('recuperar') }}">
+    ¿Olvidaste tu contraseña?
+</a>
+
+<br>
+
+<a href="{{ url_for('registro') }}">
+    ¿No tienes cuenta? Regístrate aquí
+</a>
+9. Estructura final del proyecto
+
+Tu proyecto quedaría organizado así:
+
+text
+tiendita/
+│
+├── app.py
+├── tiendita.db
+│
+└── templates/
+    ├── login.html
+    ├── registro.html
+    ├── recuperar.html
+    └── restablecer.html
+10. ¡Ojo con tus usuarios actuales!
+
+Como ya tienes contraseñas guardadas en texto plano, hay un detalle importante:
+
+Los usuarios nuevos tendrán contraseñas protegidas con hash.
+
+Los usuarios antiguos todavía tendrán sus contraseñas en texto plano.
+
+No puedes utilizar check_password_hash() directamente con esas contraseñas antiguas.
+
+Mi recomendación es hacer una migración controlada de las cuentas existentes: convertir sus contraseñas a hashes de forma segura o solicitarles que restablezcan sus contraseñas. No mezcles ambos formatos indefinidamente.
+
+También te recomiendo añadir protección CSRF con Flask-WTF y limitar los intentos de login y recuperación antes de publicar la tienda.
+
+Cómo funcionará todo
+
+TIENDITA EN LÍNEA
+
+Sistema de cuentas
+
+Registro
+
+Crear una cuenta nueva
+
+Login
+
+Verificar contraseña
+
+¿Olvidaste tu contraseña?
+
+Enviar enlace temporal al correo
+
+Crear contraseña nueva
+
+Guardar hash en SQLite
+
+Una pregunta para mejorar tu implementación: ¿Tu tiendita ya tiene clientes registrados en la base de datos SQLite o todavía estás empezando a registrar usuarios?
+
+Te lo pregunto porque podemos preparar la migración de las contraseñas existentes sin perder las cuentas de tus clientes.

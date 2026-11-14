@@ -1,0 +1,36 @@
+Modelo: AI Mode (sin etiqueta) · App: aimode · Sin sesión · 2026-11-14 13:20
+Prompt: P3 · Tirada: 1 · Chat: https://www.google.com/search?hl=es&udm=50&q=Le+voy+a+hacer+su+fiesta+de+cumplea%C3%B1os+a+mi+hijo+que+cumple+2+a%C3%B1itos%2C+van+a+venir+como+10+ni%C3%B1os+de+su+edad+y+sus+pap%C3%A1s.+Quiero+una+mesa+de+snacks+bonita+y+f%C3%A1cil%3A+brochetas+de+uvas+enteras+con+queso%2C+mini+salchichas+cocteleras%2C+palomitas+de+colores%2C+cacahuates+japoneses%2C+gomitas+y+bombones.+%C2%BFMe+ayudas+a+armar+la+lista+de+compras+para+10+ni%C3%B1os+y+15+adultos%2C+ideas+de+decoraci%C3%B3n+de+la+mesa+con+tem%C3%A1tica+de+dinosaurios+y+un+horario+para+la+fiesta+de+4+a+8%3F&csuir=1
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Para la fiesta de 2 años de tu hijo con 10 niños y 15 adultos, aquí tienes la guía completa para organizar la mesa de snacks, la decoración de dinosaurios y el itinerario. Como los niños tienen dos años, incluí ajustes importantes para evitar riesgos de asfixia con los alimentos elegidos.
+⚠️ Nota importante de seguridad alimentaria (niños de 2 años)
+A los 2 años, las vías respiratorias de los niños aún son muy estrechas y su masticación está en desarrollo. Varios de los snacks planeados son de alto riesgo de atragantamiento para esa edad:
+Uvas enteras. Nunca deben darse enteras a menores de 4 años; córtalas a lo largo en cuatro partes (en cuartos) antes de ponerlas en las brochetas.
+Mini salchichas. Su forma cilíndrica y textura firme pueden bloquear las vías aéreas; córtalas a lo largo en tiras finas o en medias lunas muy delgadas para los niños.
+Palomitas de maíz, cacahuates, gomitas duras y bombones. No se recomiendan para niños menores de 4 años porque se inhalan o se pegan en la garganta fácilmente.
+Solución práctica para la mesa. Coloca los tazones de cacahuates, palomitas, gomitas y bombones en la parte alta o trasera de la mesa (exclusivos para los adultos) y deja al alcance de los niños opciones seguras como las uvas en cuartos con cubitos suaves de queso, galletas saladas, gajos de mandarina o trocitos de plátano.
+🛒 Lista de compras (para 25 personas en total)
+Calculada para que alcance bien durante las 4 horas sin generar demasiado desperdicio:
+Fruta y lácteos (para brochetas). 1.5 kg de uvas sin semilla (verdes y moradas para dar color) y 500 g de queso panela o queso manchego suave cortado en cubos pequeños.
+Salados. 2 paquetes de mini salchichas cocteleras (aprox. 500 g en total) y 1 kg de cacahuates japoneses (puedes combinar naturales y enchilados para los adultos).
+Palomitas de colores. 6 bolsas grandes de palomitas ya hechas de colores (o 500 g de maíz palomero + colorante vegetal en gel y azúcar si las harás en casa).
+Dulces. 1 kg de gomitas surtidas (aros, ositos, lombrices) y 2 bolsas medianas de bombones (aprox. 600 g en total, de preferencia mini bombones y algunos grandes de colores).
+Desechables y montaje. 30 palillos de madera cortos o brochetas sin punta afilada (si son para niños, mejor usa cucharitas o vasitos individuales), 30 vasitos de plástico o cartón para servir porciones, 40 servilletas y 5 tazones o bowls medianos.
+🦖 Ideas de decoración temática de dinosaurios
+Puedes lograr una mesa muy vistosa usando elementos económicos y fáciles de conseguir:
+Paleta de colores. Usa tonos verde hoja, verde menta, naranja terracota y amarillo mostaza. Un mantel verde o de papel kraft (café) funciona como base perfecta.
+Niveles en la mesa. Usa cajas de cartón forradas con papel kraft o tela verde debajo del mantel para crear escalones. Pon los bowls altos atrás (con los snacks de adultos) y las charolas bajas adelante.
+Juegos con los alimentos. Ponle etiquetas divertidas a cada snack con cartulina: "Huevos de Dino" para los bombones y cacahuates, "Hojas de Jungla" para las uvas verdes, y "Rocas Volcánicas" para las palomitas.
+Detalles rápidos. Lava bien 4 o 5 dinosaurios de juguete de tu hijo y colócalos entre los bowls como si estuvieran caminando hacia la comida. Agrega algunas hojas artificiales tipo monstera o helecho sobre el mantel.
+⏰ Horario sugerido (4:00 p. m. a 8:00 p. m.)
+A los 2 años los niños tienen periodos cortos de atención y suelen cansarse rápido, por lo que conviene concentrar lo importante en las primeras tres horas:
+Hora	Actividad	Detalles clave
+4:00 p. m.	Recepción y juego libre	Llegada de invitados. Ten música infantil de fondo y un área segura en el piso con pelotas, bloques grandes o dinosaurios de juguete para que los niños entren en confianza.
+4:30 p. m.	Apertura de mesa de snacks	Todos pasan a servirse. Es buen momento para que los papás convivan mientras los niños comen sentados bajo supervisión.
+5:15 p. m.	Actividad dirigida corta	Un juego sencillo de 20 minutos adecuado a su edad: búsqueda de "huevos de dinosaurio" (pelotas de plástico escondidas a la vista) o estación para pintar dibujos grandes de dinos con crayolas gruesas.
+6:00 p. m.	Piñata	A esta edad suelen asustarse con los golpes fuertes; elige una piñata de listones (que se jalan para abrirla) o ayúdalos uno por uno a pegarle suavemente.
+6:45 p. m.	Las Mañanitas y pastel	Reúne a todos para cantar, tomar las fotos principales antes de que los niños tengan sueño y repartir el pastel.
+7:15 p. m.	Juego tranquilo y despedida	Reparte los aguinaldos/dulceros (con opciones seguras para los bebés) mientras los invitados se van retirando poco a poco hacia las 8:00 p. m.
+Si quieres, puedo ayudarte a diseñar las etiquetas imprimibles con los nombres de los snacks de dinosaurios o sugerirte ideas para los aguinaldos (dulceros) pensadas específicamente para niños de 2 años. ¿Cuál te gustaría preparar primero?

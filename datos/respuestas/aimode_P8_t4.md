@@ -1,0 +1,54 @@
+Modelo: AI Mode (sin etiqueta) · App: aimode · Sin sesión · 2026-11-14 13:28
+Prompt: P8 · Tirada: 4 · Chat: https://www.google.com/search?hl=es&udm=50&q=Mi+mam%C3%A1+tiene+67+a%C3%B1os+y+se+le+olvidan+mucho+las+pastillas%2C+as%C3%AD+que+le+quiero+comprar+un+pastillero+semanal+de+esos+que+tienen+ma%C3%B1ana%2C+tarde+y+noche.+Esto+es+lo+que+le+recetaron+el+reumat%C3%B3logo+y+su+m%C3%A9dico+familiar%3A+metotrexato+2.5+mg+4+tabletas%2C+%C3%A1cido+f%C3%B3lico+5+mg%2C+omeprazol+20+mg%2C+amlodipino+5+mg%2C+atorvastatina+20+mg+y+calcio+con+vitamina+D.+%C2%BFMe+haces+una+tabla+de+c%C3%B3mo+llenar+el+pastillero+para+toda+la+semana+y+unos+consejos+para+que+no+se+le+olvide+ninguna%3F&csuir=1
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Para organizar el pastillero semanal de tu mamá de forma segura, es fundamental respetar las indicaciones y horarios específicos pautados por su reumatólogo y su médico familiar. 
+Sociedad Asturiana de Reumatología
+ +1
+Como ejemplo orientativo, la siguiente tabla muestra una distribución de los fármacos recetados, pero es indispensable verificar con los especialistas los días exactos para la administración de fármacos de pauta semanal o intermitente.
+Distribución semanal del pastillero
+Día	Mañana (Desayuno / Ayunas*)	Tarde (Comida)	Noche (Cena / Antes de dormir)
+Lunes	• Omeprazol
+• Amlodipino
+• Metotrexato	• Calcio con vitamina D	• Atorvastatina
+Martes	• Omeprazol
+• Amlodipino
+• Ácido fólico	• Calcio con vitamina D	• Atorvastatina
+Miércoles	• Omeprazol
+• Amlodipino	• Calcio con vitamina D	• Atorvastatina
+Jueves	• Omeprazol
+• Amlodipino	• Calcio con vitamina D	• Atorvastatina
+Viernes	• Omeprazol
+• Amlodipino	• Calcio con vitamina D	• Atorvastatina
+Sábado	• Omeprazol
+• Amlodipino	• Calcio con vitamina D	• Atorvastatina
+Domingo	• Omeprazol
+• Amlodipino	• Calcio con vitamina D	• Atorvastatina
+*Nota sobre la mañana: El omeprazol funciona mejor en ayunas (unos 30 minutos antes de desayunar). Consulta con el médico la pauta exacta para el resto de los fármacos según las indicaciones de su receta. 
+Claves importantes sobre cada medicamento
+Precaución máxima con el metotrexato. Este medicamento se toma bajo una pauta estricta y supervisada según la indicación del especialista. Es fundamental seguir estrictamente el calendario pautado para evitar errores en la frecuencia de administración. Guarda la caja original fuera de su alcance diario para evitar confusiones. 
+Pfizer
+ +2
+Separación del ácido fólico. Su función es complementar el tratamiento pautado por el reumatólogo, y su administración debe respetar los intervalos de tiempo indicados en la receta médica. 
+AIRE-MB
+ +1
+Calcio con vitamina D en la comida. El calcio se absorbe de forma adecuada cuando se toma junto con los alimentos, según las recomendaciones generales para este tipo de suplementos.
+Atorvastatina por la noche. La administración nocturna de las estatinas suele alinearse con los ciclos metabólicos del colesterol en el organismo. 
+Sociedad Española de Farmacia Hospitalaria - SEFH
+ +1
+Consejos prácticos para que no se le olvide ninguna
+Usa un pastillero translúcido y con letras grandes. Elige un pastillero semanal de 3 tomas que tenga tapas transparentes y colores distintos por día. Así, tanto ella como tú podrán comprobar de un solo vistazo si el compartimento está vacío.
+Llena el pastillero tú mismo una vez por semana. Elige un día fijo para rellenarlo con calma y revisar que no hayan quedado pastillas rezagadas de la semana anterior.
+Asocia las tomas con hábitos fijos. Es más fácil recordar una rutina vinculada a las comidas. Deja el pastillero en un lugar visible y seguro (lejos de la humedad del baño y de la luz solar directa) para que lo vea al desayunar, comer y cenar.
+Configura alarmas con etiqueta o notas de voz. Si usa teléfono celular o un asistente en casa, programa recordatorios para cada toma diaria.
+Qué hacer si olvida una dosis. Ante el olvido de una medicación de toma diaria, es necesario consultar al médico o al farmacéutico sobre cómo proceder, evitando duplicar tomas por cuenta propia. Lo mismo aplica si se omite alguna toma de los fármacos de pauta periódica. 
+Ministerio de Sanidad
+ +3
+Para asegurar que la tabla coincida al cien por ciento con sus recetas médicas, ¿podrías confirmar con los especialistas:
+¿El reumatólogo le indicó tomar el metotrexato en una sola toma o dividido?
+¿Cuál es la pauta exacta indicada para el ácido fólico y el calcio con vitamina D?
+Con esos datos podrás ajustar el esquema exacto junto con su médico tratante.
+Esta información tiene un carácter meramente informativo. Para obtener asesoramiento o diagnóstico médicos, consulta a un profesional. Las respuestas de la IA pueden contener errores. Más información
++8

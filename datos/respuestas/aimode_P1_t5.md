@@ -1,0 +1,51 @@
+Modelo: AI Mode (sin etiqueta) · App: aimode · Sin sesión · 2026-11-14 13:19
+Prompt: P1 · Tirada: 5 · Chat: https://www.google.com/search?hl=es&udm=50&q=Este+fin+de+semana+largo+vamos+a+remodelar+la+casa+entre+mi+cu%C3%B1ado+y+yo+para+ahorrarnos+el+maestro+de+obra.+Pendientes%3A+pintar+las+dos+rec%C3%A1maras%2C+cambiar+las+manijas+de+las+puertas%2C+quitar+el+muro+entre+la+cocina+y+el+comedor+para+que+quede+abierto%2C+poner+piso+laminado+en+la+sala%2C+cambiar+dos+contactos+que+no+sirven%2C+resanar+el+ba%C3%B1o+y+colgar+unas+repisas+flotantes.+Tenemos+s%C3%A1bado%2C+domingo+y+lunes.+%C2%BFMe+haces+un+cronograma+por+d%C3%ADa+con+el+orden+m%C3%A1s+eficiente%2C+las+herramientas+que+hay+que+comprar+en+Home+Depot+y+un+presupuesto+aproximado%3F&csuir=1
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Para sacar este proyecto en tres días sin que un trabajo arruine otro, la regla de oro es ir de lo más sucio y estructural hacia los acabados finos y limpios.
+⚠️ Advertencia crítica antes de empezar: Antes de tocar el muro entre la cocina y el comedor, asegúrense de que no sea un muro de carga ni tenga tuberías de agua, gas o cables principales por dentro. Si sostiene el techo o la losa superior, tirarlo sin poner una viga de acero compromete toda la casa y requiere un ingeniero o arquitecto.
+Cronograma de trabajo (3 días)
+Sábado: Demolición, electricidad y preparación
+Este día está dedicado a generar polvo, escombro y dejar listas las superficies para secar.
+Cierre y protección. Bajen las pastillas (interruptores) de la luz de las áreas a trabajar y cubran muebles con plástico.
+Contactos eléctricos. Cambien los dos contactos dañados aprovechando que no hay energía.
+Demolición del muro. Si confirmaron que es un muro divisorio (de tablaroca o block no estructural), derríbenlo, retiren el escombro y resanen los bordes en piso, paredes y techo.
+Resane del baño y recámaras. Apliquen pasta o resanador en el baño y tapen hoyos de clavos en las dos recámaras para que sequen durante la noche.
+Domingo: Pintura y trabajo pesado de pisos
+Con el polvo grueso ya limpio, se avanza en superficies grandes.
+Lijado y limpieza. Lijen los resanes del baño y de las recámaras, y barran muy bien el área de la sala.
+Pintura de recámaras y baño. Apliquen la primera mano de pintura por la mañana y la segunda por la tarde.
+Piso laminado en la sala. Mientras seca la pintura entre manos, instalen el bajoalfombra (espuma) y coloquen las duelas del piso laminado.
+Lunes: Detalles finos, herrajes y limpieza final
+Un día más relajado enfocado en instalación de accesorios sin manchar nada nuevo.
+Manijas de puertas. Con la pintura de las recámaras totalmente seca, instalen las manijas nuevas para no mancharlas.
+Repisas flotantes. Midan con nivel, taladren y fijen las repisas en su lugar.
+Zoclos y limpieza. Coloquen los zoclos perimetrales del piso laminado y hagan la limpieza general.
+Lista de compras en Home Depot
+Dividimos la lista en herramientas (si aún no las tienen) y materiales consumibles.
+Herramientas básicas:
+Demolición y albañilería. Marro de 3 o 4 libras, cincel plano, espátula de 4 pulgadas y llana.
+Electricidad. Desarmador aislado (plano y de cruz), pinzas de electricista y probador de corriente.
+Carpintería y pisos. Taladro rotomartillo, brocas para concreto/madera, nivel de burbuja, flexómetro, arco con segueta (o sierra caladora para los cortes del piso) y mazo de goma.
+Pintura. Rodillos, charola, brochas de 2 pulgadas y una extensión para pintar techos o partes altas.
+Seguridad. Lentes protectores, guantes de carnaza, cubrebocas N95 (indispensables para el polvo) y tapones auditivos.
+Materiales:
+Obra y resane. Resanador para muros (o pasta para tablaroca), cinta de malla, lija de agua grano 120 y 150, y costales para escombro.
+Pintura. Cinta azul de pintor (masking tape), plásticos protectores, sellador vinílico y pintura vinílica (calcula 1 cubeta de 19 L para dos recámaras estándar).
+Acabados. Piso laminado (compra un 10% extra por desperdicio de cortes), bajoalfombra, zoclos, pegamento blanco para duela, 2 contactos nuevos, juegos de manijas y taquetes/tornillos para las repisas.
+Presupuesto aproximado (MXN)
+Considerando precios promedio en México (como Mérida o ciudades similares) para un departamento o casa de tamaño estándar (ej. sala de 15 m² y recámaras de 12 m² cada una):
+Categoría	Concepto aproximado	Costo estimado (MXN)
+Pintura y resane	1 cubeta de pintura vinílica, sellador, resanador, cintas, rodillos y plásticos.	$2,200 – $3,500
+Piso laminado	16–18 m² de piso laminado económico/medio, bajoalfombra y zoclos.	$4,500 – $7,500
+Herrajes y repisas	2 o 3 manijas nuevas, 2 contactos eléctricos y 2 repisas flotantes con soportes.	$1,500 – $2,800
+Demolición y varios	Costales de escombro, flete de retiro de escombro y equipo de seguridad.	$800 – $1,500
+Herramientas	Solo si no tienen nada (taladro básico, marro, nivel, pinzas, desarmadores).	$2,000 – $3,500
+TOTAL ESTIMADO	Sin comprar herramienta / Comprando herramienta	$9,000 – $18,800
+Nota: El flete para tirar el escombro del muro suele pasarse por alto; en muchos municipios está prohibido dejarlo en la banqueta, así que contempla pagar a un camión de volteo o camioneta para que se lo lleve.
+Si me das dos datos clave, puedo ajustar tanto el presupuesto como el plan del sábado:
+De qué material es el muro que quieren tirar (tablaroca, block hueco o tabique rojo)
+Cuántos metros cuadrados mide aproximadamente la sala donde va el piso laminado
+Con eso te digo exactamente cuántas cajas de piso comprar y qué herramienta necesitas para demoler sin morir en el intento.

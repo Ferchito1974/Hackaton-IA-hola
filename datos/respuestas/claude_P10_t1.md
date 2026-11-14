@@ -1,0 +1,175 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Segunda cuenta gratuita, chat incógnito · 2026-11-14 13:23
+Prompt: P10 · Tirada: 1 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Antes de subir nada: tu .env no debe llegar a GitHub. Un repo público con tu API key de OpenAI se escanea automáticamente por bots en minutos y te pueden gastar el crédito. La solución es crear un .gitignore antes del primer commit.
+
+1. Preparar la carpeta
+
+Desde la carpeta del proyecto:
+
+
+bash
+git init
+
+Crea el .gitignore (antes de hacer git add):
+
+
+bash
+cat > .gitignore << 'EOF'
+# Secretos
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Base de datos local y otros
+*.db
+*.sqlite3
+instance/
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+EOF
+
+Crea un .env.example para que otros sepan qué variables necesitan, sin los valores reales (ajusta los nombres a los que uses en tu código):
+
+
+bash
+cat > .env.example << 'EOF'
+OPENAI_API_KEY=tu_api_key_aqui
+DB_PASSWORD=tu_password_aqui
+EOF
+
+Verifica que .env esté ignorado:
+
+
+bash
+git status
+
+.env no debe aparecer en la lista. Si aparece, revisa el .gitignore.
+
+2. Primer commit
+
+bash
+git add .
+git commit -m "Initial commit"
+git branch -M main
+3. Crear el repo y subirlo
+
+Opción A, con GitHub CLI (gh), si la tienes instalada:
+
+
+bash
+gh auth login
+gh repo create nombre-del-proyecto --public --source=. --push
+
+Opción B, manual:
+
+Entra a github.com/new, pon el nombre, elige Public y no marques “Add a README” ni .gitignore (ya los tienes).
+Copia la URL que te da y ejecuta:
+
+bash
+git remote add origin https://github.com/TU_USUARIO/nombre-del-proyecto.git
+git push -u origin main
+4. Plantilla de README
+
+Reemplaza tu README vacío con esto y adáptalo:
+
+
+markdown
+# Nombre del Proyecto
+
+Descripción breve en una o dos frases: qué hace la app y qué problema resuelve.
+
+![Captura de pantalla](static/screenshot.png)
+
+## Características
+
+- Característica 1 (ej. chat con IA usando la API de OpenAI)
+- Característica 2
+- Característica 3
+
+## Tecnologías
+
+- Python 3
+- Flask
+- OpenAI API
+- HTML / CSS / JavaScript
+- (Tu base de datos: SQLite / PostgreSQL / MySQL)
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/TU_USUARIO/nombre-del-proyecto.git
+   cd nombre-del-proyecto
+   ```
+
+2. Crea y activa un entorno virtual:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # En Windows: venv\Scripts\activate
+
+   ```
+
+3. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configura las variables de entorno:
+   ```bash
+   cp .env.example .env
+   ```
+   Edita `.env` y agrega tus credenciales reales.
+
+5. Ejecuta la app:
+   ```bash
+   python app.py
+   ```
+   Abre `http://localhost:5000` en tu navegador.
+
+## Estructura del proyecto
+
+```
+├── app.py              # Aplicación principal
+├── templates/          # Plantillas HTML
+├── static/             # CSS, JS e imágenes
+├── requirements.txt    # Dependencias
+└── .env.example        # Ejemplo de variables de entorno
+```
+
+## Qué aprendí
+
+Breve nota sobre los retos que enfrentaste y lo que aprendiste (a los reclutadores les gusta leer esto).
+
+
+## Autor
+
+**Tu Nombre**
+[LinkedIn](https://linkedin.com/in/tu-perfil) · [GitHub](https://github.com/TU_USUARIO)
+
+Después de editar el README:
+
+
+bash
+git add README.md
+git commit -m "Add README"
+git push
+Detalles que suman en un CV
+Una captura de pantalla o GIF de la app en el README marca mucha diferencia.
+Si puedes, despliégala (Render, Railway, PythonAnywhere) y pon el link en el README.
+Haz commits pequeños con mensajes claros a partir de ahora; los reclutadores revisan el historial.
+Si ya habías subido el .env antes
+
+Si alguna vez hiciste commit o push del .env (en este u otro repo), borrarlo después no basta, porque queda en el historial. En ese caso revoca la API key en platform.openai.com y genera una nueva, y cambia la contraseña de la base de datos.
+
+¿Quieres que revise tu app.py para asegurarme de que carga las variables correctamente con python-dotenv y no hay otros secretos escritos directamente en el código?

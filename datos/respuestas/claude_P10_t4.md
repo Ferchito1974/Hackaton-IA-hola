@@ -1,0 +1,157 @@
+Modelo: Sonnet 5.5 Medio · App: claude · Segunda cuenta gratuita, chat incógnito · 2026-11-14 13:27
+Prompt: P10 · Tirada: 4 · Chat: https://claude.ai/new?incognito (chat incógnito, sin URL propia)
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Antes de subir nada: tu .env no debe llegar a GitHub. En un repositorio público hay bots que rastrean claves de OpenAI y contraseñas en minutos, y te pueden generar cargos o exponer tu base de datos. Por eso el primer paso es el .gitignore.
+
+1. Preparar el proyecto
+
+Desde la carpeta del proyecto, crea el .gitignore antes de inicializar Git:
+
+
+bash
+cat > .gitignore << 'EOF'
+# Secretos
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Base de datos local / editor
+*.db
+*.sqlite3
+.vscode/
+.idea/
+.DS_Store
+EOF
+
+Crea un .env.example con los nombres de las variables pero sin los valores reales (así otros saben qué configurar):
+
+
+bash
+cat > .env.example << 'EOF'
+OPENAI_API_KEY=tu_api_key_aqui
+DB_PASSWORD=tu_contraseña_aqui
+EOF
+2. Inicializar Git y hacer el primer commit
+
+bash
+git init
+git branch -M main
+git add .
+git status
+
+Revisa la salida de git status: .env NO debe aparecer en la lista. Si aparece, detente y revisa el .gitignore. Si todo está bien:
+
+
+bash
+git commit -m "Primer commit: app Flask"
+3. Crear el repositorio y subirlo
+En github.com, haz clic en New repository.
+Ponle nombre, elige Public y no marques “Add a README” ni .gitignore (ya los tienes).
+Copia la URL y ejecuta:
+
+bash
+git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
+git push -u origin main
+
+(Si te pide contraseña, GitHub ya no acepta la de tu cuenta: usa un Personal Access Token o instala GitHub CLI y ejecuta gh auth login.)
+
+4. Si ya habías subido el .env alguna vez
+
+Borrarlo en un commit nuevo no basta, porque queda en el historial. Revoca y genera una API key nueva en OpenAI, cambia la contraseña de la base de datos y, si el repo es nuevo, lo más simple es borrar la carpeta .git y empezar de cero.
+
+5. Plantilla de README
+
+Reemplaza el README vacío con esto y ajusta lo que está entre corchetes:
+
+
+markdown
+# Nombre del Proyecto
+
+Breve descripción en una o dos frases: qué hace la app y qué problema resuelve.
+
+![Captura de pantalla](static/screenshot.png)
+
+## Características
+
+- Característica principal 1
+- Característica principal 2
+- Integración con la API de OpenAI para [lo que haga]
+- Persistencia de datos con [PostgreSQL / MySQL / SQLite]
+
+## Tecnologías
+
+- **Backend:** Python, Flask
+- **Base de datos:** [tu base de datos]
+- **IA:** OpenAI API
+- **Frontend:** HTML, CSS, [JavaScript / Bootstrap]
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/TU_USUARIO/TU_REPO.git
+   cd TU_REPO
+   ```
+
+2. Crea y activa un entorno virtual:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # En Windows: venv\Scripts\activate
+
+   ```
+
+3. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configura las variables de entorno:
+   ```bash
+   cp .env.example .env
+   ```
+   Edita `.env` con tus propias credenciales.
+
+5. Ejecuta la aplicación:
+   ```bash
+   flask run
+   ```
+   Abre http://localhost:5000 en tu navegador.
+
+## Estructura del proyecto
+
+```
+├── app.py
+├── requirements.txt
+├── templates/
+├── static/
+└── .env.example
+```
+
+## Qué aprendí
+
+- [Ej. Integrar una API externa de forma segura con variables de entorno]
+
+- [Ej. Estructurar una app Flask con plantillas Jinja2]
+
+## Próximas mejoras
+
+- [ ] Autenticación de usuarios
+- [ ] Tests automatizados
+- [ ] Despliegue en [Render / Railway]
+
+## Autor
+
+**Tu Nombre** · [LinkedIn](https://linkedin.com/in/tu-perfil) · [Correo](mailto:tu@correo.com)
+Consejos para que destaque en tu CV
+Agrega una captura de pantalla o GIF de la app funcionando: es lo primero que mira un reclutador.
+Si puedes, despliégala (Render, Railway, PythonAnywhere) y pon el enlace en el README.
+Haz commits pequeños con mensajes claros a partir de ahora; el historial también se evalúa.
+
+Si quieres, te ayudo a adaptar el README a lo que hace tu app en concreto.

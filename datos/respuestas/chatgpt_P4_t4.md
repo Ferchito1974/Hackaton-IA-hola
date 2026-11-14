@@ -1,0 +1,326 @@
+Modelo: default sin sesion · App: chatgpt · Sin sesión · 2026-11-14 13:25
+Prompt: P4 · Tirada: 4 · Chat: https://chatgpt.com/uc/6af8b50f-3be4-83ea-9bfc-8545fdadf467
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+Ha pensado durante 51s
+
+¡Qué buen plan para celebrar su primer aniversario! ❤️ Una cena asiática hecha en casa, con sus sabores favoritos y pensada para que ella pueda disfrutarla sin preocuparse por el gluten ni encontrarse cilantro en ningún plato.
+
+Te propongo preparar un menú japonés para dos personas, con un toque de restaurante:
+
+
+
+Plato fuerte: pollo teriyaki casero
+
+Pollo jugoso con salsa teriyaki dulce y salada, jengibre, ajo y semillas de sésamo.
+
+
+
+Acompañamiento: arroz frito con verduras
+
+Arroz salteado al estilo asiático con huevo, zanahoria, chícharos y cebollín.
+
+
+
+Postre: mochis de fresa
+
+Suaves, ligeramente dulces y rellenos de fresa con pasta dulce de frijol rojo.
+
+Todo
+el
+menú
+sin
+gluten
+ Siempre que utilices ingredientes certificados sin gluten y evites la contaminación cruzada.
+
+Una precaución importante por la celiaquía: no utilices salsa de soya convencional. Compra tamari certificado sin gluten. También revisa las etiquetas de la harina de arroz glutinoso, la pasta de frijol rojo, el vinagre y los condimentos. Usa utensilios, tablas y sartenes limpios, sin restos de harina o alimentos con gluten.
+
+1. Pollo teriyaki casero
+
+Sin gluten
+25–30 minutos
+2 personas
+Ingredientes
+
+400 g de muslos de pollo deshuesados o pechuga.
+
+4 cucharadas de tamari sin gluten.
+
+2 cucharadas de miel.
+
+2 cucharadas de azúcar morena.
+
+3 cucharadas de agua.
+
+1 cucharada de vinagre de arroz.
+
+1 diente de ajo picado.
+
+1 cucharadita de jengibre fresco rallado.
+
+1 cucharadita de aceite de sésamo.
+
+1 cucharadita de maicena certificada sin gluten.
+
+2 cucharadas de agua adicionales para disolver la maicena.
+
+Aceite vegetal.
+
+Semillas de sésamo para decorar.
+
+Cebollín picado para decorar (sin cilantro).
+
+Preparación paso a paso
+
+Prepara la salsa. En un recipiente mezcla el tamari, miel, azúcar morena, agua, vinagre de arroz, ajo, jengibre y aceite de sésamo.
+
+Prepara el pollo. Corta el pollo en trozos medianos y sécalo con papel de cocina.
+
+Dora el pollo. Calienta una sartén con un poco de aceite vegetal. Cocina el pollo durante unos 5–7 minutos por lado, según el grosor, hasta que esté bien cocido.
+
+Incorpora la salsa. Baja el fuego y vierte la mezcla sobre el pollo.
+
+Espesa. Disuelve la maicena en las dos cucharadas de agua adicionales. Agrégala a la sartén y remueve suavemente.
+
+Glasea. Cocina otros 2–3 minutos hasta conseguir una salsa brillante y ligeramente espesa.
+
+Sirve. Decora con sésamo y cebollín.
+
+Truco: reserva un poquito de salsa antes de ponerla en contacto con el pollo crudo. Puedes usarla para decorar el plato al servir.
+
+2. Arroz frito con verduras
+
+Sin gluten
+20 minutos
+2 personas
+Ingredientes
+
+200 g de arroz blanco en crudo.
+
+2 huevos.
+
+1 zanahoria mediana.
+
+½ taza de chícharos.
+
+2 cebollines.
+
+2 dientes de ajo.
+
+2 cucharadas de tamari sin gluten.
+
+1 cucharadita de aceite de sésamo.
+
+1 cucharada de aceite vegetal.
+
+Pimienta negra al gusto.
+
+Preparación paso a paso
+
+Cuece el arroz. Lava el arroz y cuécelo siguiendo las instrucciones del paquete. Lo ideal es prepararlo con anticipación y dejarlo enfriar extendido en una bandeja.
+
+Prepara las verduras. Corta la zanahoria en cubitos pequeños, pica el ajo y corta el cebollín en rodajas.
+
+Cocina el huevo. Calienta un wok o sartén grande con un poquito de aceite. Bate los huevos, viértelos y revuelve hasta obtener huevo revuelto. Retira y reserva.
+
+Saltea las verduras. Añade un poco más de aceite. Incorpora el ajo, la zanahoria y los chícharos. Cocina durante 3–4 minutos.
+
+Añade el arroz. Incorpora el arroz frío y separa los granos con una espátula.
+
+Condimenta. Añade el tamari, aceite de sésamo y pimienta.
+
+Termina. Regresa el huevo a la sartén y mezcla durante 2–3 minutos.
+
+Decora. Añade cebollín fresco por encima.
+
+Truco de restaurante: el arroz frío y bien separado queda mucho mejor que el arroz recién cocido y húmedo. Enfríalo rápidamente en una bandeja poco profunda y refrigéralo mientras preparas los demás ingredientes; no lo dejes a temperatura ambiente durante horas.
+
+3. Mochis japoneses de fresa
+
+Sin gluten
+35–40 minutos
+4–6 piezas
+Ingredientes
+
+100 g de harina de arroz glutinoso dulce (mochiko o shiratamako), certificada sin gluten.
+
+50 g de azúcar.
+
+150 ml de agua.
+
+Maicena certificada sin gluten para espolvorear.
+
+4–6 fresas pequeñas.
+
+100–150 g de pasta dulce de frijol rojo (anko), certificada sin gluten.
+
+
+Preparación paso a paso
+
+Prepara las fresas. Lávalas, quítales las hojas y sécalas perfectamente.
+
+Envuelve las fresas. Cubre cada una con una capa fina de pasta de frijol rojo. Reserva en el refrigerador.
+
+Prepara la masa. Mezcla en un recipiente apto para microondas la harina de arroz glutinoso, el azúcar y el agua hasta que no queden grumos.
+
+Cocina la masa. Tapa parcialmente el recipiente y calienta durante 1 minuto en el microondas. Remueve con una espátula húmeda.
+
+Repite en intervalos de 30–45 segundos, removiendo entre cada uno, hasta que la masa esté translúcida, muy pegajosa y cocida. Normalmente necesitarás unos 2–3 minutos en total, dependiendo de la potencia.
+
+Forma los mochis. Espolvorea bastante maicena sobre una superficie limpia. Coloca la masa encima y deja que pierda un poco de calor.
+
+Divide en 4–6 porciones. Aplana cada porción formando un disco.
+
+Rellena. Coloca una fresa cubierta de anko en el centro, junta los bordes y pellizca para cerrar.
+
+Refrigera. Déjalos reposar unos 10–15 minutos antes de servir.
+
+Truco: no escatimes en maicena al manipular la masa. Es muy pegajosa. Retira el exceso de maicena con una brocha antes de presentar los mochis.
+
+Si no encuentras anko, puedes utilizar una pequeña cantidad de chocolate tipo ganache, preparado con ingredientes certificados sin gluten.
+
+4. Lista completa del súper
+
+He juntado los ingredientes para que no compres cosas duplicadas. Las cantidades son para dos personas y te sobrará un poquito de algunos ingredientes.
+
+Tu lista de compras
+
+0/21 comprados
+
+Carnes y huevos
+
+400 g de pollo (muslos deshuesados o pechuga)
+2 huevos
+
+Verduras y frutas
+
+1 zanahoria mediana
+½ taza de chícharos
+1 manojo pequeño de cebollín
+1 cabeza de ajo
+1 trozo pequeño de jengibre fresco
+4–6 fresas
+
+Salsas y condimentos
+
+Tamari certificado sin gluten
+Aceite de sésamo
+Vinagre de arroz certificado sin gluten
+Miel
+Azúcar morena
+Aceite vegetal
+Semillas de sésamo
+Pimienta negra
+
+Arroz y repostería
+
+200 g de arroz blanco
+100 g de harina de arroz glutinoso dulce (mochiko o shiratamako), certificada sin gluten
+50 g de azúcar
+Maicena certificada sin gluten
+100–150 g de pasta dulce de frijol rojo (anko), certificada sin gluten
+Reiniciar lista
+
+Consejo para comprar: lo más importante es encontrar el mochiko y el tamari certificados sin gluten. No asumas que por ser arroz o salsa de soya alternativa son automáticamente aptos para celíacos.
+
+5. Cronograma: todo listo en 2 horas
+
+La clave es preparar primero lo que necesita enfriarse y aprovechar los tiempos de cocción para adelantar otras cosas.
+
+Tu plan de cocina
+
+120 minutos
+
+00:00–00:15 | Preparación inicial
+
+Limpia y prepara la zona de trabajo.
+
+Lava y pon a cocer el arroz.
+
+Lava y seca las fresas.
+
+Prepara la mezcla de la salsa teriyaki.
+
+00:15–00:35 | Prepara los mochis
+
+Envuelve las fresas con anko.
+
+Prepara y cocina la masa de mochis.
+
+Forma las piezas y déjalas reposar.
+
+00:35–00:50 | Mise en place
+
+Extiende el arroz cocido en una bandeja poco profunda y refrigéralo.
+
+Corta la zanahoria y el cebollín.
+
+Pica el ajo y ralla el jengibre.
+
+Deja todos los ingredientes separados.
+
+00:50–01:15 | Cocina el pollo
+
+Dora el pollo.
+
+Incorpora la salsa teriyaki.
+
+Espesa y glasea.
+
+Reserva caliente de forma segura.
+
+01:15–01:35 | Prepara el arroz frito
+
+Cocina los huevos.
+
+Saltea las verduras.
+
+Incorpora el arroz frío.
+
+Añade tamari y aceite de sésamo.
+
+01:35–01:45 | Emplatado
+
+Coloca el arroz en cuencos.
+
+Sirve el pollo con su salsa.
+
+Decora con sésamo y cebollín.
+
+01:45–02:00 | Ambiente y cena
+
+Limpia y recoge la cocina.
+
+Prepara las bebidas.
+
+Pon música y sirve la cena.
+
+Deja los mochis listos para el postre.
+
+6. Cómo hacer que la cena sea realmente especial
+
+
+9
+
+
+Unos detalles sencillos pueden convertir una cena casera en una noche memorable:
+
+Decoración: luz cálida, dos velas y una mesa despejada.
+
+Vajilla: utiliza cuencos bonitos para el arroz y platos blancos para el pollo.
+
+Bebida: té verde frío con limón, agua de jazmín o limonada casera.
+
+Música: una playlist tranquila de jazz japonés o lo-fi.
+
+Postre: sirve los mochis en un platito pequeño con fresas cortadas y un poco de té verde.
+
+Y una idea que me encanta para el aniversario: escribe una notita y déjala junto a sus palillos. Algo como:
+
+"Un año de momentos contigo y todavía me quedan mil cenas que quiero cocinarte. Feliz aniversario. ❤️"
+
+Mi recomendación final: prepara los mochis primero, deja todas las verduras cortadas y la salsa lista antes de empezar con el pollo. Así no estarás corriendo mientras cocinas y podrás disfrutar también de la noche con ella.
+
+¡Feliz primer aniversario! ❤️
