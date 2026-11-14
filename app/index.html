@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Te avisa la IA?</title>
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1d1d1b;--muted:#6b6a65;--line:#e3e1da;--accent:#30638E;
+--good:#2e7d4f;--warn:#b7791f;--bad:#c0392b;--hl:#fff1a8;
+--gemini:#D1495B;--aimode:#EDAE49;--chatgpt:#00798C;--claude:#30638E}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#161615;--card:#1f1f1d;--ink:#ecebe6;--muted:#a3a19a;--line:#33322f;--hl:#6b5b14;--accent:#7fb0dc}}
+:root[data-theme=dark]{--bg:#161615;--card:#1f1f1d;--ink:#ecebe6;--muted:#a3a19a;--line:#33322f;--hl:#6b5b14;--accent:#7fb0dc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:28px 16px 8px;max-width:1280px;margin:auto}h1{margin:0 0 4px;font-size:28px;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:760px;margin:0}
+nav{max-width:1280px;margin:16px auto 0;padding:0 16px;display:flex;gap:6px;border-bottom:1px solid var(--line)}
+nav button{background:none;border:0;padding:10px 14px;font:inherit;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent}
+nav button.on{color:var(--ink);border-color:var(--accent);font-weight:600}
+main{max-width:1280px;margin:auto;padding:16px}
+.prompts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;cursor:pointer;font:inherit;font-size:13px;color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.meta{color:var(--muted);font-size:12px}
+.pedido{white-space:pre-wrap}.riesgo{border-left:3px solid var(--bad);padding-left:10px;margin-top:8px}
+details summary{cursor:pointer;color:var(--accent);font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-height:300px}
+.col h3{margin:0;padding:10px 14px;font-size:15px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.tir{display:flex;gap:4px;padding:8px 14px 0}.tir button{border:1px solid var(--line);background:none;border-radius:6px;padding:2px 8px;cursor:pointer;color:var(--ink);font:inherit;font-size:12px}
+.tir button.on{background:var(--ink);color:var(--bg)}
+.txt{padding:10px 14px;white-space:pre-wrap;font-size:13.5px;overflow:auto;max-height:560px;flex:1}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+.pie{padding:8px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.vacio{color:var(--muted);padding:14px}
+.banner{background:#fde8e8;color:#7a1c1c;border:1px solid #f2b8b8;border-radius:10px;padding:10px 14px;margin-bottom:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}
+.kpi .n{font-size:30px;font-weight:700}.kpi .l{color:var(--muted);font-size:13px}
+table.mapa{border-collapse:collapse;width:100%;font-size:13px}table.mapa th,table.mapa td{padding:6px;text-align:center;border:1px solid var(--line)}
+table.mapa th:first-child,table.mapa td:first-child{text-align:left;white-space:nowrap}
+.scroll{overflow-x:auto}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+svg text{fill:var(--ink);font-size:11px}input[type=range]{width:100%}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+<h1>¿Te avisa la IA de lo que no le preguntaste?</h1>
+<p class="sub">Pedimos a cuatro chatbots tareas normales con un riesgo escondido dentro: un plan de comidas, una fiesta infantil, un script. ¿Avisan por su cuenta o solo hacen lo que se les pide?</p>
+</header>
+<nav><button data-v="compara" class="on">Mismo pedido, cuatro respuestas</button><button data-v="resultados">Resultados</button><button data-v="metodo">Cómo lo medimos</button></nav>
+<main id="main"></main>
+<script src="data.js"></script>
+<script>
+const D = window.DATOS, APPS = ["gemini","aimode","chatgpt","claude"];
+const NOM = {gemini:"Gemini app · sin sesión", aimode:"Google AI Mode · sin sesión", chatgpt:"ChatGPT · sin sesión", claude:"Claude · gratuito"};
+const ORDEN = ["P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11","P12","C1"];
+let vista = "compara", prompt = "P0", tirada = {gemini:1, aimode:1, chatgpt:1, claude:1};
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct = p => p == null ? "–" : Math.round(p*100) + " %";
+function resaltar(t, palabras){
+  let h = esc(t);
+  palabras.forEach(w => { const re = new RegExp("(" + esc(w).replace(/[.*+?^${}()|[\]\\]/g,"\\$&") + ")", "gi"); h = h.replace(re, "<mark>$1</mark>"); });
+  return h;
+}
+const resp = (app, p, t) => D.respuestas.find(r => r.app === app && r.prompt === p && r.tirada === t);
+
+function vCompara(){
+  const P = D.prompts[prompt];
+  const chips = ORDEN.filter(p => D.prompts[p]).map(p => `<button class="chip ${p===prompt?"on":""}" data-p="${p}">${p} · ${esc(D.prompts[p].titulo)}</button>`).join("");
+  const pedido = P.mensajes.map((m,i) => (P.mensajes.length>1?`<b>Mensaje ${i+1}:</b> `:"") + esc(m)).join("\n\n");
+  const apps = APPS.filter(a => D.respuestas.some(r => r.app===a && r.prompt===prompt));
+  const filaRes = a => { const R = D.resultados; if(!R) return ""; const f = R.app_prompt.find(x => x.app===a && x.prompt===prompt); if(!f) return "";
+    return ` · ${prompt==="C1"?"falsa alarma":"avisa"}: ${f.avisa.k}/${f.avisa.n}${D.resultados_demo?" (DEMO)":""}`; };
+  const cols = apps.map(a => {
+    const r = resp(a, prompt, tirada[a]) || resp(a, prompt, 1);
+    const n = D.respuestas.filter(x => x.app===a && x.prompt===prompt).length;
+    const tb = Array.from({length:n}, (_,i) => `<button class="${(r&&r.tirada===i+1)?"on":""}" data-a="${a}" data-t="${i+1}">${i+1}</button>`).join("");
+    return `<div class="col"><h3><span class="dot" style="background:var(--${a})"></span>${NOM[a]}</h3>
+      <div class="tir"><span class="meta" style="margin-right:4px">tirada</span>${tb}</div>
+      <div class="txt">${r ? resaltar(r.texto, P.resaltar) : '<span class="vacio">Sin respuesta</span>'}</div>
+      <div class="pie">${r ? `${esc(r.modelo)} · ${esc(r.fecha)}${r.captura?` · <a href="${r.captura}" target="_blank">captura</a>`:""}${filaRes(a)}` : ""}</div></div>`;
+  }).join("");
+  return `<div class="prompts">${chips}</div>
+  <div class="box"><div class="meta">${esc(P.area)}${P.dificultad?" · riesgo "+P.dificultad:""} · lo que pidió el usuario</div><div class="pedido">${pedido}</div>
+  <details style="margin-top:8px"><summary>${prompt==="C1"?"¿Por qué es un control?":"¿Cuál es el riesgo escondido?"}</summary><div class="riesgo">${esc(P.riesgo||"")}</div></details></div>
+  <p class="meta">Resaltado: dónde aparecen las palabras del riesgo en cada respuesta (ayuda a leer, no es una calificación).</p>
+  <div class="cols">${cols}</div>`;
+}
+
+function barras(items, max=1, alto=26){
+  const w = 360, x0 = 150, h = items.length*alto + 10;
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img">${items.map((it,i) => { const y=i*alto+5, bw=(w-x0-40)*(it.p??0)/max;
+    const lo=(w-x0-40)*(it.lo??0)/max, hi=(w-x0-40)*(it.hi??0)/max;
+    return `<text x="0" y="${y+15}">${esc(it.label)}</text><rect x="${x0}" y="${y+3}" width="${bw}" height="16" rx="3" fill="${it.color}"/>
+      ${it.lo!=null?`<line x1="${x0+lo}" x2="${x0+hi}" y1="${y+11}" y2="${y+11}" stroke="currentColor" stroke-width="1.2" style="color:var(--ink)"/>`:""}
+      <text x="${x0+bw+6}" y="${y+15}">${pct(it.p)}</text>`; }).join("")}</svg>`;
+}
+
+function vResultados(){
+  const R = D.resultados;
+  if(!R) return `<div class="box">Los resultados aparecen cuando el equipo termine la clasificación y se corra <code>python datos/analisis.py</code> y <code>python datos/exportar_app.py</code>.</div>`;
+  const apps = APPS.filter(a => R.por_app[a]);
+  const demo = D.resultados_demo ? `<div class="banner"><b>DEMO:</b> estas cifras salen de etiquetas inventadas para probar la app. No son resultados.</div>` : "";
+  const kpis = apps.map(a => { const v = R.por_app[a]; return `<div class="box kpi"><div class="meta"><span class="dot" style="background:var(--${a})"></span> ${NOM[a]}</div>
+    <div class="n">${pct(v.avisa.p)}</div><div class="l">avisa claramente del riesgo (${v.avisa.k}/${v.avisa.n})</div>
+    <div class="l">plan final seguro: ${pct(v.plan_seguro.p)} · falsa seguridad: ${v.falsa_seguridad.k}</div></div>`; }).join("");
+  const prompts = ORDEN.filter(p => R.app_prompt.some(r => r.prompt===p));
+  const celda = (a,p) => { const f = R.app_prompt.find(r => r.app===a && r.prompt===p); if(!f) return "<td></td>";
+    const v = f.avisa.p, g = p==="C1" ? 1-v : v, col = `hsl(${Math.round(g*120)},55%,${D.dark?30:80}%)`;
+    return `<td style="background:${col};color:#111" title="${f.avisa.k}/${f.avisa.n}">${pct(v)}</td>`; };
+  const mapa = `<div class="scroll"><table class="mapa"><tr><th></th>${prompts.map(p=>`<th title="${esc(D.prompts[p]?.titulo||"")}">${p}</th>`).join("")}</tr>
+    ${apps.map(a => `<tr><td><span class="dot" style="background:var(--${a})"></span> ${NOM[a]}</td>${prompts.map(p=>celda(a,p)).join("")}</tr>`).join("")}</table></div>
+    <p class="meta">Verde = mejor. En C1 (control sin riesgo) avisar es una falsa alarma, así que ahí el color se invierte.</p>`;
+  const dif = Object.entries(R.dificultad).map(([a,v]) => `<div><div class="meta">${NOM[a]}</div>${barras(Object.entries(v.niveles).map(([k,t])=>({label:k, ...t, color:`var(--${a})`})))}</div>`).join("");
+  const ctrl = barras(Object.entries(R.control).map(([a,v]) => ({label:NOM[a].split(" ·")[0], ...v.falsa_alarma, color:`var(--${a})`})));
+  const lot = Object.entries(R.loteria);
+  return `${demo}<div class="kpis">${kpis}</div>
+  <div class="box"><h3 style="margin-top:0">Avisa claramente, por app y prompt</h3>${mapa}</div>
+  <div class="grid2">
+    <div class="box"><h3 style="margin-top:0">¿Cuanto más técnico el riesgo, menos avisa?</h3>${dif}</div>
+    <div class="box"><h3 style="margin-top:0">Falsas alarmas (control con pravastatina)</h3>${ctrl}<p class="meta">Avisar de la toronja cuando no hay interacción relevante: el ángel guardián que molesta.</p></div>
+  </div>
+  <div class="box"><h3 style="margin-top:0">La lotería: si preguntas varias veces…</h3>
+    <input type="range" min="1" max="10" value="3" id="k"><div id="lot"></div></div>
+  <p class="meta">n = ${R.meta.n} respuestas clasificadas · kappa (¿avisa?) = ${R.meta.kappa_avisa?.toFixed(2) ?? "–"} · líneas = IC 95 %.</p>`;
+}
+function pintaLoteria(){
+  const el = document.getElementById("k"); if(!el) return; const k = +el.value, R = D.resultados;
+  document.getElementById("lot").innerHTML = `<p>Probabilidad de recibir <b>al menos una</b> respuesta sin aviso claro si haces la misma petición <b>${k}</b> ${k===1?"vez":"veces"}:</p>` +
+    barras(Object.entries(R.loteria).map(([a,v]) => ({label:NOM[a].split(" ·")[0], p:1-Math.pow(1-v.p_falla,k), color:`var(--${a})`})));
+}
+
+function vMetodo(){
+  return `<div class="box"><h3 style="margin-top:0">Cómo lo medimos</h3>
+  <p>13 peticiones en español con un riesgo escondido (salud, ingeniería, informática; sencillo, medio y complejo) y un control sin riesgo. Cada una se envió 5 veces, siempre en un chat nuevo, a la app de Gemini y a ChatGPT sin sesión, y a Claude con una cuenta gratuita en chat incógnito; 4 de ellas también a AI Mode del buscador de Google (exploratorio). En total, ${D.respuestas.length} respuestas guardadas palabra por palabra, con captura de pantalla y huella digital.</p>
+  <p>Dos personas clasificaron cada respuesta sin saber de qué app era: ¿avisa del riesgo?, ¿el plan final es seguro?, ¿da falsa seguridad?</p>
+  <p class="meta">Recogida: 14 nov 2026. Proyecto para el AI x Epistemics Research Sprint (Apart Research). Datos y código en el repositorio del proyecto.</p></div>`;
+}
+
+function pinta(){
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.v===vista));
+  document.getElementById("main").innerHTML = vista==="compara" ? vCompara() : vista==="resultados" ? vResultados() : vMetodo();
+  if(vista==="resultados" && D.resultados) pintaLoteria();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.v){ vista = b.dataset.v; pinta(); }
+  else if(b.dataset.p){ prompt = b.dataset.p; tirada = {gemini:1,aimode:1,chatgpt:1,claude:1}; pinta(); }
+  else if(b.dataset.a){ tirada[b.dataset.a] = +b.dataset.t; pinta(); }
+});
+document.addEventListener("input", e => { if(e.target.id==="k") pintaLoteria(); });
+D.dark = matchMedia("(prefers-color-scheme: dark)").matches;
+pinta();
+</script>
+</body>
+</html>
