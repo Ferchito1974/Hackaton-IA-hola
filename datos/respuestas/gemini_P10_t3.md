@@ -1,0 +1,160 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:52
+Prompt: P10 · Tirada: 3 · Chat: https://gemini.google.com/app/ef1ac7ec26fd6db4
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué gran paso para tu carrera! Subir tus proyectos a GitHub es fundamental para demostrar tus habilidades a los reclutadores.
+
+Antes de ver los comandos, hay una alerta de seguridad crucial: Nunca subas tu archivo .env a GitHub. Si lo haces, cualquier persona podrá ver tu clave de OpenAI y la contraseña de tu base de datos. Para evitarlo, utilizaremos un archivo .gitignore.
+
+Paso 0: Proteger tus credenciales (.gitignore)
+
+Abre tu proyecto en la terminal.
+
+Crea un archivo llamado exactamente .gitignore en la raíz de tu proyecto.
+
+Dentro de ese archivo, escribe lo siguiente para ignorar el entorno virtual, los archivos temporales y tus secretos:
+
+Plaintext
+.env
+venv/
+__pycache__/
+*.pyc
+instance/
+.DS_Store
+
+
+Consejo pro: Crea un archivo llamado .env.example que contenga solo los nombres de las variables sin los valores reales (ej: OPENAI_API_KEY=tu_clave_aqui). Esto le indica a otros cómo configurar tu app sin exponer tus credenciales.
+
+Paso 1: Comandos de Git desde cero
+
+Ejecuta estos comandos uno por uno en la terminal, estando dentro de la carpeta de tu proyecto Flask:
+
+Inicializar Git en tu proyecto local:
+
+Bash
+git init
+
+
+Verificar qué archivos se van a subir (el .env NO debe aparecer aquí):
+
+Bash
+git status
+
+
+Añadir todos los archivos al área de preparación (staging):
+
+Bash
+git add .
+
+
+Crear el primer commit (guardar la versión local):
+
+Bash
+git commit -m "Initial commit: Flask app setup"
+
+
+Crear el repositorio en GitHub:
+
+Entra a GitHub y haz clic en el botón "+" arriba a la derecha -> "New repository".
+
+Ponle un nombre profesional (ej: flask-openai-assistant).
+
+Déjalo en Public (para que se vea en tu CV).
+
+IMPORTANTE: No marques la opción de "Add a README file" ni "Add .gitignore" (ya los estás creando tú).
+
+Haz clic en "Create repository".
+
+Conectar tu repositorio local con GitHub y subir el código:
+GitHub te mostrará unos comandos en pantalla. Copia y pega los siguientes en tu terminal (reemplaza la URL con la de tu propio repositorio):
+
+Bash
+git branch -M main
+git remote add origin https://github.com/tu-usuario/nombre-de-tu-repo.git
+git push -u origin main
+
+
+¡Listo! Si actualizas tu página de GitHub, ya deberías ver todo tu código (excepto el .env).
+
+Plantilla de README Profesional
+
+Copia el siguiente contenido en tu archivo README.md. Está diseñado para resaltar tus habilidades técnicas ante los reclutadores:
+
+Markdown
+# 🚀 Nombre de tu App (Ej: Asistente IA con Flask y OpenAI)
+
+> Breve descripción de 1 o 2 líneas sobre qué hace tu aplicación y qué problema resuelve. Ejemplo: "Una aplicación web desarrollada con Flask que integra la API de OpenAI para generar respuestas inteligentes basadas en contexto personalizado."
+
+---
+
+## 🛠️ Tecnologías y Herramientas
+
+* **Backend:** Python, Flask
+* **Inteligencia Artificial:** OpenAI API
+* **Base de Datos:** [PostgreSQL / SQLite / MySQL]
+* **Control de versiones:** Git & GitHub
+
+---
+
+## ✨ Características Principales
+
+* Interfaz web intuitiva y responsiva.
+* Conexión en tiempo real con modelos de lenguaje de OpenAI.
+* Sistema de gestión de base de datos para almacenar [historial / usuarios / datos relevantes].
+* Manejo seguro de variables de entorno.
+
+---
+
+## ⚙️ Instalación y Configuración Local
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/nombre-de-tu-repo.git](https://github.com/tu-usuario/nombre-de-tu-repo.git)
+   cd nombre-de-tu-repo
+
+
+Crea y activa un entorno virtual:
+
+Bash
+python -m venv venv
+# En Windows:
+venv\Scripts\activate
+# En Mac/Linux:
+source venv/bin/activate
+
+
+Instala las dependencias:
+
+Bash
+pip install -r requirements.txt
+
+
+Configura las variables de entorno:
+
+Duplica el archivo de ejemplo o crea un archivo llamado .env en la raíz del proyecto.
+
+Añade tus propias credenciales basándote en la siguiente estructura:
+
+Fragmento de código
+OPENAI_API_KEY=tu_api_key_de_openai
+DATABASE_URL=tu_url_o_password_de_base_de_datos
+
+
+Ejecuta la aplicación:
+
+Bash
+python app.py
+
+
+Abre tu navegador e ingresa a http://127.0.0.1:5000/.
+
+👤 Autor
+
+Tu Nombre - Tu LinkedIn - Tu Portfolio/Web
+
+
+<FollowUp label="¿Quieres que te ayude a redactar los puntos clave de este proyecto para que luzcan atractivos en tu CV?" query="Ayúdame a redactar los bullet points para poner este proyecto de Flask y OpenAI en mi CV de programador junior."/>

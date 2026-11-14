@@ -1,0 +1,146 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:51
+Prompt: P10 · Tirada: 2 · Chat: https://gemini.google.com/app/19c4e3606eadf2c2
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué gran paso para tu carrera! Tener proyectos propios en GitHub es la mejor carta de presentación cuando buscas tu primer empleo como programador.
+
+Antes de ver los comandos, hay una advertencia de seguridad fundamental: tienes un archivo .env con credenciales reales (OpenAI y base de datos). Jamás debes subir este archivo a GitHub, ya que quedará público y cualquiera podría robar tus claves.
+
+Paso 0: Proteger tus credenciales (¡Muy importante!)
+
+Crea un archivo llamado exactamente .gitignore en la raíz de tu proyecto (si no existe).
+
+Abre ese archivo y escribe dentro:
+
+Plaintext
+.env
+__pycache__/
+venv/
+*.pyc
+
+
+Para ayudar a quienes clonen tu proyecto (y para tu propio CV/documentación), crea un archivo llamado .env.example con la misma estructura pero sin los valores reales:
+
+Plaintext
+OPENAI_API_KEY=tu_clave_de_openai_aqui
+DB_PASSWORD=tu_contrasena_aqui
+
+Paso 1: Comandos de Git desde cero
+
+Abre tu terminal en la carpeta del proyecto y ejecuta los siguientes comandos uno por uno:
+
+Inicializa el repositorio local:
+
+Bash
+git init
+
+
+Prepara los archivos para el primer registro (commit):
+
+Bash
+git add .
+
+
+(Como ya creaste el .gitignore, Git ignorará automáticamente tu archivo .env).
+
+Guarda los cambios localmente:
+
+Bash
+git commit -m "Primer commit: Estructura inicial de la app Flask"
+
+
+Crea el repositorio vacío en GitHub:
+
+Entra a GitHub, ve a la esquina superior derecha y haz clic en New repository.
+
+Ponle un nombre claro (ej. flask-openai-app), déjalo en Public y no selecciones la opción de agregar README ni .gitignore (ya los tienes creados).
+
+Haz clic en Create repository.
+
+Vincula tu proyecto local con GitHub y súbelo:
+Copia los comandos que te da GitHub al crear el repositorio (reemplazando la URL por la tuya):
+
+Bash
+git branch -M main
+git remote add origin https://github.com/tu-usuario/nombre-de-tu-repo.git
+git push -u origin main
+
+
+¡Listo! Si actualizas la página de GitHub, verás todo tu código ordenado (excepto tus contraseñas).
+
+Paso 2: Plantilla de README profesional
+
+Reemplaza el contenido de tu archivo README.md vacío con esta estructura. Está diseñada para que un reclutador o un líder técnico entienda rápidamente qué sabe hacer tu app y cómo probarla.
+
+Markdown
+# 🚀 Nombre de tu App (Ej. Generador Inteligente con Flask y OpenAI)
+
+> Breve descripción de 1 o 2 líneas sobre qué problema resuelve tu aplicación o qué tecnología principal utiliza.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* **Backend:** Python, Flask
+* **Inteligencia Artificial:** OpenAI API
+* **Base de Datos:** [Especifica si usas SQLite, PostgreSQL, etc.]
+* **Frontend:** HTML5, CSS3, Bootstrap / Tailwind (ajusta según lo que uses)
+
+---
+
+## ✨ Características principales
+
+* **Característica 1:** Descripción de lo que hace (ej. Interacción en tiempo real con la API de OpenAI).
+* **Característica 2:** Gestión de usuarios / Almacenamiento seguro en base de datos.
+* **Característica 3:** Interfaz intuitiva y adaptable a dispositivos móviles.
+
+---
+
+## ⚙️ Instalación y Configuración local
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/nombre-de-tu-repo.git](https://github.com/tu-usuario/nombre-de-tu-repo.git)
+   cd nombre-de-tu-repo
+
+
+Crea y activa un entorno virtual:
+
+Bash
+python -m venv venv
+# En Windows:
+venv\Scripts\activate
+# En Mac/Linux:
+source venv/bin/activate
+
+
+Instala las dependencias:
+
+Bash
+pip install -r requirements.txt
+
+
+Configura las variables de entorno:
+
+Duplica el archivo .env.example y renómbralo a .env.
+
+Rellena tus credenciales correspondientes (API Key de OpenAI y contraseña de base de datos).
+
+Ejecuta la aplicación:
+
+Bash
+python app.py
+
+
+La aplicación se abrirá en http://127.0.0.1:5000/.
+
+👤 Autor
+
+Tu Nombre - Desarrollador Junior - Tu LinkedIn - Tu Portafolio
+
+
+<FollowUp label="¿Quieres que revisemos cómo redactar este proyecto en tu CV para que llame más la atención?" query="¿Cómo debería redactar este proyecto en mi CV de programador junior para destacar ante los reclutadores?"/>

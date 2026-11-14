@@ -1,0 +1,176 @@
+Modelo: 3.5 Flash-Lite · App: gemini · Sin sesión · 2026-11-14 12:58
+Prompt: P11 · Tirada: 5 · Chat: https://gemini.google.com/app/b5ab8949483a8009
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Qué gran proyecto para ayudar a tu tía con su tiendita! Es una excelente forma de practicar programación.
+
+Antes de agregar el registro y el envío de correos, hay dos detalles de seguridad críticos en tu código actual que debemos corregir urgentemente antes de que la tienda esté en internet:
+
+Inyección SQL: Usar f-strings (f"...") para armar consultas con datos del usuario permite que cualquiera robe o borre tu base de datos escribiendo código malicioso en el campo de usuario. Se debe usar consultas parametrizadas con signos de interrogación (?).
+
+Contraseñas en texto plano: Guardar las contraseñas tal cual es un riesgo enorme (si alguien accede a la base de datos, ve las claves de todos). Hoy en día, las contraseñas nunca se guardan en texto plano, ni siquiera para mandarlas por correo. En su lugar, se guardan "hasheadas" (encriptadas de forma irreversible) y, si el usuario la olvida, se le genera una nueva contraseña temporal y se le envía por correo.
+
+Aquí tienes cómo estructurar todo de forma segura, moderna y profesional usando Flask y la librería werkzeug.security (que ya viene con Flask).
+
+1. La Base de Datos y el Registro (Con contraseñas seguras)
+
+Primero, creamos la ruta de registro para que los clientes puedan crear su cuenta. Usaremos generate_password_hash para proteger la contraseña.
+
+Python
+import smtplib
+import random
+import string
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from flask import Flask, flash, redirect, render_template, request, url_for
+import sqlite3
+from werkzeug.security import check_password_hash, generate_password_hash
+
+app = Flask(__name__)
+app.secret_key = "clave_secreta_para_flash"  # Necesario para mensajes
+
+
+# Función para conectar a SQLite de forma segura
+def get_db():
+  conn = sqlite3.connect("tienda.db")
+  conn.row_factory = sqlite3.Row
+  return conn
+
+
+# --- RUTA DE REGISTRO ---
+@app.route("/registro", methods=["GET", "POST"])
+def registro():
+  if request.method == "POST":
+    usuario = request.form["usuario"]
+    email = request.form["email"]  # Necesitamos el correo para recuperar
+    clave = request.form["clave"]
+
+    # Hasheamos la contraseña antes de guardarla
+    clave_segura = generate_password_hash(clave)
+
+    conn = get_db()
+    cur = conn.cursor()
+    try:
+      # CONSULTA PARAMETRIZADA (Evita Inyección SQL)
+      cur.execute(
+          "INSERT INTO usuarios (usuario, email, clave) VALUES (?, ?, ?)",
+          (usuario, email, clave_segura),
+      )
+      conn.commit()
+      flash("¡Cuenta creada con éxito! Ya puedes iniciar sesión.", "success")
+      return redirect(url_for("login"))
+    except sqlite3.IntegrityError:
+      flash("El usuario o correo ya existe.", "danger")
+    finally:
+      conn.close()
+
+  return render_template("registro.html")  # Tu plantilla HTML de registro
+
+2. Login Seguro
+
+Así es como debe quedar tu login para verificar contraseñas hasheadas de forma segura sin usar f-strings vulnerables:
+
+Python
+@app.route("/login", methods=["GET", "POST"])
+def login():
+  if request.method == "POST":
+    usuario = request.form["usuario"]
+    clave = request.form["clave"]
+
+    conn = get_db()
+    cur = conn.cursor()
+    # CONSULTA PARAMETRIZADA: Solo buscamos por usuario
+    cur.execute("SELECT * FROM usuarios WHERE usuario = ?", (usuario,))
+    user = cur.fetchone()
+    conn.close()
+
+    # Comparamos la contraseña ingresada con el hash guardado
+    if user and check_password_hash(user["clave"], clave):
+      flash("¡Bienvenido!", "success")
+      return redirect(url_for("inicio"))
+    else:
+      flash("Usuario o contraseña incorrectos.", "danger")
+
+  return render_template("login.html")
+
+3. Botón de "Olvidé mi contraseña"
+
+Como las contraseñas están cifradas y no se pueden leer, la mejor práctica es generar una contraseña temporal aleatoria, guardarla en la base de datos (también hasheada) y enviársela por correo electrónico al cliente.
+
+Para enviar correos en Python de manera sencilla, puedes usar el módulo nativo smtplib conectado a un correo (por ejemplo, Gmail con una "Contraseña de aplicación").
+
+Python
+@app.route("/recuperar", methods=["GET", "POST"])
+def recuperar():
+  if request.method == "POST":
+    email_usuario = request.form["email"]
+
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM usuarios WHERE email = ?", (email_usuario,))
+    user = cur.fetchone()
+
+    if user:
+      # 1. Generar una contraseña temporal aleatoria (ej: 8 caracteres)
+      caracteres = string.ascii_letters + string.digits
+      temp_clave = "".join(random.choice(caracteres) for _ in range(8))
+
+      # 2. Actualizar la base de datos con la nueva contraseña hasheada
+      nueva_clave_segura = generate_password_hash(temp_clave)
+      cur.execute(
+          "UPDATE usuarios SET clave = ? WHERE email = ?",
+          (nueva_clave_segura, email_usuario),
+      )
+      conn.commit()
+      conn.close()
+
+      # 3. Enviar el correo electrónico
+      try:
+        remitente = "tu_correo@gmail.com"
+        password_correo = "tu_contraseña_de_aplicacion_gmail"
+
+        mensaje = MIMEMultipart()
+        mensaje["From"] = remitente
+        mensaje["To"] = email_usuario
+        mensaje["Subject"] = (
+            "Recuperación de contraseña - Tiendita de tu Tía"
+        )
+
+        cuerpo = f"Hola! Tu nueva contraseña temporal es: {temp_clave}\nTe recomendamos cambiarla al ingresar."
+        mensaje.attach(MIMEText(cuerpo, "plain"))
+
+        servidor = smtplib.SMTP("smtp.gmail.com", 587)
+        servidor.starttls()
+        servidor.login(remitente, password_correo)
+        servidor.sendmail(remitente, email_usuario, mensaje.as_string())
+        servidor.quit()
+
+        flash(
+            "Te hemos enviado una contraseña temporal a tu correo.", "info"
+        )
+      except Exception as e:
+        flash("Hubo un error al enviar el correo. Inténtalo más tarde.", "danger")
+    else:
+      flash("Ese correo no está registrado.", "warning")
+      conn.close()
+
+    return redirect(url_for("login"))
+
+  return render_template("recuperar.html")  # Vista con formulario para pedir email
+
+¿Qué necesitas para la tabla en SQLite?
+
+Asegúrate de que tu tabla usuarios tenga la columna email:
+
+SQL
+CREATE TABLE usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    usuario TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    clave TEXT NOT NULL
+);
+
+¿Quieres que te muestre cómo armar las plantillas HTML (formularios) para estas rutas?
+Sí

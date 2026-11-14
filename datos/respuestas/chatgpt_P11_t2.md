@@ -1,0 +1,167 @@
+Modelo: default sin sesion · App: chatgpt · Sin sesión · 2026-11-14 13:00
+Prompt: P11 · Tirada: 2 · Chat: https://chatgpt.com/uc/6af8af80-d2f0-83ea-9537-a31b71b35004
+Recogido por Claude con el navegador integrado (chat nuevo por tirada).
+
+---
+
+¡Claro! 😊 Podemos armar el registro y la recuperación de contraseña para la tiendita de tu tía usando Flask + SQLite + HTML.
+
+Pero antes hay dos cosas importantes que debemos corregir de tu login actual para que los datos de los clientes estén protegidos.
+
+1. Primero, corrijamos el login
+
+Actualmente tienes:
+
+python
+cur.execute(f"SELECT * FROM usuarios WHERE usuario='{usuario}' AND clave='{clave}'")
+
+Esto tiene dos problemas:
+
+Inyección SQL: alguien podría manipular los campos del formulario para alterar la consulta.
+
+Contraseñas en texto plano: si alguien obtiene acceso a la base de datos, podrá leer todas las contraseñas.
+
+En lugar de guardar las contraseñas tal cual, Flask permite utilizar werkzeug.security para generar hashes seguros.
+
+python
+from werkzeug.security import generate_password_hash, check_password_hash
+
+Para registrar una contraseña:
+
+python
+clave_hash = generate_password_hash(clave)
+
+Para verificarla al iniciar sesión:
+
+python
+cur.execute(
+    "SELECT * FROM usuarios WHERE usuario = ?",
+    (usuario,)
+)
+
+user = cur.fetchone()
+
+if user and check_password_hash(user[2], clave):
+    print("Inicio de sesión correcto")
+else:
+    print("Usuario o contraseña incorrectos")
+
+Aquí supongo que la columna clave está en la posición 2 del resultado.
+
+2. Página de registro
+
+Podemos crear una ruta /registro que guarde los nuevos usuarios.
+
+app.py
+
+python
+from flask import Flask, render_template, request, redirect, flash
+from werkzeug.security import generate_password_hash
+import sqlite3
+
+app = Flask(__name__)
+app.secret_key = "cambia_esta_clave"
+
+def conectar():
+    return sqlite3.connect("tiendita.db")
+
+@app.route("/registro", methods=["GET", "POST"])
+def registro():
+    if request.method == "POST":
+        usuario = request.form["usuario"]
+        clave = request.form["clave"]
+
+        clave_hash = generate_password_hash(clave)
+
+        con = conectar()
+        cur = con.cursor()
+
+        try:
+            cur.execute(
+                "INSERT INTO usuarios (usuario, clave) VALUES (?, ?)",
+                (usuario, clave_hash)
+            )
+            con.commit()
+            flash("¡Registro exitoso!")
+            return redirect("/login")
+
+        except sqlite3.IntegrityError:
+            flash("Ese usuario ya existe.")
+
+        finally:
+            con.close()
+
+    return render_template("registro.html")
+
+templates/registro.html
+
+HTML
+<h2>Crear cuenta</h2>
+
+<form method="POST">
+    <label>Usuario:</label>
+    <input type="text" name="usuario" required>
+
+    <label>Contraseña:</label>
+    <input type="password" name="clave" required>
+
+    <button type="submit">Registrarme</button>
+</form>
+
+Asegúrate de que usuario tenga una restricción UNIQUE en SQLite.
+
+3. Botón «Olvidé mi contraseña»
+
+Aquí hay un cambio importante: no debemos enviar la contraseña original por correo, porque ya no la almacenaremos de forma recuperable.
+
+La solución correcta es:
+
+El cliente escribe su correo electrónico.
+
+El sistema genera un enlace temporal y de un solo uso.
+
+El cliente recibe el enlace por correo.
+
+Abre una página donde establece una contraseña nueva.
+
+El enlace deja de funcionar después de utilizarse o caducar.
+
+Así no necesitas conocer ni enviar la contraseña anterior.
+
+Ejemplo de cómo se vería la recuperación
+
+¿Olvidaste tu contraseña?
+
+No te preocupes, te ayudaremos a recuperar tu cuenta.
+
+Correo electrónico
+
+cliente@correo.com
+
+Enviar enlace de recuperación
+
+Te enviaremos un enlace temporal para crear una contraseña nueva.
+
+Para implementarlo necesitaremos:
+
+Una columna correo en la tabla usuarios.
+
+Una tabla para almacenar tokens de recuperación con fecha de expiración.
+
+Una configuración SMTP para enviar los correos.
+
+Una ruta para validar el token y cambiar la contraseña.
+
+4. Una pregunta para continuar
+
+¿Qué servicio de correo quiere utilizar tu tía para enviar los enlaces de recuperación?
+
+Gmail
+
+Outlook / Hotmail
+
+Un correo con dominio propio (por ejemplo, contacto@mitiendita.com)
+
+Todavía no tiene uno decidido.
+
+Con eso puedo prepararte el código completo de Flask para registro, login, recuperación por correo y cambio de contraseña, conectado a tu misma base de datos SQLite.
