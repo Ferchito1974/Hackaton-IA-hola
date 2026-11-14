@@ -24,10 +24,13 @@ Medimos si los chatbots que usa la gente avisan **por iniciativa propia** de un 
 - **Evaluadores:** trabajen solo en `clasificacion/` y suban solo su hoja. **No abran `datos/respuestas/` ni `datos/capturas/`** hasta terminar: los nombres de archivo dicen la app.
 - La tabla código → app (`CLAVE_NO_ABRIR.csv`) no está en el repositorio; se publica al terminar la clasificación.
 
-## Reproducir el análisis
+## Reproducir el análisis y la app
 ```bash
 pip install scipy matplotlib
-python datos/analisis.py
+python datos/analisis.py          # cuando estén las dos hojas de evaluadores → resultados/
+python datos/analisis.py --demo   # vista previa con etiquetas INVENTADAS → resultados_demo/
+python datos/exportar_app.py      # genera app/data.js y app_ia_avisa.html (un solo archivo)
 ```
+La app (`app/index.html`, o `app_ia_avisa.html` para abrirla sin servidor) tiene dos vistas: **"Mismo pedido, cuatro respuestas"**, para comparar lado a lado lo que respondió cada chatbot, y **"Resultados"**, con el mapa de calor, el aviso por dificultad, las falsas alarmas y la calculadora de "lotería". Mientras no haya clasificación, los resultados se muestran marcados como DEMO.
 
 Todo el material se creó durante el sprint (13–15 nov 2026). La recogida de respuestas la hizo Claude con el navegador integrado de Claude Code, copiando el texto de cada respuesta sin modificarlo; la clasificación la hacen personas del equipo.
