@@ -146,10 +146,10 @@ def cargar():
                              if c in e1 and c in e2 and clave[c]["prompt"] != "C1"]),
     }
     desac = [c for c in clave if c in e1 and c in e2 and
-             (nv(e1[c][COL_AV]) != nv(e2[c][COL_AV]) or nv(e1[c][COL_PS]) != nv(e2[c][COL_PS]))]
+             any(nv(e1[c][k]) != nv(e2[c][k]) for k in (COL_AV, COL_PS, COL_FS))]
     datos, sin_clasificar = [], 0
     for c, r in clave.items():
-        fuente = cons[c] if cons and c in cons else e1.get(c)
+        fuente = cons[c] if cons and c in cons and nv(cons[c].get(COL_AV)) else e1.get(c)
         av = nv(fuente[COL_AV]) if fuente else None
         if av is None:
             sin_clasificar += 1
@@ -249,7 +249,7 @@ def resumen_md(R, fiab, desac, cons, n, sin_clasificar):
     for nombre, (k, m) in (("¿avisa?", fiab["kappa_avisa"]), ("¿plan seguro?", fiab["kappa_plan"])):
         L.append(f"- Kappa de Cohen, {nombre}: " + ("–" if k is None else f"{k:.2f}") + f" (n={m})")
     L += [f"- Respuestas con algún desacuerdo: {len(desac)}"
-          + (" (resueltas en consenso.csv)" if cons else " (sin consenso aún: se usa el evaluador 1)"), "",
+          + (f" (resueltas en consenso.csv: {sum(1 for c in cons if nv(cons[c].get(COL_AV)))})" if cons else "") + " — las no resueltas usan el evaluador 1", "",
           "## Por app (prompts con riesgo, sin C1)", "",
           "| App | Avisa (sí) | Sí o débil | Plan seguro | Falsa seguridad |", "|---|---|---|---|---|"]
     for app, v in R["por_app"].items():
@@ -321,7 +321,7 @@ def graficas(R):
         xs = [j + (i - (len(apps) - 1) / 2) * ancho for j in range(len(medidas))]
         ts = [R["por_app"][app][m_] for m_, _ in medidas]
         ax.bar(xs, [t["p"] for t in ts], ancho, color=COLOR_APP[app], label=NOMBRE_APP[app])
-        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[t["p"] - t["lo"] for t in ts], [t["hi"] - t["p"] for t in ts]],
+        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
                     fmt="none", ecolor="black", capsize=2, lw=0.8)
     ax.set_xticks(range(len(medidas)), [n for _, n in medidas])
     ax.set_ylim(0, 1)
@@ -337,7 +337,7 @@ def graficas(R):
     for app, v in R["dificultad"].items():
         ts = list(v["niveles"].values())
         xs = [0, 1, 2]
-        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[t["p"] - t["lo"] for t in ts], [t["hi"] - t["p"] for t in ts]],
+        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
                     marker="o", capsize=2, color=COLOR_APP[app], label=NOMBRE_APP[app])
     ax.set_xticks([0, 1, 2], ["sencillo", "medio", "complejo"])
     ax.set_ylim(0, 1.05)
@@ -355,7 +355,7 @@ def graficas(R):
         ts = [R["control"][a]["falsa_alarma"] for a in ctrl]
         ax.bar(range(len(ctrl)), [t["p"] for t in ts], color=[COLOR_APP[a] for a in ctrl])
         ax.errorbar(range(len(ctrl)), [t["p"] for t in ts],
-                    yerr=[[t["p"] - t["lo"] for t in ts], [t["hi"] - t["p"] for t in ts]],
+                    yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
                     fmt="none", ecolor="black", capsize=2, lw=0.8)
         ax.set_xticks(range(len(ctrl)), [NOMBRE_APP[a] for a in ctrl], fontsize=7)
         ax.set_ylim(0, 1)
@@ -386,7 +386,7 @@ def main():
     R = analizar(datos)
     R["meta"] = {"demo": DEMO, "n": len(datos), "sin_clasificar": sin_clasificar,
                  "kappa_avisa": fiab["kappa_avisa"][0], "kappa_plan": fiab["kappa_plan"][0],
-                 "desacuerdos": len(desac), "consenso": bool(cons)}
+                 "desacuerdos": len(desac), "consenso": sum(1 for c in (cons or {}) if nv(cons[c].get(COL_AV)))}
     (OUT / "resultados.json").write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
     with (OUT / "tabla_app_prompt.csv").open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
