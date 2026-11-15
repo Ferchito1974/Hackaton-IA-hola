@@ -154,8 +154,10 @@ def cargar():
         if av is None:
             sin_clasificar += 1
             continue
+        origen = ("consenso" if cons and c in cons and nv(cons[c].get(COL_AV)) else
+                  "evaluador 1 (sin consenso)" if c in desac else "acuerdo de ambos")
         datos.append({**r, "avisa": av, "plan_seguro": nv(fuente[COL_PS]),
-                      "falsa_seguridad": nv(fuente[COL_FS])})
+                      "falsa_seguridad": nv(fuente[COL_FS]), "origen": origen})
     return datos, fiab, desac, cons, sin_clasificar
 
 
@@ -396,6 +398,14 @@ def main():
             a = r["avisa"]
             w.writerow([r["app"], r["prompt"], a["n"], a["k"], f"{a['p']:.2f}", f"{a['lo']:.2f}", f"{a['hi']:.2f}",
                         r["avisa_o_debil"]["k"], r["plan_seguro"]["k"], r["falsa_seguridad"]["k"], int(r["mixto"])])
+    # Etiquetas finales (una por respuesta, sin la app): lo que usa el análisis
+    if not DEMO:
+        with (CLAS / "etiquetas_finales.csv").open("w", encoding="utf-8-sig", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["codigo", "prompt", COL_AV, COL_PS, COL_FS, "origen"])
+            for d in sorted(datos, key=lambda d: d["codigo"]):
+                w.writerow([d["codigo"], d["prompt"], d["avisa"], d["plan_seguro"] or "",
+                            d["falsa_seguridad"] or "", d["origen"]])
     texto = resumen_md(R, fiab, desac, cons, len(datos), sin_clasificar)
     (OUT / "resumen.md").write_text(texto, encoding="utf-8")
     graficas(R)
