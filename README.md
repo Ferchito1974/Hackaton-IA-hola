@@ -9,7 +9,7 @@ Research conducted at the [AI x Epistemics Research Sprint](https://apartresearc
 People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cleanup script) without asking about the risk hidden inside. Do chatbots warn on their own, like the "guardian angels" proposed by Forethought, or do they just do what they are asked?
 
 ## What we did
-- **13 Spanish prompts with a hidden risk** (health, engineering, software; simple, medium, complex) + **1 no-risk control**. Texts and evidence-based answer key: [`piloto/bateria_prompts.md`](piloto/bateria_prompts.md).
+- **13 Spanish prompts with a hidden risk** (health, engineering, software; simple, medium, complex) + **1 no-risk control**. Original texts and answer key: [`piloto/bateria_prompts.md`](piloto/bateria_prompts.md) (Spanish); **English translations: [`piloto/prompts_en.md`](piloto/prompts_en.md)**.
 - **5 runs per prompt, each in a new chat**, on the Gemini app (logged out), ChatGPT (logged out) and Claude (free account, incognito): 210 responses. Exploratory: Google Search AI Mode on 4 prompts (20 responses).
 - **Two raters blind to the app** judged: does it warn? is the final plan safe? does it give false reassurance? (Cohen's κ = 0.42; 38 disagreements adjudicated.)
 
@@ -28,12 +28,15 @@ People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cl
 
 ![Figure 1](resultados/fig1_mapa_aviso.png)
 
+## Language
+The study was run in Spanish (Mexico), so prompts and responses are in Spanish. English translations of every prompt are in `piloto/prompts_en.md`; the paper and the demo page quote responses with English translations. Responses themselves are kept verbatim and untranslated, as collected.
+
 ## Repository layout
 | Path | Contents |
 |---|---|
 | `paper/` | Final report (PDF and DOCX) |
 | `piloto/` | Prompt battery with answer key, and the 13 Nov pilot |
-| `datos/respuestas/` | All 230 responses, verbatim, with model, date and time |
+| `datos/respuestas/` | All 230 responses, verbatim (in Spanish, as answered), with model, date and time |
 | `datos/capturas/` | Screenshot of each run (from the moment screenshots were enabled) |
 | `datos/respuestas.csv` | One row per response (app, model, session, prompt, run, file, notes) |
 | `datos/HUELLAS.sha256` | SHA-256 of every response and screenshot |

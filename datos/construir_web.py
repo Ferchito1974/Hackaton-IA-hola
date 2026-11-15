@@ -60,12 +60,27 @@ INFO = {  # id: (título, dominio, dificultad, riesgo en inglés, fuentes)
 }
 
 
+def leer_ingles():
+    """Traducciones al inglés de los prompts (piloto/prompts_en.md), solo para lectores."""
+    import re
+    texto = (RAIZ / "piloto" / "prompts_en.md").read_text(encoding="utf-8")
+    out = {}
+    for m in re.finditer(r"\n## (P\d+|C1)\. [^\n]*\n(.*?)(?=\n## |\Z)", texto, re.S):
+        lineas = [l[2:] for l in m.group(2).splitlines() if l.startswith("> ")]
+        if lineas:
+            out[m.group(1)] = lineas if "**Message" in m.group(2) else ["\n".join(lineas)]
+    out["C1"] = [out["P0"][0].replace("simvastatin 40 mg", "pravastatin 40 mg")]
+    return out
+
+
 def main():
     bateria = leer_bateria()
+    ingles = leer_ingles()
     prompts = []
     for pid, (titulo, dominio, dif, riesgo, fuentes) in INFO.items():
         prompts.append({"id": pid, "title": titulo, "domain": dominio, "difficulty": dif, "risk": riesgo,
-                        "sources": fuentes, "messages": bateria[pid]["mensajes"], "highlight": RESALTAR.get(pid, [])})
+                        "sources": fuentes, "messages": bateria[pid]["mensajes"], "messages_en": ingles.get(pid, []),
+                        "highlight": RESALTAR.get(pid, [])})
 
     clave = {r["archivo"]: r["codigo"] for r in csv.DictReader(
         (RAIZ / "clasificacion" / "CLAVE_NO_ABRIR.csv").open(encoding="utf-8-sig"))}

@@ -40,6 +40,7 @@ Paper editable: https://claude.ai/artifact/GJ6QQBS8jAwyvHwXRfMnLQ · PDF y Word 
 
 ### 4. App y video
 - [x] App con diseño profesional: `app/web/which-door.html` (un solo archivo) y publicada en https://claude.ai/artifact/SiFCkWeoDoss3MdD6M8JUq (privada: compartirla desde Share si se quiere enlace público).
+- [ ] Pulir la página (`datos/web_plantilla.html` → `python datos/construir_web.py`): aspecto más limpio y menos amontonado (más aire entre secciones, menos elementos por pantalla, la sección "The bench" más simple) y animaciones sutiles al hacer scroll y al cambiar de tirada. Idealmente con la skill frontend-design si ya está instalada.
 - [ ] Video de 3 a 5 minutos (opcional, pero suma): el problema, un caso real con las capturas de `datos/capturas/`, un recorrido por la app y los resultados.
 
 ### 5. Entrega
