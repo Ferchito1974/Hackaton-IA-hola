@@ -10,18 +10,13 @@
    a horizontal shelf of requests. Generous whitespace; one idea per screen. */
 :root {
   --page: #FBFBFD; --band: #F5F5F7; --tile: #FFFFFF; --ink: #1D1D1F; --ink-2: #424245; --muted: #6E6E73; --hair: #D2D2D7;
-  --dark: #000000; --dark-tile: #1C1C1E; --dark-ink: #F5F5F7; --dark-muted: #A1A1A6;
+  --dark: #FBFBFD; --dark-tile: #F5F5F7; --dark-ink: #1D1D1F; --dark-muted: #6E6E73;
   --link: #0066CC; --ok: #248A3D; --weak: #B25000; --miss: #D70015; --mark: #FFF3B0;
   --gemini: #E5484D; --aimode: #F5A524; --chatgpt: #10A37F; --claude: #3E63DD;
   --ui: "Inter Tight", "Inter", "Segoe UI", system-ui, sans-serif; --text: "Inter", "Segoe UI", system-ui, sans-serif;
   --r-xl: 28px; --r-l: 20px;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --page: #000; --band: #0D0D0F; --tile: #1C1C1E; --ink: #F5F5F7; --ink-2: #D2D2D7; --muted: #A1A1A6; --hair: #38383D;
-  --link: #2997FF; --ok: #30D158; --weak: #FF9F0A; --miss: #FF453A; --mark: #5C4D12; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --page: #000; --band: #0D0D0F; --tile: #1C1C1E; --ink: #F5F5F7; --ink-2: #D2D2D7; --muted: #A1A1A6; --hair: #38383D;
-  --link: #2997FF; --ok: #30D158; --weak: #FF9F0A; --miss: #FF453A; --mark: #5C4D12; color-scheme: dark }
+/* single light look, deliberately: the page renders the same in every theme */
 
 * { box-sizing: border-box }
 html { scroll-behavior: smooth }
@@ -83,10 +78,10 @@ h1, h2, h3, .ui { font-family: var(--ui) }
 .excerpt .who small { color: var(--dark-muted); font-weight: 400 }
 .excerpt .verdict { font-family: var(--ui); font-weight: 600; font-size: 19px }
 .excerpt ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px }
-.excerpt li { font-size: 16px; line-height: 1.5; color: var(--dark-ink); padding-left: 14px; border-left: 2px solid rgba(255,255,255,.18) }
-.excerpt li b { color: #FFD60A; font-weight: 600 }
+.excerpt li { font-size: 16px; line-height: 1.5; color: var(--dark-ink); padding-left: 14px; border-left: 2px solid var(--hair) }
+.excerpt li b { background: var(--mark); font-weight: 600; border-radius: 3px; padding: 0 2px }
 .excerpt details { color: var(--dark-muted); font-size: 14px }
-.excerpt details summary { cursor: pointer; color: #2997FF }
+.excerpt details summary { cursor: pointer; color: var(--link) }
 .excerpt details p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere }
 .excerpt .src { color: var(--dark-muted); font-size: 13px; margin-top: auto }
 .note-es { padding: 12px 24px 0; color: var(--muted); font-size: 13px }
@@ -113,7 +108,7 @@ mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2
 .tile .stat { font-family: var(--ui); font-weight: 700; font-size: clamp(56px, 7vw, 84px); letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums }
 .tile h3 { font-size: 24px; line-height: 1.17; letter-spacing: -.02em; font-weight: 600; margin: 0; text-wrap: balance }
 .tile p { margin: 0; color: var(--ink-2) }
-.tile.ink { background: var(--ink); color: var(--page) } .tile.ink p, .tile.ink .eyebrow { color: color-mix(in srgb, var(--page) 70%, transparent) }
+.tile.ink { background: var(--tile) } .tile.ink .stat { color: var(--gemini) } .tile.ink .quote { color: var(--ink) }
 .hbars { display: grid; gap: 14px; margin-top: 8px; font-family: var(--ui) }
 .hb { display: grid; grid-template-columns: 128px minmax(0, 1fr) 46px; gap: 12px; align-items: center; font-size: 15px }
 .hb .lab { display: flex; gap: 8px; align-items: center; white-space: nowrap; overflow: hidden }
