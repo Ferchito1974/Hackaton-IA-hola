@@ -1,38 +1,62 @@
-# ¿Te avisa la IA de lo que no le preguntaste?
+# Which Door You Walk Through
 
-Proyecto para el **AI x Epistemics Research Sprint** (Apart Research, 13–15 nov 2026).
+**An audit of whether consumer chatbots warn about risks users did not ask about.**
+Research conducted at the [AI x Epistemics Research Sprint](https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15) (Apart Research, 13–15 Nov 2026).
 
-> **¿Eres del equipo? Empieza por [TAREAS.md](TAREAS.md).** Si te toca clasificar, abre `clasificacion/clasificador.html`.
+📄 **Paper:** [`paper/which_door_you_walk_through.pdf`](paper/which_door_you_walk_through.pdf) · 🖥️ **Demo app:** `app/index.html` · 📊 **Results:** [`resultados/resumen.md`](resultados/resumen.md)
 
-Medimos si los chatbots que usa la gente avisan **por iniciativa propia** de un riesgo que va escondido dentro de una petición normal (un plan de desayunos con un medicamento que interactúa con la toronja, una fiesta infantil con alimentos que causan asfixia, un script que puede borrar el disco…). Es decir, si actúan como "ángel guardián" (Forethought, *Angels-on-the-Shoulder*).
+## The question
+People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cleanup script) without asking about the risk hidden inside. Do chatbots warn on their own, like the "guardian angels" proposed by Forethought, or do they just do what they are asked?
 
-## Diseño
-- **14 prompts** (P0–P12 y el control C1) en salud, ingeniería e informática, con riesgos de tres niveles de dificultad. Textos y clave de riesgos en [`piloto/bateria_prompts.md`](piloto/bateria_prompts.md).
-- **Apps:** Gemini (sin sesión), ChatGPT (sin sesión) y Claude (cuenta gratuita, chat incógnito); 5 tiradas por prompt, cada una en un chat nuevo. Exploratorio: AI Mode del buscador de Google (P0, P1, P3, P8).
-- **Clasificación a ciegas** por dos evaluadores (¿avisa?, ¿el plan final es seguro?, ¿falsa seguridad?) y acuerdo con kappa de Cohen.
+## What we did
+- **13 Spanish prompts with a hidden risk** (health, engineering, software; simple, medium, complex) + **1 no-risk control**. Texts and evidence-based answer key: [`piloto/bateria_prompts.md`](piloto/bateria_prompts.md).
+- **5 runs per prompt, each in a new chat**, on the Gemini app (logged out), ChatGPT (logged out) and Claude (free account, incognito): 210 responses. Exploratory: Google Search AI Mode on 4 prompts (20 responses).
+- **Two raters blind to the app** judged: does it warn? is the final plan safe? does it give false reassurance? (Cohen's κ = 0.42; 38 disagreements adjudicated.)
 
-## Estructura
-| Carpeta | Contenido |
+## Main results
+| App | Clear warning | Final plan safe | False reassurance |
+|---|---|---|---|
+| Gemini app, logged out | **82%** (53/65) | **75%** | 9 |
+| ChatGPT, logged out | 97% (63/65) | 100% | 0 |
+| Claude, free account | 98% (64/65) | 95% | 3 |
+| Google AI Mode (exploratory) | 95% (19/20) | 90% | 2 |
+
+- Gemini warned less than ChatGPT (p = 0.009) and Claude (p = 0.002).
+- **Same provider, different door:** on the same 4 prompts, the Gemini app warned in 8/20 and Google's AI Mode in 19/20 (p = 0.0004).
+- Gemini failed on **everyday** risks (grapefruit + statin, load-bearing wall, toddler choking), not on technical ones (7/15 simple vs 15/15 medium).
+- ChatGPT over-warns on the control (4/5 false alarms).
+
+![Figure 1](resultados/fig1_mapa_aviso.png)
+
+## Repository layout
+| Path | Contents |
 |---|---|
-| `piloto/` | Pruebas manuales del 13 nov y batería de prompts |
-| `datos/respuestas/` | Cada respuesta completa, tal cual, con modelo, fecha y hora |
-| `datos/capturas/` | Captura de pantalla de cada tirada (desde que se activó) |
-| `datos/respuestas.csv` | Una fila por respuesta |
-| `datos/HUELLAS.sha256` | Huella SHA-256 de cada archivo, para comprobar que nada cambió |
-| `datos/*.py` | Scripts de guardado, huellas, clasificación a ciegas y análisis |
-| `clasificacion/` | Textos sin nombre de app y hojas de cada evaluador ([instrucciones](clasificacion/INSTRUCCIONES.md)) |
+| `paper/` | Final report (PDF and DOCX) |
+| `piloto/` | Prompt battery with answer key, and the 13 Nov pilot |
+| `datos/respuestas/` | All 230 responses, verbatim, with model, date and time |
+| `datos/capturas/` | Screenshot of each run (from the moment screenshots were enabled) |
+| `datos/respuestas.csv` | One row per response (app, model, session, prompt, run, file, notes) |
+| `datos/HUELLAS.sha256` | SHA-256 of every response and screenshot |
+| `clasificacion/` | Blind texts, both raters' sheets, adjudication (`consenso.csv`), final labels and the code→app key (`CLAVE_NO_ABRIR.csv`) |
+| `resultados/` | Tables, `resumen.md`, `resultados.json` and figures |
+| `app/` | Demo: same request, four answers side by side, plus results |
+| `datos/*.py` | Collection, hashing, blind rating, analysis and export scripts |
 
-## Reglas mientras se clasifica
-- **Evaluadores:** trabajen solo en `clasificacion/` y suban solo su hoja. **No abran `datos/respuestas/` ni `datos/capturas/`** hasta terminar: los nombres de archivo dicen la app.
-- La tabla código → app (`CLAVE_NO_ABRIR.csv`) no está en el repositorio; se publica al terminar la clasificación.
-
-## Reproducir el análisis y la app
+## Reproduce
 ```bash
-pip install scipy matplotlib
-python datos/analisis.py          # cuando estén las dos hojas de evaluadores → resultados/
-python datos/analisis.py --demo   # vista previa con etiquetas INVENTADAS → resultados_demo/
-python datos/exportar_app.py      # genera app/data.js y app_ia_avisa.html (un solo archivo)
+pip install -r requirements.txt
+python datos/analisis.py        # recomputes every number and figure from the labels
+python datos/exportar_app.py    # rebuilds the demo app data
 ```
-La app (`app/index.html`, o `app_ia_avisa.html` para abrirla sin servidor) tiene dos vistas: **"Mismo pedido, cuatro respuestas"**, para comparar lado a lado lo que respondió cada chatbot, y **"Resultados"**, con el mapa de calor, el aviso por dificultad, las falsas alarmas y la calculadora de "lotería". Mientras no haya clasificación, los resultados se muestran marcados como DEMO.
+Then open `app/index.html` (or serve the folder with `python -m http.server`).
 
-Todo el material se creó durante el sprint (13–15 nov 2026). La recogida de respuestas la hizo Claude con el navegador integrado de Claude Code, copiando el texto de cada respuesta sin modificarlo; la clasificación la hacen personas del equipo.
+## Ethics and dual use
+All user profiles are fictional and were only sent to the chatbots; nothing false or harmful was published. The risks are well known and documented in public sources; we release the prompts so providers can use them as a regression test. See Appendix A of the paper.
+
+## LLM usage
+Claude (Anthropic) was used through Claude Code to help design the study, collect responses through a browser (verbatim copies verified by hash), write the code, check references and draft text. Claude did not rate any response; ratings were done by humans blind to the app. Details in the paper.
+
+## Team
+[Author names and affiliations]. Internal task guide (Spanish): [`TAREAS.md`](TAREAS.md).
+
+All material was created during the sprint (13–15 Nov 2026). Code under the MIT License; data and text under CC BY 4.0 (see `LICENSE`).

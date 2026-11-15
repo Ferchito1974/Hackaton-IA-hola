@@ -281,105 +281,162 @@ def resumen_md(R, fiab, desac, cons, n, sin_clasificar):
     return "\n".join(L) + "\n"
 
 
+EN_APP = {"gemini": "Gemini app (logged out)", "aimode": "Google AI Mode (logged out, exploratory)",
+          "chatgpt": "ChatGPT (logged out)", "claude": "Claude (free account)"}
+NL = chr(10)
+EN_PROMPT = {k: v.replace("|", NL) for k, v in {
+    "P0": "grapefruit|+ statin", "P1": "load-bearing|wall", "P2": "fasting|+ insulin",
+    "P3": "choking,|age 2", "P4": "celiac|+ soy", "P5": "SSRI +|St John's w.", "P6": "8 kW|heater",
+    "P7": "statin in|turn 1", "P8": "weekly|MTX", "P9": "generator|backfeed",
+    "P10": ".env|leak", "P11": "SQL|injection", "P12": "cd; rm -rf", "C1": "CONTROL|pravastatin"}.items()}
+
+
 def graficas(R):
+    """Figuras del paper (en inglés, sin título: el pie de figura va en el texto)."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import PercentFormatter
 
-    plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
-    marca = " (DEMO: etiquetas inventadas)" if DEMO else ""
+    plt.rcParams.update({"font.size": 9, "font.family": "DejaVu Sans", "axes.spines.top": False,
+                         "axes.spines.right": False, "savefig.dpi": 300, "savefig.bbox": "tight"})
+    sufijo = " — DEMO (fake labels)" if DEMO else ""
     apps = [a for a in APPS if a in R["por_app"]]
+    err = lambda ts: [[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]]
+
+    def guardar(fig, nombre, titulo=""):
+        if DEMO or titulo:
+            fig.suptitle((titulo + sufijo).strip(" —"), fontsize=9)
+        fig.savefig(OUT / nombre)
+        plt.close(fig)
 
     # Fig 1: mapa de calor app x prompt
     prompts = [p for p in ORDEN_PROMPTS if any(r["prompt"] == p for r in R["app_prompt"])]
-    m = [[float("nan")] * len(prompts) for _ in apps]      # lo que se escribe
-    color = [[float("nan")] * len(prompts) for _ in apps]  # verde = bueno; en C1 avisar es malo
+    m = [[float("nan")] * len(prompts) for _ in apps]
+    color = [[float("nan")] * len(prompts) for _ in apps]
     for r in R["app_prompt"]:
         if r["app"] in apps:
             i, j = apps.index(r["app"]), prompts.index(r["prompt"])
             m[i][j] = r["avisa"]["p"]
             color[i][j] = 1 - m[i][j] if r["prompt"] == "C1" else m[i][j]
-    fig, ax = plt.subplots(figsize=(11, 2.9))
+    fig, ax = plt.subplots(figsize=(10, 2.9))
     im = ax.imshow(color, cmap="RdYlGn", vmin=0, vmax=1, aspect="auto")
-    ax.set_xticks(range(len(prompts)), prompts)
-    ax.set_yticks(range(len(apps)), [NOMBRE_APP[a] for a in apps])
+    ax.set_xticks(range(len(prompts)), [p + NL + EN_PROMPT[p] for p in prompts], fontsize=6.5)
+    ax.set_yticks(range(len(apps)), [EN_APP[a] for a in apps], fontsize=8)
+    ax.tick_params(length=0)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
     for i, fila in enumerate(m):
         for j, v in enumerate(fila):
             if v == v:
-                ax.text(j, i, f"{v:.0%}", ha="center", va="center", fontsize=8)
-    ax.axvline(len(prompts) - 1.5, color="black", lw=1)
-    ax.set_title("Respuestas que avisan claramente del riesgo (C1: control sin riesgo, avisar = falsa alarma)" + marca)
-    cb = fig.colorbar(im, ax=ax, fraction=0.02, ticks=[0, 1])
-    cb.ax.set_yticklabels(["peor", "mejor"])
-    fig.tight_layout()
-    fig.savefig(OUT / "fig1_mapa_aviso.png", dpi=200)
-    plt.close(fig)
+                ax.text(j, i, f"{v:.0%}", ha="center", va="center", fontsize=7.5,
+                        color="white" if color[i][j] > 0.85 or color[i][j] < 0.2 else "black")
+    ax.axvline(len(prompts) - 1.5, color="black", lw=1.2)
+    cb = fig.colorbar(im, ax=ax, fraction=0.015, pad=0.01, ticks=[0, 1])
+    cb.ax.set_yticklabels(["worse", "better"], fontsize=7)
+    guardar(fig, "fig1_mapa_aviso.png")
 
     # Fig 2: por app, tres medidas con IC
-    medidas = [("avisa", "Avisa (sí)"), ("plan_seguro", "Plan final seguro"), ("falsa_seguridad", "Falsa seguridad")]
-    fig, ax = plt.subplots(figsize=(8, 3.6))
+    medidas = [("avisa", "Clear warning"), ("plan_seguro", "Final plan safe"), ("falsa_seguridad", "False reassurance")]
+    fig, ax = plt.subplots(figsize=(7, 3.2))
     ancho = 0.8 / len(apps)
     for i, app in enumerate(apps):
         xs = [j + (i - (len(apps) - 1) / 2) * ancho for j in range(len(medidas))]
         ts = [R["por_app"][app][m_] for m_, _ in medidas]
-        ax.bar(xs, [t["p"] for t in ts], ancho, color=COLOR_APP[app], label=NOMBRE_APP[app])
-        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
-                    fmt="none", ecolor="black", capsize=2, lw=0.8)
+        ax.bar(xs, [t["p"] for t in ts], ancho * 0.95, color=COLOR_APP[app], label=EN_APP[app])
+        ax.errorbar(xs, [t["p"] for t in ts], yerr=err(ts), fmt="none", ecolor="black", capsize=2, lw=0.8)
     ax.set_xticks(range(len(medidas)), [n for _, n in medidas])
-    ax.set_ylim(0, 1)
-    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1))
-    ax.set_title("Prompts con riesgo, por app (IC 95 % de Wilson)" + marca)
-    ax.legend(frameon=False, fontsize=7, ncol=2)
-    fig.tight_layout()
-    fig.savefig(OUT / "fig2_apps.png", dpi=200)
-    plt.close(fig)
+    ax.set_ylim(0, 1.05)
+    ax.set_ylabel("Share of responses (risk prompts)")
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.legend(frameon=False, fontsize=7.5, ncol=2, loc="upper center", bbox_to_anchor=(0.5, 1.22))
+    guardar(fig, "fig2_apps.png")
 
     # Fig 3: dificultad
-    fig, ax = plt.subplots(figsize=(6, 3.4))
-    for app, v in R["dificultad"].items():
+    fig, ax = plt.subplots(figsize=(5, 3))
+    for k, (app, v) in enumerate(R["dificultad"].items()):
         ts = list(v["niveles"].values())
-        xs = [0, 1, 2]
-        ax.errorbar(xs, [t["p"] for t in ts], yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
-                    marker="o", capsize=2, color=COLOR_APP[app], label=NOMBRE_APP[app])
-    ax.set_xticks([0, 1, 2], ["sencillo", "medio", "complejo"])
+        xs = [x + (k - 1) * 0.06 for x in (0, 1, 2)]
+        ax.errorbar(xs, [t["p"] for t in ts], yerr=err(ts), marker="o", ms=4, capsize=2,
+                    color=COLOR_APP[app], label=EN_APP[app])
+    ax.set_xticks([0, 1, 2], ["Simple", "Medium", "Complex"])
+    ax.set_xlabel("Risk difficulty (3 x 3 matrix)")
+    ax.set_ylabel("Clear warning")
     ax.set_ylim(0, 1.05)
-    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1))
-    ax.set_title("Aviso según la dificultad del riesgo (matriz 3 × 3)" + marca)
-    ax.legend(frameon=False, fontsize=7)
-    fig.tight_layout()
-    fig.savefig(OUT / "fig3_dificultad.png", dpi=200)
-    plt.close(fig)
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.legend(frameon=False, fontsize=7.5, loc="lower right")
+    guardar(fig, "fig3_dificultad.png")
 
-    # Fig 4: control
+    # Fig 4: control (falsas alarmas claras y débiles)
     ctrl = [a for a in APPS if a in R["control"]]
     if ctrl:
-        fig, ax = plt.subplots(figsize=(5.5, 3))
-        ts = [R["control"][a]["falsa_alarma"] for a in ctrl]
-        ax.bar(range(len(ctrl)), [t["p"] for t in ts], color=[COLOR_APP[a] for a in ctrl])
-        ax.errorbar(range(len(ctrl)), [t["p"] for t in ts],
-                    yerr=[[max(0, t["p"] - t["lo"]) for t in ts], [max(0, t["hi"] - t["p"]) for t in ts]],
-                    fmt="none", ecolor="black", capsize=2, lw=0.8)
-        ax.set_xticks(range(len(ctrl)), [NOMBRE_APP[a] for a in ctrl], fontsize=7)
-        ax.set_ylim(0, 1)
-        ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1))
-        ax.set_title("Falsas alarmas en el control C1 (pravastatina)" + marca)
-        fig.tight_layout()
-        fig.savefig(OUT / "fig4_control.png", dpi=200)
-        plt.close(fig)
+        fig, ax = plt.subplots(figsize=(5, 2.6))
+        claras = [R["control"][a]["falsa_alarma_clara"] for a in ctrl]
+        todas = [R["control"][a]["falsa_alarma"] for a in ctrl]
+        ys = range(len(ctrl))
+        ax.barh(ys, [t["p"] for t in todas], color=[COLOR_APP[a] for a in ctrl], alpha=0.35)
+        ax.barh(ys, [t["p"] for t in claras], color=[COLOR_APP[a] for a in ctrl])
+        for y, t in zip(ys, claras):
+            ax.text(t["p"] + 0.02, y, f"{t['k']}/{t['n']}", va="center", fontsize=7.5)
+        ax.set_yticks(list(ys), [EN_APP[a] for a in ctrl], fontsize=8)
+        ax.invert_yaxis()
+        ax.set_xlim(0, 1.05)
+        ax.xaxis.set_major_formatter(PercentFormatter(1))
+        ax.set_xlabel("Responses warning against grapefruit with pravastatin (no relevant interaction)")
+        from matplotlib.patches import Patch
+        ax.legend(handles=[Patch(color="0.25", label="Clear false alarm"),
+                           Patch(color="0.25", alpha=0.35, label="Clear or weak (e.g. \"check with your doctor\")")],
+                  frameon=False, fontsize=7, loc="upper center", bbox_to_anchor=(0.5, 1.22), ncol=2)
+        guardar(fig, "fig4_control.png")
 
     # Fig 5: lotería
-    fig, ax = plt.subplots(figsize=(6, 3.4))
+    fig, ax = plt.subplots(figsize=(5, 3))
     for app, v in R["loteria"].items():
         ks = list(v["por_k"].keys())
-        ax.plot(ks, list(v["por_k"].values()), marker="o", color=COLOR_APP[app], label=NOMBRE_APP[app])
-    ax.set_xlabel("Veces que el usuario pregunta (chats nuevos)")
+        ax.plot(ks, list(v["por_k"].values()), marker="o", ms=4, color=COLOR_APP[app], label=EN_APP[app])
+    ax.set_xlabel("Times the user asks the same request (new chats)")
+    ax.set_ylabel("P(at least one response" + NL + "without a clear warning)")
+    ax.set_xticks([1, 2, 3, 5, 10])
     ax.set_ylim(0, 1.05)
-    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1))
-    ax.set_title("Probabilidad de recibir al menos una respuesta sin aviso claro" + marca)
-    ax.legend(frameon=False, fontsize=7)
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.legend(frameon=False, fontsize=7.5)
+    guardar(fig, "fig5_loteria.png")
+
+    # Figura combinada para el paper: (a) dificultad, (b) control, (c) lotería
+    fig, axs = plt.subplots(1, 3, figsize=(11, 3.1), gridspec_kw={"width_ratios": [1, 1.1, 1]})
+    ax = axs[0]
+    for k, (app, v) in enumerate(R["dificultad"].items()):
+        ts = list(v["niveles"].values())
+        ax.errorbar([x + (k - 1) * 0.06 for x in (0, 1, 2)], [t["p"] for t in ts], yerr=err(ts), marker="o",
+                    ms=3.5, capsize=2, color=COLOR_APP[app], label=EN_APP[app])
+    ax.set_xticks([0, 1, 2], ["Simple", "Medium", "Complex"])
+    ax.set_ylim(0, 1.05)
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.set_title("(a) Clear warning by risk difficulty", fontsize=9, loc="left")
+    ax = axs[1]
+    if ctrl:
+        ax.barh(ys, [t["p"] for t in todas], color=[COLOR_APP[a] for a in ctrl], alpha=0.35)
+        ax.barh(ys, [t["p"] for t in claras], color=[COLOR_APP[a] for a in ctrl])
+        for y, t in zip(ys, claras):
+            ax.text(t["p"] + 0.02, y, f"{t['k']}/{t['n']}", va="center", fontsize=7.5)
+        ax.set_yticks(list(ys), [EN_APP[a].split(" (")[0] for a in ctrl], fontsize=8)
+        ax.invert_yaxis()
+        ax.set_xlim(0, 1.15)
+        ax.xaxis.set_major_formatter(PercentFormatter(1))
+        ax.set_title("(b) False alarms on the control (dark = clear)", fontsize=9, loc="left")
+    ax = axs[2]
+    for app, v in R["loteria"].items():
+        ax.plot(list(v["por_k"].keys()), list(v["por_k"].values()), marker="o", ms=3.5, color=COLOR_APP[app],
+                label=EN_APP[app])
+    ax.set_xticks([1, 2, 3, 5, 10])
+    ax.set_xlabel("Identical requests (k)")
+    ax.set_ylim(0, 1.05)
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+    ax.set_title("(c) P(>=1 response without clear warning)", fontsize=9, loc="left")
+    h, l = axs[2].get_legend_handles_labels()
+    fig.legend(h, l, loc="lower center", ncol=4, frameon=False, fontsize=8, bbox_to_anchor=(0.5, -0.08))
     fig.tight_layout()
-    fig.savefig(OUT / "fig5_loteria.png", dpi=200)
-    plt.close(fig)
+    guardar(fig, "fig3_paneles.png")
 
 
 def main():
