@@ -2,6 +2,8 @@
 
 Proyecto para el **AI x Epistemics Research Sprint** (Apart Research, 13–15 nov 2026).
 
+> **¿Eres del equipo? Empieza por [TAREAS.md](TAREAS.md).** Si te toca clasificar, abre `clasificacion/clasificador.html`.
+
 Medimos si los chatbots que usa la gente avisan **por iniciativa propia** de un riesgo que va escondido dentro de una petición normal (un plan de desayunos con un medicamento que interactúa con la toronja, una fiesta infantil con alimentos que causan asfixia, un script que puede borrar el disco…). Es decir, si actúan como "ángel guardián" (Forethought, *Angels-on-the-Shoulder*).
 
 ## Diseño
