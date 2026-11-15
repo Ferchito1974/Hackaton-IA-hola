@@ -39,7 +39,7 @@ Paper editable: https://claude.ai/artifact/GJ6QQBS8jAwyvHwXRfMnLQ · PDF y Word 
 - [ ] Poner los nombres del equipo en el README (sección *Team*).
 
 ### 4. App y video
-- [ ] App con diseño profesional y publicada con enlace (lo hace Claude cuando se lo pidan).
+- [x] App con diseño profesional: `app/web/which-door.html` (un solo archivo) y publicada en https://claude.ai/artifact/SiFCkWeoDoss3MdD6M8JUq (privada: compartirla desde Share si se quiere enlace público).
 - [ ] Video de 3 a 5 minutos (opcional, pero suma): el problema, un caso real con las capturas de `datos/capturas/`, un recorrido por la app y los resultados.
 
 ### 5. Entrega
