@@ -39,7 +39,7 @@ Entrega: **domingo antes de las 18:00 (hora de México)**. El cierre oficial es 
 ## Literatura y verificación (no puede ser evaluador)
 - Leer **PaSBench** ([arXiv 2505.17455](https://arxiv.org/abs/2505.17455)), el estudio más parecido, y confirmar en qué nos diferenciamos.
 - Revisar en el borrador del paper los puntos marcados **"Por verificar"** (secciones 2 y 3.6).
-- Pedir a alguien del área de salud que revise la clave de P0, P2, P5 y P8 en [`piloto/bateria_prompts.md`](piloto/bateria_prompts.md) (sección "Clave").
+- (Opcional) Pedir a alguien del área de salud que revise la clave de P0, P2, P5 y P8. Las referencias ya están verificadas contra fuentes oficiales; esto solo suma credibilidad.
 
 ## Escritura y video
 - Pasar el borrador a la [plantilla oficial](https://docs.google.com/document/d/17b3JWki-ZkaqdmqGI5d0gof-HwlGuWU9Mc1_klNZXKs/copy?usp=sharing), traducirlo al inglés y ajustarlo a 8 páginas (sin contar referencias ni apéndices).
