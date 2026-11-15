@@ -3,7 +3,7 @@
 **An audit of whether consumer chatbots warn about risks users did not ask about.**
 Research conducted at the [AI x Epistemics Research Sprint](https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15) (Apart Research, 13–15 Nov 2026).
 
-📄 **Paper:** [`paper/which_door_you_walk_through.pdf`](paper/which_door_you_walk_through.pdf) · 🖥️ **Demo app:** `app/index.html` · 📊 **Results:** [`resultados/resumen.md`](resultados/resumen.md)
+📄 **Paper:** [`paper/which_door_you_walk_through.pdf`](paper/which_door_you_walk_through.pdf) · 🖥️ **Demo:** `app/web/which-door.html` (open it in a browser; single file) · 📊 **Results:** [`resultados/resumen.md`](resultados/resumen.md)
 
 ## The question
 People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cleanup script) without asking about the risk hidden inside. Do chatbots warn on their own, like the "guardian angels" proposed by Forethought, or do they just do what they are asked?
@@ -39,16 +39,18 @@ People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cl
 | `datos/HUELLAS.sha256` | SHA-256 of every response and screenshot |
 | `clasificacion/` | Blind texts, both raters' sheets, adjudication (`consenso.csv`), final labels and the code→app key (`CLAVE_NO_ABRIR.csv`) |
 | `resultados/` | Tables, `resumen.md`, `resultados.json` and figures |
-| `app/` | Demo: same request, four answers side by side, plus results |
+| `app/web/which-door.html` | Demo page: the same request answered by every app, with verdicts, plus all results (built by `datos/construir_web.py`) |
+| `app/index.html` | Earlier internal viewer (Spanish) |
 | `datos/*.py` | Collection, hashing, blind rating, analysis and export scripts |
 
 ## Reproduce
 ```bash
 pip install -r requirements.txt
 python datos/analisis.py        # recomputes every number and figure from the labels
-python datos/exportar_app.py    # rebuilds the demo app data
+python datos/exportar_app.py    # rebuilds the internal viewer data
+python datos/construir_web.py   # rebuilds the demo page app/web/which-door.html
 ```
-Then open `app/index.html` (or serve the folder with `python -m http.server`).
+Then open `app/web/which-door.html` in a browser.
 
 ## Ethics and dual use
 All user profiles are fictional and were only sent to the chatbots; nothing false or harmful was published. The risks are well known and documented in public sources; we release the prompts so providers can use them as a regression test. See Appendix A of the paper.
