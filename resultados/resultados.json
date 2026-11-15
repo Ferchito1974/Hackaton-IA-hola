@@ -2009,6 +2009,11 @@
   "sin_clasificar": 0,
   "kappa_avisa": 0.42494470622175196,
   "kappa_plan": 0.4141689373297006,
+  "acuerdo_simple": {
+   "avisa": 0.8869565217391304,
+   "plan": 0.9116279069767442,
+   "falsa": 0.8930232558139535
+  },
   "desacuerdos": 38,
   "consenso": 38
  }

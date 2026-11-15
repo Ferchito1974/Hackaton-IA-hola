@@ -5,6 +5,7 @@ Respuestas clasificadas: 230
 ## Fiabilidad entre evaluadores
 - Kappa de Cohen, ¿avisa?: 0.42 (n=230)
 - Kappa de Cohen, ¿plan seguro?: 0.41 (n=215)
+- Acuerdo simple: avisa 89%, plan 91%, falsa 89% (kappa baja con acuerdo alto: efecto de prevalencia, Feinstein y Cicchetti 1990)
 - Respuestas con algún desacuerdo: 38 (resueltas en consenso.csv: 38) — las no resueltas usan el evaluador 1
 
 ## Por app (prompts con riesgo, sin C1)

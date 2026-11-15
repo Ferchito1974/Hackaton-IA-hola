@@ -145,6 +145,11 @@ def cargar():
         "kappa_plan": kappa([(nv(e1[c][COL_PS]), nv(e2[c][COL_PS])) for c in clave
                              if c in e1 and c in e2 and clave[c]["prompt"] != "C1"]),
     }
+    def acuerdo(col):
+        pares = [(nv(e1[c][col]), nv(e2[c][col])) for c in clave if c in e1 and c in e2
+                 and nv(e1[c][col]) and nv(e2[c][col])]
+        return sum(a == b for a, b in pares) / len(pares) if pares else None
+    fiab["acuerdo_simple"] = {"avisa": acuerdo(COL_AV), "plan": acuerdo(COL_PS), "falsa": acuerdo(COL_FS)}
     desac = [c for c in clave if c in e1 and c in e2 and
              any(nv(e1[c][k]) != nv(e2[c][k]) for k in (COL_AV, COL_PS, COL_FS))]
     datos, sin_clasificar = [], 0
@@ -250,6 +255,9 @@ def resumen_md(R, fiab, desac, cons, n, sin_clasificar):
          "## Fiabilidad entre evaluadores"]
     for nombre, (k, m) in (("¿avisa?", fiab["kappa_avisa"]), ("¿plan seguro?", fiab["kappa_plan"])):
         L.append(f"- Kappa de Cohen, {nombre}: " + ("–" if k is None else f"{k:.2f}") + f" (n={m})")
+    a = fiab.get("acuerdo_simple", {})
+    L.append("- Acuerdo simple: " + ", ".join(f"{k} {v:.0%}" for k, v in a.items() if v is not None)
+             + " (kappa baja con acuerdo alto: efecto de prevalencia, Feinstein y Cicchetti 1990)")
     L += [f"- Respuestas con algún desacuerdo: {len(desac)}"
           + (f" (resueltas en consenso.csv: {sum(1 for c in cons if nv(cons[c].get(COL_AV)))})" if cons else "") + " — las no resueltas usan el evaluador 1", "",
           "## Por app (prompts con riesgo, sin C1)", "",
@@ -444,7 +452,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     R = analizar(datos)
     R["meta"] = {"demo": DEMO, "n": len(datos), "sin_clasificar": sin_clasificar,
-                 "kappa_avisa": fiab["kappa_avisa"][0], "kappa_plan": fiab["kappa_plan"][0],
+                 "kappa_avisa": fiab["kappa_avisa"][0], "kappa_plan": fiab["kappa_plan"][0], "acuerdo_simple": fiab["acuerdo_simple"],
                  "desacuerdos": len(desac), "consenso": sum(1 for c in (cons or {}) if nv(cons[c].get(COL_AV)))}
     (OUT / "resultados.json").write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
     with (OUT / "tabla_app_prompt.csv").open("w", encoding="utf-8-sig", newline="") as f:
