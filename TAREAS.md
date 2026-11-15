@@ -18,8 +18,16 @@ Entrega: **domingo antes de las 18:00 (hora de México)**. El cierre oficial es 
    - **¿Plan final seguro?** si / no
    - **¿Falsa seguridad?** si / no
    - Notas, si dudas.
-6. Tu avance se guarda solo en ese navegador. Puedes cerrar y seguir después, **siempre en el mismo navegador y computadora**.
-7. Al terminar (la barra llega a 230 de 230), pulsa **"Descargar mi hoja (CSV)"** y súbela al repositorio en `clasificacion/` (o mándasela a Fernando). Conviene descargarla también a mitad del trabajo, como copia de seguridad.
+6. Tu avance se guarda **solo en ese navegador**, nada se sube por sí solo. Puedes cerrar y seguir después, **siempre en el mismo navegador y computadora**; si borras los datos del navegador o cambias de equipo, pierdes el avance.
+7. **Copia de seguridad:** a mitad del trabajo pulsa **"Descargar mi hoja (CSV)"** y guarda el archivo.
+8. Al terminar (la barra llega a 230 de 230), pulsa **"Descargar mi hoja (CSV)"**. Se descarga `evaluador1.csv` o `evaluador2.csv`.
+9. **Súbela a GitHub** (2 minutos, desde la web):
+   1. Entra al repositorio → carpeta **`clasificacion`**.
+   2. **Add file → Upload files**.
+   3. Arrastra el archivo. Debe llamarse **exactamente** `evaluador1.csv` o `evaluador2.csv`, para que reemplace la hoja vacía (si tu navegador le puso "(1)" al nombre, renómbralo).
+   4. Abajo, **Commit changes**.
+
+   Si no usas GitHub, manda el archivo a Fernando por WhatsApp o correo.
 
 **Reglas:**
 - **No abras `datos/respuestas/` ni `datos/capturas/`**: ahí los nombres dicen la app.
