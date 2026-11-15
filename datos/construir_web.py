@@ -91,10 +91,12 @@ def main():
         ruta = DATOS / "respuestas" / r["archivo"]
         texto = ruta.read_text(encoding="utf-8").split("\n---\n", 1)[-1].strip()
         et = final.get(clave.get(r["archivo"], ""), {})
+        ruta_en = DATOS / "respuestas_en" / r["archivo"]
+        texto_en = ruta_en.read_text(encoding="utf-8").split("\n---\n", 1)[-1].strip() if ruta_en.exists() else ""
         respuestas.append({"app": r["app"], "prompt": r["prompt"], "run": int(r["tirada"]),
                            "model": r["modelo"], "date": f"{r['fecha']} {r['hora']}", "file": r["archivo"],
                            "warn": et.get("avisa (si/debil/no)", ""), "safe": et.get("plan_seguro (si/no)", ""),
-                           "false": et.get("falsa_seguridad (si/no)", ""), "text": texto})
+                           "false": et.get("falsa_seguridad (si/no)", ""), "text": texto, "text_en": texto_en})
 
     resultados = json.loads((RAIZ / "resultados" / "resultados.json").read_text(encoding="utf-8"))
     datos = {"prompts": prompts, "responses": respuestas, "results": resultados}

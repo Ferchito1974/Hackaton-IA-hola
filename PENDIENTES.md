@@ -1,52 +1,44 @@
-# Lo que le falta al proyecto antes de entregar
+# Lo que falta para entregar
 
-Entrega: **domingo 15 nov, antes de las 18:00 (hora de México)**. Cierre oficial 23:59 AoE.
+Entrega: **domingo 15 nov, antes de las 18:00 (hora de México)**. Cierre oficial 23:59 AoE. Se entrega en la página del sprint con el botón **"Submit your project"**.
 
-Paper editable: https://claude.ai/artifact/GJ6QQBS8jAwyvHwXRfMnLQ · PDF y Word actuales en `paper/`.
+Todo lo técnico está terminado y en el repositorio:
+- datos (230 respuestas, capturas, huellas, traducciones);
+- clasificación y consenso;
+- análisis y figuras;
+- paper en inglés (`paper/`);
+- página de demostración (`app/web/which-door.html`);
+- traducciones de los prompts (`piloto/prompts_en.md`);
+- guion del video ([VIDEO_GUION.md](VIDEO_GUION.md)).
 
-## Ya resuelto (no hace falta tocarlo)
-- [x] Recogida de las 230 respuestas, con capturas, huellas y commits.
-- [x] Clasificación ciega por dos personas y consenso de los 38 desacuerdos.
-- [x] Análisis reproducible (`python datos/analisis.py`), 3 figuras en inglés y tablas.
-- [x] Paper en inglés con la estructura de la plantilla, apéndice de ética y uso dual, y declaración de uso de LLMs.
-- [x] Referencias verificadas abriendo cada fuente (34 + 1).
-- [x] H3 reformulada (puertas de entrada gratuitas, no gratis frente a pago).
-- [x] Fiabilidad reportada con acuerdo simple (89–91 %) además de la kappa (0.42).
-- [x] Tabla de la matriz movida al apéndice para ahorrar espacio.
-- [x] Repositorio público, README en inglés, licencia, `requirements.txt` y clave de códigos publicada.
+## Lo que solo puede hacer el equipo
 
-## Pendiente: lo tiene que hacer el equipo
-
-### 1. Texto del paper (prioridad alta)
-- [ ] **Leer el paper entero y reescribirlo con sus palabras.** La plantilla pide que el equipo escriba principalmente la entrega, y la declaración de uso de LLMs dice que lo hicieron.
-- [ ] **Recortar el cuerpo a unas 5–6 páginas.** Ahora ocupa unas 7–8; el máximo es 8 y la guía recomienda unas 4. Candidatos para acortar:
+### 1. Paper (prioridad alta)
+- [ ] **Leer el paper entero y reescribirlo con sus palabras.** La plantilla pide que la entrega final la escriba el equipo, y la declaración de uso de LLMs dice que lo hicieron. Paper editable: https://claude.ai/artifact/GJ6QQBS8jAwyvHwXRfMnLQ
+- [ ] **Recortar el cuerpo a unas 5–6 páginas.** Ahora ocupa unas 8, que es el máximo. Candidatos:
   - el segundo párrafo de *Related Work*;
   - *Hiding depth (H1)*;
-  - el párrafo *Both sides of the guardian angel* de la discusión.
-- [ ] **Autores y afiliaciones** en el bloque de autores (ahora dice `[Author Name 1], [Affiliation]`).
-- [ ] **Author Contributions:** quién diseñó, clasificó, adjudicó, escribió e hizo el video.
-- [ ] **Revisar la declaración de uso de LLMs** y ajustarla si algo no refleja lo que hicieron.
-- [ ] **Revisión de literatura:** leer al menos PaSBench (arXiv 2505.17455) y las fuentes de la tabla del apéndice B. Pueden quitar o cambiar las que no les convenzan.
-- [ ] (Opcional) Que alguien del área de salud revise la clave de P0, P2, P5 y P8.
+  - *Both sides of the guardian angel*.
+- [ ] **Autores y afiliaciones** (ahora dice `[Author Name 1], [Affiliation]`).
+- [ ] **Author Contributions**: quién hizo qué.
+- [ ] **Revisión de literatura**: leer al menos PaSBench (arXiv 2505.17455) y revisar las fuentes del apéndice B.
+- [ ] **Pasar el texto a la plantilla oficial de Google Docs** (https://docs.google.com/document/d/17b3JWki-ZkaqdmqGI5d0gof-HwlGuWU9Mc1_klNZXKs/copy?usp=sharing), pegando desde `paper/which_door_you_walk_through.docx`, y borrar el texto de instrucciones. Las figuras son `resultados/fig1_mapa_aviso.png`, `fig2_apps.png` y `fig3_paneles.png`.
+- [ ] Exportar a PDF (máximo 25 MB). Si cambian alguna cifra, avisar a Claude para comprobar que coincide con los datos.
 
-### 2. Formato de entrega
-- [ ] Copiar el texto final a la **plantilla oficial de Google Docs**: https://docs.google.com/document/d/17b3JWki-ZkaqdmqGI5d0gof-HwlGuWU9Mc1_klNZXKs/copy?usp=sharing. Pegar desde `paper/which_door_you_walk_through.docx`; las figuras están en `resultados/fig1_mapa_aviso.png`, `fig2_apps.png` y `fig3_paneles.png`.
-- [ ] Borrar el texto de instrucciones de la plantilla y exportar a PDF (máximo 25 MB).
-- [ ] Si cambian alguna cifra o figura, avisar para comprobar que coincide con los datos.
+### 2. Video (opcional, pero suma)
+- [ ] Grabar siguiendo [VIDEO_GUION.md](VIDEO_GUION.md) (unos 3:30), con la página de demostración.
+- [ ] Subirlo a YouTube (oculto) o a Drive y copiar el enlace.
 
 ### 3. Repositorio
-- [ ] Si cambian el nombre del repo, actualizar el enlace en el paper (sección *Code and Data*) y en este README.
-- [ ] Poner los nombres del equipo en el README (sección *Team*).
+- [ ] Nombres del equipo en el README (sección *Team*).
+- [ ] Si cambian el nombre del repo, actualizar el enlace en el paper (*Code and Data*), en el README y en la página.
+- [ ] Compartir la página publicada desde **Share** si se quiere un enlace público (https://claude.ai/artifact/SiFCkWeoDoss3MdD6M8JUq). Si no, basta con el archivo del repo.
 
-### 4. App y video
-- [x] App con diseño profesional: `app/web/which-door.html` (un solo archivo) y publicada en https://claude.ai/artifact/SiFCkWeoDoss3MdD6M8JUq (privada: compartirla desde Share si se quiere enlace público).
-- [ ] Pulir la página (`datos/web_plantilla.html` → `python datos/construir_web.py`): aspecto más limpio y menos amontonado (más aire entre secciones, menos elementos por pantalla, la sección "The bench" más simple) y animaciones sutiles al hacer scroll y al cambiar de tirada. Idealmente con la skill frontend-design si ya está instalada.
-- [ ] Video de 3 a 5 minutos (opcional, pero suma): el problema, un caso real con las capturas de `datos/capturas/`, un recorrido por la app y los resultados.
+### 4. Entrega
+- [ ] En "Submit your project": título, resumen (150–250 palabras), PDF, enlace al repositorio y enlace al video.
+- [ ] Revisión final: autores, resumen, apéndice de limitaciones y ética, y declaración de uso de LLMs.
 
-### 5. Entrega
-- [ ] Subir el PDF en la página del sprint ("Submit your project"), con título, resumen, enlace al repositorio y video.
-- [ ] Revisión final: título, autores, resumen de 150 a 250 palabras y apéndice de limitaciones y ética.
-
-### 6. Opcional, si sobra tiempo
-- [ ] Prueba de la app de Gemini con sesión iniciada (P0, P1, P3 y P8, 5 tiradas cada uno) para aislar el efecto del modelo.
-- [ ] Mandar los casos a Google (divulgación responsable) y mencionarlo en el paper.
+## Opcional (no hace falta para entregar)
+- Prueba de mitigación en Gemini: 9 de 20 respuestas recogidas (`geminimit_*`). Está **incompleta** y **no se usa** en el paper.
+- Prueba de la app de Gemini con sesión iniciada, para aislar el efecto del modelo.
+- Enviar los casos a Google (divulgación responsable).

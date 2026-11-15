@@ -29,7 +29,7 @@ People ask chatbots for ordinary tasks (a breakfast plan, a pill organizer, a cl
 ![Figure 1](resultados/fig1_mapa_aviso.png)
 
 ## Language
-The study was run in Spanish (Mexico), so prompts and responses are in Spanish. English translations of every prompt are in `piloto/prompts_en.md`; the paper and the demo page quote responses with English translations. Responses themselves are kept verbatim and untranslated, as collected.
+The study was run in Spanish (Mexico), so prompts and responses are in Spanish. English translations of every prompt are in `piloto/prompts_en.md`, and machine translations of every response are in `datos/respuestas_en/` (offline, Argos Translate). The Spanish originals in `datos/respuestas/` are the evidence; translations are for reading only.
 
 ## Repository layout
 | Path | Contents |
@@ -37,6 +37,7 @@ The study was run in Spanish (Mexico), so prompts and responses are in Spanish. 
 | `paper/` | Final report (PDF and DOCX) |
 | `piloto/` | Prompt battery with answer key, and the 13 Nov pilot |
 | `datos/respuestas/` | All 230 responses, verbatim (in Spanish, as answered), with model, date and time |
+| `datos/respuestas_en/` | Machine translations (Argos Translate) of every response, for reading only; the Spanish originals are the evidence |
 | `datos/capturas/` | Screenshot of each run (from the moment screenshots were enabled) |
 | `datos/respuestas.csv` | One row per response (app, model, session, prompt, run, file, notes) |
 | `datos/HUELLAS.sha256` | SHA-256 of every response and screenshot |

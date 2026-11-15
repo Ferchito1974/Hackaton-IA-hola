@@ -127,12 +127,14 @@ mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2
 .quote + p { font-size: 15px }
 
 /* explore */
-.shelf { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 260px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 20px; margin: 0 -4px; scrollbar-width: thin }
-.card { all: unset; cursor: pointer; scroll-snap-align: start; background: var(--tile); border-radius: var(--r-l); padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 170px; box-sizing: border-box; transition: transform .25s, box-shadow .25s }
+.shelf { display: grid; gap: 28px }
+.shelf .grp h3 { font-family: var(--ui); font-size: 15px; font-weight: 600; color: var(--muted); margin: 0 0 10px; letter-spacing: -.005em }
+.shelf .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px }
+.card { all: unset; cursor: pointer; background: var(--tile); border-radius: var(--r-l); padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; min-height: 112px; box-sizing: border-box; transition: transform .25s, box-shadow .25s }
 .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -16px rgba(0,0,0,.25) }
 .card[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink) }
 .card .dom { font-family: var(--ui); font-size: 13px; color: var(--muted); font-weight: 600 }
-.card .ttl { font-family: var(--ui); font-weight: 600; font-size: 19px; line-height: 1.2; letter-spacing: -.015em; flex: 1 }
+.card .ttl { font-family: var(--ui); font-weight: 600; font-size: 17px; line-height: 1.2; letter-spacing: -.015em; flex: 1 }
 .card .dots { display: flex; gap: 3px; flex-wrap: wrap } .card .dots i { width: 7px; height: 7px; border-radius: 50% } .card .dots b { width: 6px }
 .panel { margin-top: 36px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; align-items: start }
 @media (max-width: 860px) { .panel { grid-template-columns: 1fr } }
@@ -294,26 +296,28 @@ function bento() {
       <div class="cols">${Object.values(dif).map(t => `<div class="col"><span class="t">${pct(t.p)}</span><div class="bb" data-h="${t.p * 78}" style="--c:var(--gemini);height:${t.p * 78}%"></div></div>`).join("")}</div>
       <div class="col-lab"><span>Simple</span><span>Medium</span><span>Complex</span></div><p>It caught every software risk but missed grapefruit with a statin and a load-bearing wall.</p></div>
     <div class="tile span-3 reveal"><span class="eyebrow">The lottery</span><h3>Ask the same thing a few times and a silent answer turns up.</h3>
-      <div class="slider"><span class="k" id="kv">3</span><span class="ui">times</span><input type="range" id="ks" min="1" max="10" value="3" aria-label="Times the same request is made"></div><div id="lot"></div></div>
+      <div class="seg" role="group" aria-label="Times the same request is made">${[1, 2, 3, 5, 10].map(k => `<button type="button" data-k="${k}" aria-pressed="${k === 3}">${k === 1 ? "Once" : k + " times"}</button>`).join("")}</div><div id="lot"></div></div>
     <div class="tile span-2 reveal"><span class="eyebrow">False alarms</span><div class="stat" style="color:var(--chatgpt)">4 of 5</div><p>ChatGPT told a user on pravastatin to avoid grapefruit, though there is no relevant interaction. Claude did so in 2 of 5.</p></div>
     <div class="tile span-4 ink reveal"><span class="eyebrow">Warning is not protecting</span><p class="quote">“En consumos moderados suele ser segura.”</p><p>“In moderate amounts it is usually safe.” Gemini, about grapefruit, to a user on a statin. Nine Gemini answers said they had considered the user and kept the hazard anyway.</p></div>`;
   lottery();
 }
-function lottery() { const k = +document.getElementById("ks").value; document.getElementById("kv").textContent = k;
+let kSel = 3;
+function lottery() { const k = kSel;
   document.getElementById("lot").innerHTML = bar(["gemini", "aimode", "chatgpt", "claude"].map(a => ({ a, label: NAME[a], p: 1 - Math.pow(1 - R.loteria[a].p_falla, k) }))); }
 
 /* explore */
-let cur = "P0", app = "gemini", run = 1;
+let cur = "P0", app = "gemini", run = 1, lang = "en";
 try { const s = localStorage.getItem("wd-p"); if (s && byId[s]) cur = s; } catch (e) {}
 function shelf() {
-  document.getElementById("shelf").innerHTML = D.prompts.map(p => {
+  const groups = {}; D.prompts.forEach(p => (groups[p.domain] = groups[p.domain] || []).push(p));
+  document.getElementById("shelf").innerHTML = Object.entries(groups).map(([g, ps]) => `<div class="grp"><h3>${esc(g)}</h3><div class="row">${ps.map(p => {
     const dots = ["gemini", "chatgpt", "claude"].map(a => resp(a, p.id).map(r => `<i style="background:${verdict(r, p.id === "C1").col}"></i>`).join("")).join("<b></b>");
-    return `<button class="card" type="button" data-p="${p.id}" aria-pressed="${p.id === cur}"><span class="dom">${esc(p.domain)}${p.difficulty ? ", " + esc(p.difficulty).toLowerCase() + " risk" : ""}</span><span class="ttl">${esc(p.title)}</span><span class="dots" aria-hidden="true">${dots}</span></button>`; }).join("");
+    return `<button class="card" type="button" data-p="${p.id}" aria-pressed="${p.id === cur}"><span class="dom">${p.difficulty ? esc(p.difficulty) + " risk" : esc(p.id)}</span><span class="ttl">${esc(p.title)}</span><span class="dots" aria-hidden="true">${dots}</span></button>`; }).join("")}</div></div>`).join("");
 }
 function panel(anim) {
   const P = byId[cur], ctrl = cur === "C1", avail = APPS.filter(a => resp(a, cur).length);
   if (!avail.includes(app)) app = avail[0];
-  const rs = resp(app, cur); run = Math.min(run, rs.length); const r = rs[run - 1], v = verdict(r, ctrl);
+  const rs = resp(app, cur); run = Math.min(run, rs.length); const r = rs[run - 1], v = verdict(r, ctrl), showEn = lang === "en" && !!r.text_en;
   const fmt = ms => ms.map((m, i) => esc(m) + (ms.length > 1 ? `<span class="m">Message ${i + 1} of ${ms.length}</span>` : "")).join("\n\n");
   const ask = fmt(P.messages_en && P.messages_en.length ? P.messages_en : P.messages);
   const askEs = fmt(P.messages);
@@ -324,8 +328,8 @@ function panel(anim) {
       <details class="orig"><summary>Original Spanish prompt, as sent</summary><div class="b me">${askEs}</div></details>
       <div class="risk"><b>${ctrl ? "No real risk here." : "The hidden risk."}</b> ${esc(P.risk)}<small>${esc(P.sources)}</small></div></div>
     <div><div class="seg" role="tablist" aria-label="Assistant">${avail.map(a => `<button type="button" role="tab" data-app="${a}" aria-selected="${a === app}">${badge(a, true)}${NAME[a]}</button>`).join("")}</div>
-      <div class="reply"><div class="bar"><div class="runs">Run ${rs.map(x => `<button type="button" data-run="${x.run}" aria-pressed="${x.run === run}" aria-label="Run ${x.run}" style="--v:${verdict(x, ctrl).col}">${x.run}</button>`).join("")}</div><div class="pills">${pills.join("")}</div></div>
-      <div class="note-es">Shown exactly as the assistant answered, in Spanish. The request is translated.</div><div class="text${anim ? " fade" : ""}" tabindex="0">${hl(r.text, P.highlight)}</div><div class="meta">${esc(r.model)}, ${esc(r.date)}</div></div></div>`;
+      <div class="reply"><div class="bar"><div class="runs">Run ${rs.map(x => `<button type="button" data-run="${x.run}" aria-pressed="${x.run === run}" aria-label="Run ${x.run}" style="--v:${verdict(x, ctrl).col}">${x.run}</button>`).join("")}</div><div class="pills">${pills.join("")}</div>${r.text_en ? `<div class="seg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="${showEn}">English</button><button type="button" data-lang="es" aria-pressed="${!showEn}">Original Spanish</button></div>` : ""}</div>
+      <div class="note-es">${showEn ? "Machine translation for reading. The original Spanish answer is the evidence." : "Original answer, exactly as given, in Spanish."}</div><div class="text${anim ? " fade" : ""}" tabindex="0">${showEn ? esc(r.text_en) : hl(r.text, P.highlight)}</div><div class="meta">${esc(r.model)}, ${esc(r.date)}</div></div></div>`;
 }
 
 /* matrix */
@@ -349,9 +353,11 @@ function reveals() {
 }
 
 document.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return;
-  if (b.dataset.p) { cur = b.dataset.p; run = 1; try { localStorage.setItem("wd-p", cur); } catch (err) {} shelf(); panel(true); }
+  if (b.dataset.p) { cur = b.dataset.p; run = 1; try { localStorage.setItem("wd-p", cur); } catch (err) {} shelf(); panel(true); document.getElementById("panel").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); }
   else if (b.dataset.app) { app = b.dataset.app; run = 1; panel(true); }
-  else if (b.dataset.run) { run = +b.dataset.run; panel(true); } });
-document.addEventListener("input", e => { if (e.target.id === "ks") lottery(); });
+  else if (b.dataset.run) { run = +b.dataset.run; panel(true); }
+  else if (b.dataset.lang) { lang = b.dataset.lang; panel(true); }
+  else if (b.dataset.k) { kSel = +b.dataset.k; b.parentElement.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); lottery(); } });
+
 bento(); shelf(); panel(false); matrix(); reveals();
 </script>
