@@ -54,7 +54,7 @@ Then open `app/index.html` (or serve the folder with `python -m http.server`).
 All user profiles are fictional and were only sent to the chatbots; nothing false or harmful was published. The risks are well known and documented in public sources; we release the prompts so providers can use them as a regression test. See Appendix A of the paper.
 
 ## LLM usage
-Claude (Anthropic) was used through Claude Code to help design the study, collect responses through a browser (verbatim copies verified by hash), write the code, check references and draft text. Claude did not rate any response; ratings were done by humans blind to the app. Details in the paper.
+We used Claude (Anthropic) as an assistant to automate response collection, write the analysis code and help with the literature search and drafting. All classification was done by the team, blind to the app, so Claude (one of the evaluated systems) could not influence the labels. The team designed and supervised the study and verified every result and reference. Details in the paper.
 
 ## Team
 [Author names and affiliations]. Internal task guide (Spanish): [`TAREAS.md`](TAREAS.md).
