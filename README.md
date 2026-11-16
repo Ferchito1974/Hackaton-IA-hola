@@ -39,7 +39,7 @@ The study was run in Spanish (Mexico), so prompts and responses are in Spanish. 
 ## Repository layout
 | Path | Contents |
 |---|---|
-| `paper/` | Final report (PDF); earlier drafts in `paper/draft/` |
+| `paper/` | Final report (PDF) |
 | `video/` | Demo video (MP4) |
 | `piloto/` | Prompt battery with answer key, and the 13 Nov pilot |
 | `datos/respuestas/` | All 230 responses, verbatim (in Spanish, as answered), with model, date and time |
