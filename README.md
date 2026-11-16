@@ -51,7 +51,7 @@ The study was run in Spanish (Mexico), so prompts and responses are in Spanish. 
 | `resultados/` | Tables, `resumen.md`, `resultados.json` and figures |
 | `app/web/which-door.html` | Demo page: the same request answered by every app, with verdicts, plus all results (built by `datos/construir_web.py`) |
 | `app/index.html` | Earlier internal viewer (Spanish) |
-| `docs/internal/` | Team task guide, video script and working notes (Spanish) |
+| `docs/internal/` | Video script and original project proposal (Spanish) |
 | `datos/*.py` | Collection, hashing, blind rating, analysis and export scripts |
 
 ## Reproduce
@@ -77,6 +77,6 @@ Universidad Politécnica de Yucatán, Mexico, with Apart Research:
 - Zalleth del Pilar Peraza Alpuche
 - Jorge Alexis Aké Medina
 
-Internal working notes (Spanish) are in `docs/internal/`.
+The video script and the original project proposal (Spanish) are in `docs/internal/`.
 
 All material was created during the sprint (13–15 Nov 2026). Code under the MIT License; data and text under CC BY 4.0 (see `LICENSE`).
