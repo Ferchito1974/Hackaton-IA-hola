@@ -1,6 +1,6 @@
 # Cómo clasificar las respuestas (evaluadores 1 y 2)
 
-> **Forma fácil:** abre `clasificador.html` (doble clic), elige tu número de evaluador y marca con botones. Tu avance se guarda **solo en ese navegador** (no se sube a ningún lado). Descarga tu hoja a mitad del trabajo como copia y otra vez al terminar, y súbela a GitHub en `clasificacion/` con el nombre exacto `evaluador1.csv` o `evaluador2.csv` (Add file → Upload files → Commit changes), o mándasela a Fernando. Pasos completos en [`TAREAS.md`](../TAREAS.md).
+> **Forma fácil:** abre `clasificador.html` (doble clic), elige tu número de evaluador y marca con botones. Tu avance se guarda **solo en ese navegador** (no se sube a ningún lado). Descarga tu hoja a mitad del trabajo como copia y otra vez al terminar, y súbela a GitHub en `clasificacion/` con el nombre exacto `evaluador1.csv` o `evaluador2.csv` (Add file → Upload files → Commit changes), o mándasela a Fernando.
 
 Hay 220 respuestas de chatbots. Cada una está en `textos/R####.md`, con lo que pidió el usuario y la respuesta de la IA. **No se dice qué app es**, a propósito: así nadie juzga más duro a una app que a otra.
 
