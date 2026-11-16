@@ -7,7 +7,7 @@ Research conducted at the [AI x Epistemics Research Sprint](https://apartresearc
 |---|---|
 | 📄 **Report** | [`paper/Which_Door_You_Walk_Through.pdf`](paper/Which_Door_You_Walk_Through.pdf) |
 | 🎬 **Video** | [Watch on Google Drive](https://drive.google.com/file/d/1Pg6qI049v33_d9O3NYGFV2K9Lnt-O5zX/view) · also in [`video/`](video/Which_Door_You_Walk_Through.mp4) |
-| 🖥️ **Demo page** | [`app/web/which-door.html`](app/web/which-door.html) (download and open in a browser; single file) |
+| 🖥️ **Demo page** | **https://ferchito1974.github.io/which-door-you-walk-through/** (or open [`app/web/which-door.html`](app/web/which-door.html) locally) |
 | 📊 **Results** | [`resultados/resumen.md`](resultados/resumen.md) and figures in [`resultados/`](resultados/) |
 
 ## The question
